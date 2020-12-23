@@ -98,12 +98,6 @@ var FeaturesLayoutOne = function () {
         React__default["default"].createElement(
           react.VStack,
           { spacing: 4, align: "left" },
-          React__default["default"].createElement(react.Image, {
-            src:
-              "https://unsplash-assets.imgix.net/marketing/misc/img01.jpg?auto=format&fit=crop&q=60",
-            alt: "Over one million curated photos",
-            rounded: "lg",
-          }),
           React__default["default"].createElement(
             react.Text,
             { fontWeight: "bold", fontSize: "lg" },
@@ -118,12 +112,6 @@ var FeaturesLayoutOne = function () {
         React__default["default"].createElement(
           react.VStack,
           { spacing: 4, align: "left" },
-          React__default["default"].createElement(react.Image, {
-            src:
-              "https://unsplash-assets.imgix.net/marketing/misc/img02.jpg?auto=format&fit=crop&q=60",
-            alt: "Over one million curated photos",
-            rounded: "lg",
-          }),
           React__default["default"].createElement(
             react.Text,
             { fontWeight: "bold", fontSize: "lg" },
@@ -138,12 +126,6 @@ var FeaturesLayoutOne = function () {
         React__default["default"].createElement(
           react.VStack,
           { spacing: 4, align: "left" },
-          React__default["default"].createElement(react.Image, {
-            src:
-              "https://unsplash-assets.imgix.net/marketing/misc/img03.jpg?auto=format&fit=crop&q=60",
-            alt: "Over one million curated photos",
-            rounded: "lg",
-          }),
           React__default["default"].createElement(
             react.Text,
             { fontWeight: "bold", fontSize: "lg" },

@@ -10,11 +10,6 @@ const FeaturesLayoutOne = () => {
         </Heading>
         <HStack spacing={24}>
           <VStack spacing={4} align="left">
-            <Image
-              src="https://unsplash-assets.imgix.net/marketing/misc/img01.jpg?auto=format&fit=crop&q=60"
-              alt="Over one million curated photos"
-              rounded="lg"
-            />
             <Text fontWeight="bold" fontSize="lg">
               Over one million curated photos
             </Text>
@@ -25,11 +20,6 @@ const FeaturesLayoutOne = () => {
             </Text>
           </VStack>
           <VStack spacing={4} align="left">
-            <Image
-              src="https://unsplash-assets.imgix.net/marketing/misc/img02.jpg?auto=format&fit=crop&q=60"
-              alt="Over one million curated photos"
-              rounded="lg"
-            />
             <Text fontWeight="bold" fontSize="lg">
               A community of 211,166 photographers
             </Text>
@@ -39,11 +29,6 @@ const FeaturesLayoutOne = () => {
             </Text>
           </VStack>
           <VStack spacing={4} align="left">
-            <Image
-              src="https://unsplash-assets.imgix.net/marketing/misc/img03.jpg?auto=format&fit=crop&q=60"
-              alt="Over one million curated photos"
-              rounded="lg"
-            />
             <Text fontWeight="bold" fontSize="lg">
               Fuelling your favourite platforms
             </Text>
