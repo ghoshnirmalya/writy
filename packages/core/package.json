@@ -1,6 +1,7 @@
 {
   "private": true,
   "name": "writy",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "nirmalya.email@gmail.com",
   "scripts": {
