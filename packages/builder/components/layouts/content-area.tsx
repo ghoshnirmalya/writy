@@ -30,10 +30,9 @@ const ContentArea: FC = () => {
       w="calc(100vw - 80px - 600px)"
       bg={bgColor}
       p={14}
-      overflowY="auto"
     >
       <Box borderWidth={1} shadow="xl">
-        <Box bg="white">
+        <Box bg="white" h="calc(100vh - 80px - 120px)" overflowY="auto">
           {pageData.sections.map((section: any, index: number) => {
             return (
               <Box as="section" key={index}>
