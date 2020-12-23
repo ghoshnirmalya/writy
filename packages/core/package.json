@@ -1,12 +1,11 @@
 {
-  "name": "writy",
-  "version": "0.1.0",
-  "author": "nirmalya.email@gmail.com",
-  "license": "MIT",
   "private": true,
+  "name": "writy",
+  "license": "MIT",
+  "author": "nirmalya.email@gmail.com",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
     "start": "next start"
   },
   "dependencies": {
