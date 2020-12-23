@@ -1,18 +1,31 @@
 import { Box, HStack, Link } from "@chakra-ui/react";
-import React from "react";
+import React, { FC } from "react";
 
-const NavbarLayoutOne = () => {
+interface IProps {
+  theme: any;
+  data: any;
+}
+
+const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
   return (
-    <Box as="section" borderBottomWidth={1} p={4}>
+    <Box
+      borderBottomWidth={1}
+      p={4}
+      bg={theme.backgroundColor}
+      color={theme.linkColor}
+    >
       <HStack spacing={16} justifyContent="space-between">
         <Box>
-          <Link>Home</Link>
+          <Link>Writy</Link>
         </Box>
         <HStack spacing={8}>
-          <Link>About</Link>
-          <Link>History</Link>
-          <Link>Join the team</Link>
-          <Link>Press</Link>
+          {data.links.map((link: any, index: number) => {
+            return (
+              <Link key={index} href={link.link}>
+                {link.label}
+              </Link>
+            );
+          })}
         </HStack>
       </HStack>
     </Box>

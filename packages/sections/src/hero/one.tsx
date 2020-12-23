@@ -1,9 +1,14 @@
 import { Box, Button, Heading, HStack, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import React, { FC } from "react";
 
-const HeroLayoutOne = () => {
+interface IProps {
+  theme: any;
+  data: any;
+}
+
+const HeroLayoutOne: FC<IProps> = () => {
   return (
-    <Box as="section" borderBottomWidth={1} p={24}>
+    <Box borderBottomWidth={1} p={24}>
       <VStack spacing={4} align="stretch">
         <Heading>Photos for everyone</Heading>
         <Text>

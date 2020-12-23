@@ -1,9 +1,14 @@
-import { Box, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import { Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import React, { FC } from "react";
 
-const FeaturesLayoutOne = () => {
+interface IProps {
+  theme: any;
+  data: any;
+}
+
+const FeaturesLayoutOne: FC<IProps> = () => {
   return (
-    <Box as="section" borderBottomWidth={1} p={24}>
+    <Box borderBottomWidth={1} p={24}>
       <VStack spacing={24} align="center">
         <Heading>
           Unsplash is internet’s source of freely usable images.

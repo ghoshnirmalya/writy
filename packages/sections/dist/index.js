@@ -9,29 +9,35 @@ function _interopDefaultLegacy(e) {
 
 var React__default = /*#__PURE__*/ _interopDefaultLegacy(React);
 
-var NavbarLayoutOne = function () {
+var NavbarLayoutOne = function (_a) {
+  var theme = _a.theme,
+    data = _a.data;
   return React__default["default"].createElement(
     react.Box,
-    { as: "section", borderBottomWidth: 1, p: 4 },
+    {
+      borderBottomWidth: 1,
+      p: 4,
+      bg: theme.backgroundColor,
+      color: theme.linkColor,
+    },
     React__default["default"].createElement(
       react.HStack,
       { spacing: 16, justifyContent: "space-between" },
       React__default["default"].createElement(
         react.Box,
         null,
-        React__default["default"].createElement(react.Link, null, "Home")
+        React__default["default"].createElement(react.Link, null, "Writy")
       ),
       React__default["default"].createElement(
         react.HStack,
         { spacing: 8 },
-        React__default["default"].createElement(react.Link, null, "About"),
-        React__default["default"].createElement(react.Link, null, "History"),
-        React__default["default"].createElement(
-          react.Link,
-          null,
-          "Join the team"
-        ),
-        React__default["default"].createElement(react.Link, null, "Press")
+        data.links.map(function (link, index) {
+          return React__default["default"].createElement(
+            react.Link,
+            { key: index, href: link.link },
+            link.label
+          );
+        })
       )
     )
   );
@@ -44,7 +50,7 @@ var NavbarLayouts = {
 var HeroLayoutOne = function () {
   return React__default["default"].createElement(
     react.Box,
-    { as: "section", borderBottomWidth: 1, p: 24 },
+    { borderBottomWidth: 1, p: 24 },
     React__default["default"].createElement(
       react.VStack,
       { spacing: 4, align: "stretch" },
@@ -83,7 +89,7 @@ var HeroLayouts = {
 var FeaturesLayoutOne = function () {
   return React__default["default"].createElement(
     react.Box,
-    { as: "section", borderBottomWidth: 1, p: 24 },
+    { borderBottomWidth: 1, p: 24 },
     React__default["default"].createElement(
       react.VStack,
       { spacing: 24, align: "center" },

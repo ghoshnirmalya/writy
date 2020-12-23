@@ -7,7 +7,8 @@
       "components/*": ["components/*"],
       "pages/*": ["pages/*"],
       "types/*": ["types/*"],
-      "lib/*": ["lib/*"]
+      "lib/*": ["lib/*"],
+      "data/*": ["data/*"]
     },
     "jsx": "preserve"
   },
