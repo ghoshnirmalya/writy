@@ -9,6 +9,7 @@
 > Blogging application built using [Next.js](https://nextjs.org/).
 
 # Installation
+
 Run the following command at the root of your project to install all the necessary dependencies for our application:
 
 ```bash
@@ -16,6 +17,7 @@ yarn install
 ```
 
 # Development
+
 Run the following command at the root of your project to start the application:
 
 ```bash
