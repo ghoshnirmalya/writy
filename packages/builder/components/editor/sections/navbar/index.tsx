@@ -1,44 +1,12 @@
-import {
-  FormControl,
-  FormLabel,
-  HStack,
-  Input,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  VStack,
-} from "@chakra-ui/react";
-import React, { ChangeEvent, FC } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getSectionData } from "selectors/template";
-import { updateTemplateSectionData } from "slices/template";
-
+import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import NavbarSectionEditorColorsPanel from "components/editor/sections/navbar/panels/colors";
+import NavbarSectionEditorTextPanel from "components/editor/sections/navbar/panels/text";
+import React, { FC } from "react";
 interface IProps {
   positionOfSection: number;
 }
 
 const NavbarSectionEditor: FC<IProps> = ({ positionOfSection }) => {
-  const dispatch = useDispatch();
-  const { data } = useSelector(getSectionData(positionOfSection));
-
-  const handleChange = (
-    positionOfItem: number,
-    itemType: string,
-    value: string
-  ) => {
-    dispatch(
-      updateTemplateSectionData({
-        positionOfSection,
-        itemType: "links",
-        itemPosition: positionOfItem,
-        key: itemType,
-        value,
-      })
-    );
-  };
-
   return (
     <Tabs>
       <TabList>
@@ -47,34 +15,14 @@ const NavbarSectionEditor: FC<IProps> = ({ positionOfSection }) => {
         <Tab>Fonts</Tab>
         <Tab>Layouts</Tab>
       </TabList>
-      <TabPanels>
+      <TabPanels minH="400px">
         <TabPanel>
-          <VStack spacing={4} align="stretch">
-            {data.links.map((link: any, index: number) => {
-              return (
-                <HStack spacing={4} key={index}>
-                  <FormControl>
-                    <FormLabel>Label</FormLabel>
-                    <Input
-                      value={link.label}
-                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                        handleChange(index, "label", e.currentTarget.value)
-                      }
-                    />
-                  </FormControl>
-                  <FormControl>
-                    <FormLabel>URL</FormLabel>
-                    <Input
-                      value={link.link}
-                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                        handleChange(index, "link", e.currentTarget.value)
-                      }
-                    />
-                  </FormControl>
-                </HStack>
-              );
-            })}
-          </VStack>
+          <NavbarSectionEditorTextPanel positionOfSection={positionOfSection} />
+        </TabPanel>
+        <TabPanel>
+          <NavbarSectionEditorColorsPanel
+            positionOfSection={positionOfSection}
+          />
         </TabPanel>
       </TabPanels>
     </Tabs>

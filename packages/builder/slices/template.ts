@@ -32,6 +32,11 @@ export const templateSlice = createSlice({
         action.payload.itemType
       ][action.payload.itemPosition][action.payload.key] = action.payload.value;
     },
+    updateTemplateSectionTheme(state, action) {
+      state.template.sections[action.payload.positionOfSection].theme[
+        action.payload.key
+      ] = action.payload.value;
+    },
   },
   extraReducers(builder) {
     builder.addCase(hydrate, (state, action) => {
@@ -46,4 +51,5 @@ export const templateSlice = createSlice({
 export const {
   setTemplateData,
   updateTemplateSectionData,
+  updateTemplateSectionTheme,
 } = templateSlice.actions;
