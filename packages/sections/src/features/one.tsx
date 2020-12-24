@@ -1,4 +1,3 @@
-import { Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
 
 interface IProps {
@@ -6,46 +5,46 @@ interface IProps {
   data: any;
 }
 
-const FeaturesLayoutOne: FC<IProps> = () => {
+const FeaturesLayoutOne: FC<IProps> = ({ theme, data }) => {
   return (
-    <Box borderBottomWidth={1} p={24}>
-      <VStack spacing={24} align="center">
-        <Heading>
+    <div
+      className="border-b border-solid border-gray-300 p-24"
+      style={{
+        backgroundColor: theme?.backgroundColor,
+        color: theme?.linkColor,
+      }}
+    >
+      <div className="space-y-24">
+        <h2 className="font-bold text-4xl text-center">
           Unsplash is internet’s source of freely usable images.
-        </Heading>
-        <HStack spacing={24}>
-          <VStack spacing={4} align="left">
-            <Text fontWeight="bold" fontSize="lg">
-              Over one million curated photos
-            </Text>
-            <Text>
+        </h2>
+        <div className="flex">
+          <div className="space-y-4">
+            <p className="font-bold">Over one million curated photos</p>
+            <p>
               We hand-select every photo and accept only the best, so that no
               matter what you need—you’ll find exactly what you’re looking for
               on Unsplash.
-            </Text>
-          </VStack>
-          <VStack spacing={4} align="left">
-            <Text fontWeight="bold" fontSize="lg">
-              A community of 211,166 photographers
-            </Text>
-            <Text>
+            </p>
+          </div>
+          <div className="space-y-4">
+            <p className="font-bold">A community of 211,166 photographers</p>
+            <p>
               Unsplash is home to a growing community of photographers—from
               hobbyists, professionals, emerging brands and everyone in between.
-            </Text>
-          </VStack>
-          <VStack spacing={4} align="left">
-            <Text fontWeight="bold" fontSize="lg">
-              Fuelling your favourite platforms
-            </Text>
-            <Text>
+            </p>
+          </div>
+          <div className="space-y-4">
+            <p className="font-bold">Fuelling your favourite platforms</p>
+            <p>
               With partners like BuzzFeed, Squarespace and Trello being powered
               by our API, the Unsplash library is more widely accessible than
               ever.
-            </Text>
-          </VStack>
-        </HStack>
-      </VStack>
-    </Box>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

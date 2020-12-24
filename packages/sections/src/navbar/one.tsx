@@ -1,4 +1,3 @@
-import { Box, HStack, Link } from "@chakra-ui/react";
 import React, { FC } from "react";
 
 interface IProps {
@@ -8,27 +7,28 @@ interface IProps {
 
 const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
   return (
-    <Box
-      borderBottomWidth={1}
-      p={4}
-      bg={theme.backgroundColor}
-      color={theme.linkColor}
+    <div
+      className="border-b border-solid border-gray-300 p-4"
+      style={{
+        backgroundColor: theme?.backgroundColor,
+        color: theme?.linkColor,
+      }}
     >
-      <HStack spacing={16} justifyContent="space-between">
-        <Box>
-          <Link>Writy</Link>
-        </Box>
-        <HStack spacing={8}>
+      <div className="flex justify-between">
+        <div>
+          <a href="/">Writy</a>
+        </div>
+        <div className="space-x-8">
           {data.links.map((link: any, index: number) => {
             return (
-              <Link key={index} href={link.link}>
+              <a key={index} href={link.link}>
                 {link.label}
-              </Link>
+              </a>
             );
           })}
-        </HStack>
-      </HStack>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };
 

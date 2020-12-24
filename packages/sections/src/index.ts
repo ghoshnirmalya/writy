@@ -1,3 +1,5 @@
+import "../assets/tailwind.css";
+
 import NavbarLayouts from "./navbar";
 import HeroLayouts from "./hero";
 import FeaturesLayouts from "./features";
