@@ -12,7 +12,7 @@ import NavbarSectionEditor from "components/editor/sections/navbar";
 import pageData from "data/layout.json";
 import React, { FC } from "react";
 
-const RightSidebarAccordion: FC = () => {
+const RightSidebarSectionsTab: FC = () => {
   const editorControlsBgColor = useColorModeValue("white", "black");
 
   const mapSectionTypeToEditor = (section: any, positionOfSection: number) => {
@@ -75,4 +75,4 @@ const RightSidebarAccordion: FC = () => {
   );
 };
 
-export default RightSidebarAccordion;
+export default RightSidebarSectionsTab;

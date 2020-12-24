@@ -34,7 +34,12 @@ const ContentArea: FC = () => {
       p={14}
     >
       <Box borderWidth={1} shadow="xl">
-        <Box bg={bgColor} h="calc(100vh - 80px - 120px)" overflowY="auto">
+        <Box
+          bg={bgColor}
+          h="calc(100vh - 80px - 120px)"
+          overflowY="auto"
+          id="js-page-content"
+        >
           {template.sections.map((section: any, index: number) => {
             return (
               <Box as="section" key={index}>
