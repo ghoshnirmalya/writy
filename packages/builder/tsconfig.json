@@ -8,7 +8,10 @@
       "pages/*": ["pages/*"],
       "types/*": ["types/*"],
       "lib/*": ["lib/*"],
-      "data/*": ["data/*"]
+      "data/*": ["data/*"],
+      "thunks/*": ["thunks/*"],
+      "selectors/*": ["selectors/*"],
+      "slices/*": ["slices/*"]
     },
     "jsx": "preserve"
   },
