@@ -2,6 +2,7 @@ import {
   Box,
   HStack,
   Input,
+  Text,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -11,7 +12,7 @@ import {
   PopoverTrigger,
 } from "@chakra-ui/react";
 import React, { FC, useState } from "react";
-import { SketchPicker } from "react-color";
+import { ChromePicker } from "react-color";
 
 interface IProps {
   color: string;
@@ -27,7 +28,7 @@ const ColorPicker: FC<IProps> = ({ color, onChange }) => {
     }
 
     return (
-      <SketchPicker
+      <ChromePicker
         color={color}
         onChangeComplete={(color: any) => {
           onChange(color.hex);
@@ -37,25 +38,25 @@ const ColorPicker: FC<IProps> = ({ color, onChange }) => {
   };
 
   return (
-    <HStack spacing={2}>
-      <Popover placement="left-start">
-        <PopoverTrigger>
+    <Popover placement="bottom-end">
+      <PopoverTrigger>
+        <HStack spacing={4} borderWidth={1} p={1} rounded="lg">
           <Box
             as="button"
             bg={color}
-            h={10}
-            w={10}
+            h={8}
+            w={16}
             rounded="lg"
             onClick={() => setPickerVisibility(true)}
             borderWidth={1}
           />
-        </PopoverTrigger>
-        <PopoverContent>
-          <PopoverBody>{pickerNode()}</PopoverBody>
-        </PopoverContent>
-      </Popover>
-      <Input defaultValue={color} disabled />
-    </HStack>
+          <Text>{color}</Text>
+        </HStack>
+      </PopoverTrigger>
+      <PopoverContent>
+        <PopoverBody>{pickerNode()}</PopoverBody>
+      </PopoverContent>
+    </Popover>
   );
 };
 

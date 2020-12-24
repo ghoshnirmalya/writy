@@ -41,7 +41,7 @@ const TopNavbar: FC = () => {
           >
             Reset
           </Button>
-          <Button leftIcon={<MdSave />} colorScheme="teal">
+          <Button leftIcon={<MdSave />} colorScheme="blue">
             Save
           </Button>
           <IconButton

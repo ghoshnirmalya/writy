@@ -1,14 +1,21 @@
 import {
+  Button,
   FormControl,
   FormLabel,
   HStack,
+  IconButton,
   Input,
   VStack,
 } from "@chakra-ui/react";
 import React, { ChangeEvent, FC } from "react";
+import { MdAdd, MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { getSectionData } from "selectors/template";
-import { updateTemplateSectionData } from "slices/template";
+import {
+  addTemplateSectionData,
+  removeTemplateSectionData,
+  updateTemplateSectionData,
+} from "slices/template";
 
 interface IProps {
   positionOfSection: number;
@@ -19,7 +26,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const { data } = useSelector(getSectionData(positionOfSection));
 
   const handleChange = (
-    positionOfItem: number,
+    itemPosition: number,
     itemType: string,
     value: string
   ) => {
@@ -27,9 +34,31 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
       updateTemplateSectionData({
         positionOfSection,
         itemType: "links",
-        itemPosition: positionOfItem,
+        itemPosition,
         key: itemType,
         value,
+      })
+    );
+  };
+
+  const handleDelete = (itemPosition: number) => {
+    dispatch(
+      removeTemplateSectionData({
+        positionOfSection,
+        itemType: "links",
+        itemPosition,
+      })
+    );
+  };
+
+  const handleAdd = () => {
+    const initialValue = { label: "Link", link: "/link" };
+
+    dispatch(
+      addTemplateSectionData({
+        positionOfSection,
+        itemType: "links",
+        value: initialValue,
       })
     );
   };
@@ -38,7 +67,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
     <VStack spacing={4} align="stretch">
       {data.links.map((link: any, index: number) => {
         return (
-          <HStack spacing={4} key={index}>
+          <HStack spacing={4} key={index} alignItems="flex-end">
             <FormControl>
               <FormLabel>Label</FormLabel>
               <Input
@@ -57,9 +86,19 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
                 }
               />
             </FormControl>
+            <IconButton
+              aria-label="Delete"
+              icon={<MdDelete />}
+              colorScheme="red"
+              variant="outline"
+              onClick={() => handleDelete(index)}
+            />
           </HStack>
         );
       })}
+      <Button leftIcon={<MdAdd />} colorScheme="blue" onClick={handleAdd}>
+        Add link
+      </Button>
     </VStack>
   );
 };
