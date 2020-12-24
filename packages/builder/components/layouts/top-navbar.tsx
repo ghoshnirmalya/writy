@@ -1,18 +1,40 @@
-import { Flex, HStack, IconButton } from "@chakra-ui/react";
+import { Button, Flex, HStack, IconButton, Link } from "@chakra-ui/react";
 import React, { FC } from "react";
-import { MdSettings } from "react-icons/md";
+import {
+  MdSave,
+  MdNotifications,
+  MdLayersClear,
+  MdBugReport,
+} from "react-icons/md";
 
 const TopNavbar: FC = () => {
   return (
     <Flex h="80px" borderBottomWidth={1} px={4} alignItems="center">
-      <HStack spacing={4} align="center">
-        <IconButton aria-label="Send email" icon={<MdSettings size={32} />} />
-        <IconButton aria-label="Send email" icon={<MdSettings size={32} />} />
-        <IconButton aria-label="Send email" icon={<MdSettings size={32} />} />
-        <IconButton aria-label="Send email" icon={<MdSettings size={32} />} />
-        <IconButton aria-label="Send email" icon={<MdSettings size={32} />} />
-        <IconButton aria-label="Send email" icon={<MdSettings size={32} />} />
-      </HStack>
+      <Flex justifyContent="space-between" w="100%">
+        <HStack spacing={4} align="center">
+          <Link>Writy</Link>
+        </HStack>
+        <HStack spacing={4} align="center">
+          <Button
+            leftIcon={<MdLayersClear />}
+            colorScheme="red"
+            variant="outline"
+          >
+            Reset
+          </Button>
+          <Button leftIcon={<MdSave />} colorScheme="teal">
+            Save
+          </Button>
+          <IconButton
+            aria-label="Notifications"
+            icon={<MdNotifications size={24} />}
+          />
+          <IconButton
+            aria-label="Report bug"
+            icon={<MdBugReport size={24} />}
+          />
+        </HStack>
+      </Flex>
     </Flex>
   );
 };

@@ -6,6 +6,11 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
   useColorModeValue,
 } from "@chakra-ui/react";
 import React, { FC } from "react";
@@ -43,30 +48,42 @@ const RightSidebar: FC = () => {
       <Box borderBottomWidth={1} p={4} bg={editorControlsBgColor}>
         <Text fontWeight="bold">Editor</Text>
       </Box>
-      <Box bg={editorControlsBgColor} m={4}>
-        <Accordion
-          defaultIndex={[0]}
-          borderWidth={1}
-          allowToggle
-          bg={editorControlsBgColor}
-        >
-          {pageData.sections.map((section: any, index: number) => {
-            return (
-              <AccordionItem key={index}>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    <Text fontWeight="bold">{section.meta.type}</Text>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-                <AccordionPanel p={0} borderTopWidth={1}>
-                  {mapSectionToSectionType(section)}
-                </AccordionPanel>
-              </AccordionItem>
-            );
-          })}
-        </Accordion>
-      </Box>
+      <Tabs>
+        <TabList bg={editorControlsBgColor}>
+          <Tab>Global styles</Tab>
+          <Tab>Overrides</Tab>
+          <Tab>Templates</Tab>
+          <Tab>Settings</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <Box bg={editorControlsBgColor} m={1}>
+              <Accordion
+                defaultIndex={[0]}
+                borderWidth={1}
+                allowToggle
+                bg={editorControlsBgColor}
+              >
+                {pageData.sections.map((section: any, index: number) => {
+                  return (
+                    <AccordionItem key={index}>
+                      <AccordionButton>
+                        <Box flex="1" textAlign="left">
+                          <Text fontWeight="bold">{section.meta.type}</Text>
+                        </Box>
+                        <AccordionIcon />
+                      </AccordionButton>
+                      <AccordionPanel p={0} borderTopWidth={1}>
+                        {mapSectionToSectionType(section)}
+                      </AccordionPanel>
+                    </AccordionItem>
+                  );
+                })}
+              </Accordion>
+            </Box>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </Box>
   );
 };
