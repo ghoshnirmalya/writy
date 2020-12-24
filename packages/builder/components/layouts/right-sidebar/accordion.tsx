@@ -15,16 +15,16 @@ import React, { FC } from "react";
 const RightSidebarAccordion: FC = () => {
   const editorControlsBgColor = useColorModeValue("white", "black");
 
-  const mapSectionTypeToEditor = (section: any) => {
+  const mapSectionTypeToEditor = (section: any, positionOfSection: number) => {
     switch (section.meta.type) {
       case "navbar":
-        return <NavbarSectionEditor section={section} />;
+        return <NavbarSectionEditor positionOfSection={positionOfSection} />;
 
       // case "hero":
-      //   return <HeroSection section={section} />;
+      //   return <HeroSection  positionOfSection={positionOfSection}/>;
 
       // case "features":
-      //   return <FeaturesSection section={section} />;
+      //   return <FeaturesSection  positionOfSection={positionOfSection}/>;
 
       default:
         break;
@@ -66,7 +66,7 @@ const RightSidebarAccordion: FC = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel p={0} borderTopWidth={1}>
-              {mapSectionTypeToEditor(section)}
+              {mapSectionTypeToEditor(section, index)}
             </AccordionPanel>
           </AccordionItem>
         );

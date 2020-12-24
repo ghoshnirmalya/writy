@@ -2,11 +2,13 @@ import { Box, useColorModeValue } from "@chakra-ui/react";
 import FeaturesSection from "components/views/sections/features";
 import HeroSection from "components/views/sections/hero";
 import NavbarSection from "components/views/sections/navbar";
-import pageData from "data/layout.json";
 import React, { FC } from "react";
+import { useSelector } from "react-redux";
+import { getTemplateData } from "selectors/template";
 
 const ContentArea: FC = () => {
   const bgColor = useColorModeValue("gray.200", "gray.800");
+  const { template } = useSelector(getTemplateData());
 
   const mapSectionToSectionType = (section: any) => {
     switch (section.meta.type) {
@@ -33,7 +35,7 @@ const ContentArea: FC = () => {
     >
       <Box borderWidth={1} shadow="xl">
         <Box bg="white" h="calc(100vh - 80px - 120px)" overflowY="auto">
-          {pageData.sections.map((section: any, index: number) => {
+          {template.sections.map((section: any, index: number) => {
             return (
               <Box as="section" key={index}>
                 {mapSectionToSectionType(section)}
