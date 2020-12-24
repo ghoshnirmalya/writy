@@ -8,7 +8,7 @@ import { getTemplateData } from "selectors/template";
 
 const ContentArea: FC = () => {
   const bgColor = useColorModeValue("gray.200", "gray.800");
-  const { template } = useSelector(getTemplateData());
+  const template = useSelector(getTemplateData());
 
   const mapSectionToSectionType = (section: any) => {
     switch (section.meta.type) {

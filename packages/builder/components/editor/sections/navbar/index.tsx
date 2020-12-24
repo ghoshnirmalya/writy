@@ -20,8 +20,8 @@ interface IProps {
 }
 
 const NavbarSectionEditor: FC<IProps> = ({ positionOfSection }) => {
-  const { data } = useSelector(getSectionData(positionOfSection));
   const dispatch = useDispatch();
+  const { data } = useSelector(getSectionData(positionOfSection));
 
   const handleChange = (
     positionOfItem: number,

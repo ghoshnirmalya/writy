@@ -2,10 +2,17 @@ import { createDraftSafeSelector } from "@reduxjs/toolkit";
 import { templateSlice } from "slices/template";
 import { AppState } from "../store";
 
-export const getTemplateData = () => {
+export const getAsyncStateData = () => {
   return createDraftSafeSelector(
     (state: AppState) => state,
     (state: AppState) => state?.[templateSlice.name]
+  );
+};
+
+export const getTemplateData = () => {
+  return createDraftSafeSelector(
+    (state: AppState) => state,
+    (state: AppState) => state?.[templateSlice.name].template
   );
 };
 

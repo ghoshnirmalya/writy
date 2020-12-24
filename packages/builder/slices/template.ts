@@ -22,7 +22,10 @@ export const templateSlice = createSlice({
   initialState,
   reducers: {
     setTemplateData(state, action) {
-      state.template = action.payload;
+      if (state.loading === "idle") {
+        state.loading = "fulfilled";
+        state.template = action.payload;
+      }
     },
     updateTemplateSectionData(state, action) {
       state.template.sections[action.payload.positionOfSection].data[
