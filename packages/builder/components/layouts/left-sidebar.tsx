@@ -1,15 +1,17 @@
-import { Flex, IconButton, VStack } from "@chakra-ui/react";
+import { Flex, IconButton, useColorModeValue, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
 import {
-  MdSettings,
-  MdDevices,
-  MdLayers,
-  MdImage,
   MdAddAPhoto,
+  MdDevices,
   MdHelp,
+  MdImage,
+  MdLayers,
+  MdSettings,
 } from "react-icons/md";
 
 const LeftSidebar: FC = () => {
+  const bgColor = useColorModeValue("white", "black");
+
   return (
     <Flex
       h="calc(100vh - 80px)"
@@ -17,6 +19,7 @@ const LeftSidebar: FC = () => {
       borderRightWidth={1}
       py={4}
       justifyContent="center"
+      bg={bgColor}
     >
       <VStack spacing={8} align="center">
         <IconButton aria-label="Devices" icon={<MdDevices size={24} />} />
