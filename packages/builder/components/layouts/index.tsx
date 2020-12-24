@@ -9,7 +9,7 @@ const Layout: FC = () => {
   return (
     <Flex overflow="hidden" flexDir="column">
       <Box>
-        <TopNavbar></TopNavbar>
+        <TopNavbar />
       </Box>
       <Flex>
         <LeftSidebar />
