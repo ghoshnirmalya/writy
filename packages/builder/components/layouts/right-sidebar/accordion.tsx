@@ -15,7 +15,7 @@ import React, { FC } from "react";
 const RightSidebarAccordion: FC = () => {
   const editorControlsBgColor = useColorModeValue("white", "black");
 
-  const mapSectionToSectionType = (section: any) => {
+  const mapSectionTypeToEditor = (section: any) => {
     switch (section.meta.type) {
       case "navbar":
         return <NavbarSectionEditor section={section} />;
@@ -25,6 +25,22 @@ const RightSidebarAccordion: FC = () => {
 
       // case "features":
       //   return <FeaturesSection section={section} />;
+
+      default:
+        break;
+    }
+  };
+
+  const mapSectionTypeToName = (type: string) => {
+    switch (type) {
+      case "navbar":
+        return "Navbar section";
+
+      case "hero":
+        return "Hero section";
+
+      case "features":
+        return "Feature section";
 
       default:
         break;
@@ -43,12 +59,14 @@ const RightSidebarAccordion: FC = () => {
           <AccordionItem key={index}>
             <AccordionButton>
               <Box flex="1" textAlign="left">
-                <Text fontWeight="bold">{section.meta.type}</Text>
+                <Text fontWeight="bold">
+                  {mapSectionTypeToName(section.meta.type)}
+                </Text>
               </Box>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel p={0} borderTopWidth={1}>
-              {mapSectionToSectionType(section)}
+              {mapSectionTypeToEditor(section)}
             </AccordionPanel>
           </AccordionItem>
         );

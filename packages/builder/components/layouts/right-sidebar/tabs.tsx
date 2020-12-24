@@ -18,6 +18,7 @@ const RightSidebarTabs: FC = () => {
     <Tabs>
       <TabList bg={editorControlsBgColor}>
         <Tab>Global styles</Tab>
+        <Tab>Blog</Tab>
         <Tab>Overrides</Tab>
         <Tab>Templates</Tab>
         <Tab>Settings</Tab>
