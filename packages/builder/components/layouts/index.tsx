@@ -29,7 +29,7 @@ const LazyContentArea = dynamic(
       return (
         <Flex
           h="calc(100vh - 80px)"
-          w="calc(100vw - 80px - 600px)"
+          w="calc(100vw - 500px)"
           bg={bgColor}
           alignItems="center"
           justifyContent="center"
@@ -56,7 +56,6 @@ const Layout: FC = () => {
         <TopNavbar />
       </Box>
       <Flex>
-        <LeftSidebar />
         <LazyContentArea />
         <RightSidebar />
       </Flex>

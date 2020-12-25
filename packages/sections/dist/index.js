@@ -117,7 +117,7 @@ var HeroLayoutOne = function (_a) {
   return React__default["default"].createElement(
     "div",
     {
-      className: "p-24 flex items-center",
+      className: "p-24 lg:flex lg:items-center",
       style: {
         backgroundColor:
           theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
@@ -126,46 +126,55 @@ var HeroLayoutOne = function (_a) {
     },
     React__default["default"].createElement(
       "div",
-      { className: "space-y-4" },
-      React__default["default"].createElement(
-        "h2",
-        { className: "font-bold text-4xl" },
-        meta.heading
-      ),
-      React__default["default"].createElement("p", null, meta.subHeading),
+      { className: "w-1/2 sm:w-full md:w-full lg:w-1/2" },
       React__default["default"].createElement(
         "div",
-        { className: "space-x-4" },
-        data.buttons.map(function (button, index) {
-          if (!button.label) {
-            return false;
-          }
-          return React__default["default"].createElement(
-            "a",
-            {
-              key: index,
-              href: button.link,
-              className: "py-2 px-4 rounded font-bold",
-              style: {
-                backgroundColor:
-                  theme === null || theme === void 0
-                    ? void 0
-                    : theme.buttonBackgroundColor,
-                color:
-                  theme === null || theme === void 0
-                    ? void 0
-                    : theme.buttonTextColor,
+        { className: "space-y-4" },
+        React__default["default"].createElement(
+          "h2",
+          { className: "font-bold text-4xl" },
+          meta.heading
+        ),
+        React__default["default"].createElement("p", null, meta.subHeading),
+        React__default["default"].createElement(
+          "div",
+          { className: "space-x-4" },
+          data.buttons.map(function (button, index) {
+            if (!button.label) {
+              return false;
+            }
+            return React__default["default"].createElement(
+              "a",
+              {
+                key: index,
+                href: button.link,
+                className: "py-2 px-4 rounded font-bold",
+                style: {
+                  backgroundColor:
+                    theme === null || theme === void 0
+                      ? void 0
+                      : theme.buttonBackgroundColor,
+                  color:
+                    theme === null || theme === void 0
+                      ? void 0
+                      : theme.buttonTextColor,
+                },
               },
-            },
-            button.label
-          );
-        })
+              button.label
+            );
+          })
+        )
       )
     ),
-    React__default["default"].createElement("img", {
-      src: meta.image,
-      alt: meta.imageAlternativeText,
-    })
+    React__default["default"].createElement(
+      "div",
+      { className: "w-1/2 sm:w-full md:w-full lg:w-1/2" },
+      React__default["default"].createElement("img", {
+        src: meta.image,
+        alt: meta.imageAlternativeText,
+        className: "w-full",
+      })
+    )
   );
 };
 

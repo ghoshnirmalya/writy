@@ -31,13 +31,8 @@ const ContentArea: FC = () => {
   };
 
   return (
-    <Box
-      h="calc(100vh - 80px)"
-      w="calc(100vw - 80px - 600px)"
-      bg={bgColor}
-      p={14}
-    >
-      <Box borderWidth={1} shadow="xl">
+    <Box h="calc(100vh - 80px)" w="calc(100vw - 500px)" bg={bgColor} p={14}>
+      <Box shadow="xl">
         <Box
           bg={bgColor}
           h="calc(100vh - 80px - 120px)"

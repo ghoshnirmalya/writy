@@ -9,7 +9,7 @@ const RightSidebar: FC = () => {
   return (
     <Box
       h="calc(100vh - 80px)"
-      w="600px"
+      w="500px"
       bg={bgColor}
       borderLeftWidth={1}
       overflowY="auto"
