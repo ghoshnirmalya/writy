@@ -1,3 +1,9 @@
+# [0.5.0](https://github.com/ghoshnirmalya/writy/compare/0.4.0...0.5.0) (2020-12-25)
+
+### Features
+
+- adds option to remove a section ([38b65fc](https://github.com/ghoshnirmalya/writy/commit/38b65fc192042f51838bef5c14b535da0fe7c937))
+
 # [0.4.0](https://github.com/ghoshnirmalya/writy/compare/0.3.0...0.4.0) (2020-12-25)
 
 ### Features
