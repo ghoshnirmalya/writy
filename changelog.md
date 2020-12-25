@@ -1,3 +1,11 @@
+# [0.6.0](https://github.com/ghoshnirmalya/writy/compare/0.5.1...0.6.0) (2020-12-25)
+
+### Features
+
+- adds Footer section ([cf35f83](https://github.com/ghoshnirmalya/writy/commit/cf35f8380da7d6c2218acee353311dd6dadfb64f))
+- adds image support ([e74d8da](https://github.com/ghoshnirmalya/writy/commit/e74d8da01ecb22d34e067d631247965f61d92c1d))
+- updates microcopy ([2fba73c](https://github.com/ghoshnirmalya/writy/commit/2fba73c7f04e06f49254c815a93499ff3dc47e56))
+
 ## [0.5.1](https://github.com/ghoshnirmalya/writy/compare/0.5.0...0.5.1) (2020-12-25)
 
 # [0.5.0](https://github.com/ghoshnirmalya/writy/compare/0.4.0...0.5.0) (2020-12-25)
