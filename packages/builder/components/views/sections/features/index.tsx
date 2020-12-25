@@ -9,7 +9,13 @@ const FeaturesSectionView: FC<IProps> = ({ section }) => {
   const renderLayout = () => {
     switch (section.meta.layout) {
       case "one":
-        return <FeaturesLayouts.One />;
+        return (
+          <FeaturesLayouts.One
+            theme={section.theme}
+            data={section.data}
+            meta={section.meta}
+          />
+        );
 
       default:
         break;

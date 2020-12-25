@@ -16,9 +16,10 @@
   },
   "types": "dist/index",
   "dependencies": {
-    "autoprefixer": "^10.1.0",
-    "postcss": "^8.2.1",
-    "tailwindcss": "^2.0.2"
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "peerDependencies": {
     "react": "17.0.1",

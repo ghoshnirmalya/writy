@@ -9,7 +9,9 @@ interface IProps {
   positionOfSection: number;
 }
 
-const HeroSectionEditorColorsPanel: FC<IProps> = ({ positionOfSection }) => {
+const FeaturesSectionEditorColorsPanel: FC<IProps> = ({
+  positionOfSection,
+}) => {
   const dispatch = useDispatch();
   const { theme } = useSelector(getSectionData(positionOfSection));
 
@@ -39,24 +41,8 @@ const HeroSectionEditorColorsPanel: FC<IProps> = ({ positionOfSection }) => {
           onChange={(color: string) => handleChange("textColor", color)}
         />
       </FormControl>
-      <FormControl>
-        <FormLabel>Button background</FormLabel>
-        <ColorPicker
-          color={theme.buttonBackgroundColor}
-          onChange={(color: string) =>
-            handleChange("buttonBackgroundColor", color)
-          }
-        />
-      </FormControl>
-      <FormControl>
-        <FormLabel>Button text</FormLabel>
-        <ColorPicker
-          color={theme.buttonTextColor}
-          onChange={(color: string) => handleChange("buttonTextColor", color)}
-        />
-      </FormControl>
     </VStack>
   );
 };
 
-export default HeroSectionEditorColorsPanel;
+export default FeaturesSectionEditorColorsPanel;

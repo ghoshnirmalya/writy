@@ -1,14 +1,19 @@
 import {
+  Button,
   FormControl,
   FormLabel,
   HStack,
+  IconButton,
   Input,
   VStack,
 } from "@chakra-ui/react";
 import React, { ChangeEvent, FC } from "react";
+import { MdAdd, MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { getSectionData } from "selectors/template";
 import {
+  addTemplateSectionData,
+  removeTemplateSectionData,
   updateTemplateSectionData,
   updateTemplateSectionMeta,
 } from "slices/template";
@@ -17,7 +22,7 @@ interface IProps {
   positionOfSection: number;
 }
 
-const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
+const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
   const { data, meta } = useSelector(getSectionData(positionOfSection));
 
@@ -39,10 +44,35 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
     dispatch(
       updateTemplateSectionData({
         positionOfSection,
-        itemType: "buttons",
+        itemType: "cards",
         itemPosition,
         key: itemType,
         value,
+      })
+    );
+  };
+
+  const handleDataAddition = () => {
+    const initialValue = {
+      heading: "Heading",
+      subHeading: "This is a sub-heading",
+    };
+
+    dispatch(
+      addTemplateSectionData({
+        positionOfSection,
+        itemType: "cards",
+        value: initialValue,
+      })
+    );
+  };
+
+  const handleDataDeletion = (itemPosition: number) => {
+    dispatch(
+      removeTemplateSectionData({
+        positionOfSection,
+        itemType: "cards",
+        itemPosition,
       })
     );
   };
@@ -58,41 +88,46 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
           }
         />
       </FormControl>
-      <FormControl>
-        <FormLabel>Sub heading</FormLabel>
-        <Input
-          value={meta.subHeading}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            handleMetaChange("subHeading", e.currentTarget.value)
-          }
-        />
-      </FormControl>
-      {data.buttons.map((button: any, index: number) => {
+      {data.cards.map((card: any, index: number) => {
         return (
           <HStack spacing={4} key={index} alignItems="flex-end">
             <FormControl>
-              <FormLabel>Button {index + 1} label</FormLabel>
+              <FormLabel>Card {index + 1} heading</FormLabel>
               <Input
-                value={button.label}
+                value={card.heading}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  handleDataChange(index, "label", e.currentTarget.value)
+                  handleDataChange(index, "heading", e.currentTarget.value)
                 }
               />
             </FormControl>
             <FormControl>
-              <FormLabel>Button {index + 1} URL</FormLabel>
+              <FormLabel>Card {index + 1} sub-heading</FormLabel>
               <Input
-                value={button.link}
+                value={card.subHeading}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  handleDataChange(index, "link", e.currentTarget.value)
+                  handleDataChange(index, "subHeading", e.currentTarget.value)
                 }
               />
             </FormControl>
+            <IconButton
+              aria-label="Delete"
+              icon={<MdDelete />}
+              colorScheme="red"
+              variant="outline"
+              onClick={() => handleDataDeletion(index)}
+            />
           </HStack>
         );
       })}
+      <Button
+        leftIcon={<MdAdd />}
+        colorScheme="blue"
+        onClick={handleDataAddition}
+      >
+        Add card
+      </Button>
     </VStack>
   );
 };
 
-export default HeroSectionEditorTextPanel;
+export default FeaturesSectionEditorTextPanel;

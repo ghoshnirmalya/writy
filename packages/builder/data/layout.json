@@ -67,7 +67,7 @@
       },
       "theme": {
         "backgroundColor": "white",
-        "linkColor": "black"
+        "textColor": "black"
       },
       "data": {
         "cards": [

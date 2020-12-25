@@ -25,7 +25,6 @@ const NavbarSectionEditorColorsPanel: FC<IProps> = ({ positionOfSection }) => {
 
   return (
     <VStack spacing={4} align="stretch">
-      return (
       <HStack spacing={4}>
         <FormControl>
           <FormLabel>Background</FormLabel>
@@ -42,7 +41,6 @@ const NavbarSectionEditorColorsPanel: FC<IProps> = ({ positionOfSection }) => {
           />
         </FormControl>
       </HStack>
-      );
     </VStack>
   );
 };
