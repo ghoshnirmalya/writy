@@ -12,34 +12,12 @@ import {
 } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
-import {
-  MdChromeReaderMode,
-  MdCode,
-  MdDns,
-  MdSettings,
-  MdStyle,
-} from "react-icons/md";
+import { MdChromeReaderMode, MdDns, MdSettings } from "react-icons/md";
 
-const RightSidebarSectionsTab = dynamic(
+const LazyRightSidebarSectionsTab = dynamic(
   () =>
     import(
-      /* webpackChunkName: 'rightSidebarSectionsTab' */ "components/layouts/right-sidebar/tabs/sections"
-    ),
-  { ssr: false }
-);
-
-const RightSidebarHTMLTab = dynamic(
-  () =>
-    import(
-      /* webpackChunkName: 'rightSidebarHTMLTab' */ "components/layouts/right-sidebar/tabs/html"
-    ),
-  { ssr: false }
-);
-
-const RightSidebarCSSOverridesTab = dynamic(
-  () =>
-    import(
-      /* webpackChunkName: 'rightSidebarCSSOverridesTab' */ "components/layouts/right-sidebar/tabs/css-overrides"
+      /* webpackChunkName: 'lazyRightSidebarSectionsTab' */ "components/layouts/right-sidebar/tabs/sections"
     ),
   { ssr: false }
 );
@@ -58,18 +36,6 @@ const RightSidebarTabs: FC = () => {
         </Tab>
         <Tab>
           <HStack spacing={1}>
-            <Icon as={MdCode} />
-            <Text>HTML</Text>
-          </HStack>
-        </Tab>
-        <Tab>
-          <HStack spacing={1}>
-            <Icon as={MdStyle} />
-            <Text>CSS</Text>
-          </HStack>
-        </Tab>
-        <Tab>
-          <HStack spacing={1}>
             <Icon as={MdChromeReaderMode} />
             <Text>Templates</Text>
           </HStack>
@@ -84,17 +50,7 @@ const RightSidebarTabs: FC = () => {
       <TabPanels>
         <TabPanel>
           <Box bg={editorControlsBgColor}>
-            <RightSidebarSectionsTab />
-          </Box>
-        </TabPanel>
-        <TabPanel>
-          <Box bg={editorControlsBgColor}>
-            <RightSidebarHTMLTab />
-          </Box>
-        </TabPanel>
-        <TabPanel>
-          <Box bg={editorControlsBgColor}>
-            <RightSidebarCSSOverridesTab />
+            <LazyRightSidebarSectionsTab />
           </Box>
         </TabPanel>
       </TabPanels>
