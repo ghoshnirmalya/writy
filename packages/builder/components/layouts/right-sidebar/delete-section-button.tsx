@@ -23,7 +23,6 @@ const DeleteSectionButton: FC<IProps> = ({ positionOfSection }) => {
     <Button
       leftIcon={<MdDelete />}
       w="100%"
-      size="lg"
       onClick={handleSectionDeletion}
       colorScheme="red"
     >

@@ -41,7 +41,7 @@ const FeaturesSectionEditor: FC<IProps> = ({ positionOfSection }) => {
           </HStack>
         </Tab>
       </TabList>
-      <TabPanels minH="400px">
+      <TabPanels>
         <TabPanel>
           <FeaturesSectionEditorTextPanel
             positionOfSection={positionOfSection}

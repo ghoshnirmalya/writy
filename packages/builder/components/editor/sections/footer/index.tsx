@@ -41,7 +41,7 @@ const FooterSectionEditor: FC<IProps> = ({ positionOfSection }) => {
           </HStack>
         </Tab>
       </TabList>
-      <TabPanels minH="400px">
+      <TabPanels>
         <TabPanel>
           <FooterSectionEditorTextPanel positionOfSection={positionOfSection} />
         </TabPanel>

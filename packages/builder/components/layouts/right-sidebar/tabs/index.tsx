@@ -1,5 +1,6 @@
 import {
   Box,
+  Flex,
   HStack,
   Icon,
   Tab,
@@ -19,7 +20,18 @@ const LazyRightSidebarSectionsTab = dynamic(
     import(
       /* webpackChunkName: 'lazyRightSidebarSectionsTab' */ "components/layouts/right-sidebar/tabs/sections"
     ),
-  { ssr: false }
+  {
+    ssr: false,
+    loading: () => {
+      return (
+        <Flex h={100} alignItems="center" justifyContent="center">
+          <Text fontSize="20" fontWeight="bold">
+            Loading...
+          </Text>
+        </Flex>
+      );
+    },
+  }
 );
 
 const RightSidebarTabs: FC = () => {

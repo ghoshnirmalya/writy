@@ -1,4 +1,4 @@
-import { FormControl, FormLabel, HStack, VStack } from "@chakra-ui/react";
+import { FormControl, FormLabel, VStack } from "@chakra-ui/react";
 import ColorPicker from "components/color-picker";
 import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -25,22 +25,20 @@ const FooterSectionEditorColorsPanel: FC<IProps> = ({ positionOfSection }) => {
 
   return (
     <VStack spacing={4} align="stretch">
-      <HStack spacing={4}>
-        <FormControl>
-          <FormLabel>Background</FormLabel>
-          <ColorPicker
-            color={theme.backgroundColor}
-            onChange={(color: string) => handleChange("backgroundColor", color)}
-          />
-        </FormControl>
-        <FormControl>
-          <FormLabel>Link</FormLabel>
-          <ColorPicker
-            color={theme.linkColor}
-            onChange={(color: string) => handleChange("linkColor", color)}
-          />
-        </FormControl>
-      </HStack>
+      <FormControl>
+        <FormLabel>Background</FormLabel>
+        <ColorPicker
+          color={theme.backgroundColor}
+          onChange={(color: string) => handleChange("backgroundColor", color)}
+        />
+      </FormControl>
+      <FormControl>
+        <FormLabel>Link</FormLabel>
+        <ColorPicker
+          color={theme.linkColor}
+          onChange={(color: string) => handleChange("linkColor", color)}
+        />
+      </FormControl>
     </VStack>
   );
 };

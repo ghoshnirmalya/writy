@@ -7,6 +7,7 @@ import {
   PopoverContent,
   PopoverTrigger,
   Portal,
+  useColorModeValue,
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
@@ -20,6 +21,7 @@ interface IProps {
 }
 
 const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
+  const bgColor = useColorModeValue("white", "black");
   const dispatch = useDispatch();
   const { onOpen, onClose, isOpen } = useDisclosure();
 
@@ -70,9 +72,9 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
 
   const sectionButtonsNode = () => {
     const sections = [
-      { key: "navbar", label: "Navbar", icon: <MdAdd /> },
-      { key: "hero", label: "Hero", icon: <MdAdd /> },
-      { key: "features", label: "Features", icon: <MdAdd /> },
+      { key: "navbar", label: "Navbar" },
+      { key: "hero", label: "Hero" },
+      { key: "features", label: "Features" },
     ];
 
     return (
@@ -81,8 +83,6 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
           return (
             <Button
               key={index}
-              leftIcon={section.icon}
-              size="lg"
               onClick={() => handleNewSectionAddition(section.key)}
             >
               Add {section.label} section
@@ -102,7 +102,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
           </Button>
         </PopoverTrigger>
         <Portal>
-          <PopoverContent>
+          <PopoverContent bg={bgColor}>
             <PopoverArrow />
             <PopoverBody>{sectionButtonsNode()}</PopoverBody>
           </PopoverContent>

@@ -53,7 +53,7 @@ const NavbarSectionEditor: FC<IProps> = ({ positionOfSection }) => {
           </HStack>
         </Tab>
       </TabList>
-      <TabPanels minH="400px">
+      <TabPanels>
         <TabPanel>
           <NavbarSectionEditorTextPanel positionOfSection={positionOfSection} />
         </TabPanel>
