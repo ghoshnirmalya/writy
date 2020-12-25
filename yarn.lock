@@ -2215,6 +2215,35 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
+"@writy/builder@file:packages/builder":
+  version "0.0.1"
+  dependencies:
+    "@chakra-ui/react" "^1.0.4"
+    "@emotion/react" "^11.1.4"
+    "@emotion/styled" "^11.0.0"
+    "@reduxjs/toolkit" "^1.5.0"
+    "@writy/sections" "file:../../../../Library/Caches/Yarn/v6/npm-@writy-builder-0.0.1-4a1118a9-ac62-4f14-a824-b354c7bfd2c5-1608893881988/node_modules/@writy/sections"
+    codesandbox "^2.2.1"
+    focus-visible "^5.2.0"
+    framer-motion "^3.1.1"
+    js-beautify "^1.13.0"
+    next "10.0.4"
+    next-redux-wrapper "7.0.0-rc.1"
+    react "17.0.1"
+    react-ace "^9.2.1"
+    react-color "^2.19.3"
+    react-dom "17.0.1"
+    react-icons "^4.1.0"
+    react-redux "^7.2.2"
+
+"@writy/sections@file:packages/sections":
+  version "0.0.1"
+  dependencies:
+    "@tailwindcss/postcss7-compat" "^2.0.2"
+    autoprefixer "^9"
+    postcss "^7"
+    tailwindcss "npm:@tailwindcss/postcss7-compat"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"

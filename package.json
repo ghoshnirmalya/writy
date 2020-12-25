@@ -12,7 +12,11 @@
     "dev": "lerna run dev --stream",
     "export": "lerna run export --stream",
     "release": "release-it",
-    "start": "lerna run start --stream --parallel watch"
+    "start": "lerna run start --stream"
+  },
+  "dependencies": {
+    "@writy/builder": "file:packages/builder",
+    "@writy/sections": "file:packages/sections"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.0",
