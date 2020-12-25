@@ -1,27 +1,20 @@
 import { getParameters } from "codesandbox/lib/api/define";
+import createHTML from "create-html";
 
-const deployToCodeSandbox = (indexHTMLContent: string) => {
+const deployToCodeSandbox = (bodyContent: string) => {
+  const html = createHTML({
+    title: "File generated using Writy",
+    head:
+      '<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">',
+    body: bodyContent,
+  });
+
   const parameters = getParameters({
     files: {
       "index.html": {
-        content: `
-          <!doctype html>
-            <html>
-              <head>
-                <meta charset="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              </head>
-              <body>
-                <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-                ${indexHTMLContent}
-            </body>
-          </html>
-        `,
+        content: html,
         isBinary: false,
       },
-      // "package.json": {
-      //   content: { dependencies: {} },
-      // },
     },
   });
 

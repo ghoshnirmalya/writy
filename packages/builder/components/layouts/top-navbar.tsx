@@ -9,12 +9,13 @@ import {
 } from "@chakra-ui/react";
 import { html as beautifyHTML } from "js-beautify";
 import deployToCodeSandbox from "lib/deploy-to-code-sandbox";
+import generateAndDownloadCode from "lib/generate-and-download-cod";
 import React, { FC } from "react";
 import { AiOutlineCodeSandbox } from "react-icons/ai";
 import {
   MdBugReport,
+  MdFileDownload,
   MdLayersClear,
-  MdNotifications,
   MdWbIncandescent,
   MdWbSunny,
 } from "react-icons/md";
@@ -29,6 +30,12 @@ const TopNavbar: FC = () => {
     );
 
     window.open(codeSandboxURL, "_blank");
+  };
+
+  const handleDownloadCode = () => {
+    generateAndDownloadCode(
+      beautifyHTML(document.getElementById("js-page-content").innerHTML)
+    );
   };
 
   return (
@@ -49,19 +56,21 @@ const TopNavbar: FC = () => {
             colorScheme="red"
             variant="outline"
           >
-            Reset
+            Reset template
           </Button>
           <Button
             leftIcon={<AiOutlineCodeSandbox />}
-            colorScheme="blue"
             onClick={handleDeploymentToCodeSandbox}
           >
             Deploy to CodeSandbox
           </Button>
-          <IconButton
-            aria-label="Notifications"
-            icon={<MdNotifications size={24} />}
-          />
+          <Button
+            leftIcon={<MdFileDownload />}
+            colorScheme="blue"
+            onClick={handleDownloadCode}
+          >
+            Download HTML file
+          </Button>
           <IconButton
             aria-label="Report an issue"
             icon={<MdBugReport size={24} />}

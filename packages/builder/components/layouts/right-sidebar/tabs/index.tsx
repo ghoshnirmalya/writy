@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
-import { MdChromeReaderMode, MdDns, MdSettings } from "react-icons/md";
+import { MdChromeReaderMode, MdDns } from "react-icons/md";
 
 const LazyRightSidebarSectionsTab = dynamic(
   () =>
@@ -50,12 +50,6 @@ const RightSidebarTabs: FC = () => {
           <HStack spacing={1}>
             <Icon as={MdChromeReaderMode} />
             <Text>Templates</Text>
-          </HStack>
-        </Tab>
-        <Tab>
-          <HStack spacing={1}>
-            <Icon as={MdSettings} />
-            <Text>Settings</Text>
           </HStack>
         </Tab>
       </TabList>
