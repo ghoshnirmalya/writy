@@ -10,8 +10,9 @@ import {
 } from "@chakra-ui/react";
 import NavbarSectionEditorColorsPanel from "components/editor/sections/navbar/panels/colors";
 import NavbarSectionEditorTextPanel from "components/editor/sections/navbar/panels/text";
+import DeleteSectionButton from "components/layouts/right-sidebar/delete-section-button";
 import React, { FC } from "react";
-import { MdColorLens, MdDvr, MdTextFields } from "react-icons/md";
+import { MdColorLens, MdSettings, MdTextFields } from "react-icons/md";
 
 interface IProps {
   positionOfSection: number;
@@ -35,8 +36,8 @@ const NavbarSectionEditor: FC<IProps> = ({ positionOfSection }) => {
         </Tab>
         <Tab>
           <HStack spacing={1}>
-            <Icon as={MdDvr} />
-            <Text>Layouts</Text>
+            <Icon as={MdSettings} />
+            <Text>Settings</Text>
           </HStack>
         </Tab>
       </TabList>
@@ -48,6 +49,9 @@ const NavbarSectionEditor: FC<IProps> = ({ positionOfSection }) => {
           <NavbarSectionEditorColorsPanel
             positionOfSection={positionOfSection}
           />
+        </TabPanel>
+        <TabPanel>
+          <DeleteSectionButton positionOfSection={positionOfSection} />
         </TabPanel>
       </TabPanels>
     </Tabs>

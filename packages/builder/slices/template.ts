@@ -34,6 +34,9 @@ export const templateSlice = createSlice({
         action.payload.sectionContent
       );
     },
+    removeTemplateSection(state, action) {
+      state.template.sections.splice(action.payload.positionOfSection, 1);
+    },
     updateTemplateSectionMeta(state, action) {
       state.template.sections[action.payload.positionOfSection].meta[
         action.payload.itemType
@@ -73,6 +76,7 @@ export const templateSlice = createSlice({
 export const {
   setTemplateData,
   addTemplateSection,
+  removeTemplateSection,
   updateTemplateSectionMeta,
   updateTemplateSectionTheme,
   addTemplateSectionData,

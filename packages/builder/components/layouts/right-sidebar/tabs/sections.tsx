@@ -71,7 +71,7 @@ const RightSidebarSectionsTab: FC = () => {
                 {mapSectionTypeToEditor(section, index)}
               </AccordionPanel>
             </AccordionItem>
-            <AddNewSection positionOfSection={0} />
+            <AddNewSection positionOfSection={index + 1} />
           </Box>
         );
       })}
