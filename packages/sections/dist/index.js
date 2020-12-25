@@ -56,7 +56,7 @@ var NavbarLayoutOne = function (_a) {
     },
     React__default["default"].createElement(
       "div",
-      { className: "flex justify-between" },
+      { className: "flex justify-between font-semibold" },
       React__default["default"].createElement(
         "div",
         null,

@@ -22,16 +22,8 @@ const uno = {
             link: "/",
           },
           {
-            label: "History",
-            link: "/history",
-          },
-          {
-            label: "Join the team",
-            link: "/join",
-          },
-          {
-            label: "Press",
-            link: "/press",
+            label: "About us",
+            link: "/about-us",
           },
         ],
       },
@@ -40,9 +32,9 @@ const uno = {
       meta: {
         type: "hero",
         layout: "one",
-        heading: "Photos for everyone",
+        heading: "Welcome to our website",
         subHeading:
-          "Over 2 million free high-resolution images brought to you by the world’s most generous community of photographers.",
+          "Building products is hard. We've been building applications for over two decades. Let us help you.",
         image: Image1,
       },
       theme: {
@@ -54,14 +46,12 @@ const uno = {
       data: {
         buttons: [
           {
-            label: "Start browsing",
-            link: "/start",
-            variant: "solid",
+            label: "Read more",
+            link: "/read-more",
           },
           {
-            label: "Become a contributor",
-            link: "/become",
-            variant: "outline",
+            label: "Contact us",
+            link: "/contact-us",
           },
         ],
       },
@@ -70,7 +60,7 @@ const uno = {
       meta: {
         type: "features",
         layout: "one",
-        heading: "Unsplash is internet’s source of freely usable images.",
+        heading: "We've developed and shipped over 500 products",
       },
       theme: {
         backgroundColor: "#ffffff",
@@ -80,21 +70,21 @@ const uno = {
         cards: [
           {
             image: Image2,
-            heading: "Over one million curated photos",
+            heading: "E-commerce application",
             subHeading:
-              "We hand-select every photo and accept only the best, so that no matter what you need—you’ll find exactly what you’re looking for on Unsplash.",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis commodo enim. Morbi eleifend lacinia massa, id elementum lorem lacinia in.",
           },
           {
             image: Image3,
-            heading: "A community of 211,166 photographers",
+            heading: "Booking application",
             subHeading:
-              "Unsplash is home to a growing community of photographers—from hobbyists, professionals, emerging brands and everyone in between.",
+              "Proin mauris nisl, scelerisque quis ante non, scelerisque tempor dui. In sit amet dui blandit nunc consequat volutpat. In euismod felis sed velit sodales finibus.",
           },
           {
             image: Image4,
-            heading: "Fuelling your favourite platforms",
+            heading: "Learning management system",
             subHeading:
-              "With partners like BuzzFeed, Squarespace and Trello being powered by our API, the Unsplash library is more widely accessible than ever.",
+              "In et augue eget ipsum congue suscipit at in urna. Integer non nibh vitae purus maximus bibendum nec eu metus. Nulla facilisi.",
           },
         ],
       },

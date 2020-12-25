@@ -14,7 +14,7 @@ const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
         color: theme?.linkColor,
       }}
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between font-semibold">
         <div>
           <a href="/">Writy</a>
         </div>
