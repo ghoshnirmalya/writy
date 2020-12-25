@@ -7,12 +7,14 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { html as beautifyHTML } from "js-beautify";
+import deployToCodeSandbox from "lib/deploy-to-code-sandbox";
 import React, { FC } from "react";
+import { AiOutlineCodeSandbox } from "react-icons/ai";
 import {
   MdBugReport,
   MdLayersClear,
   MdNotifications,
-  MdSave,
   MdWbIncandescent,
   MdWbSunny,
 } from "react-icons/md";
@@ -20,6 +22,14 @@ import {
 const TopNavbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue("white", "black");
+
+  const handleDeploymentToCodeSandbox = () => {
+    const codeSandboxURL = deployToCodeSandbox(
+      beautifyHTML(document.getElementById("js-page-content").innerHTML)
+    );
+
+    window.open(codeSandboxURL, "_blank");
+  };
 
   return (
     <Flex
@@ -41,8 +51,12 @@ const TopNavbar: FC = () => {
           >
             Reset
           </Button>
-          <Button leftIcon={<MdSave />} colorScheme="blue">
-            Save
+          <Button
+            leftIcon={<AiOutlineCodeSandbox />}
+            colorScheme="blue"
+            onClick={handleDeploymentToCodeSandbox}
+          >
+            Deploy to CodeSandbox
           </Button>
           <IconButton
             aria-label="Notifications"
