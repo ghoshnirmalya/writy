@@ -1,5 +1,6 @@
 import { Box, useColorModeValue } from "@chakra-ui/react";
 import FeaturesSection from "components/views/sections/features";
+import FooterSection from "components/views/sections/footer";
 import HeroSection from "components/views/sections/hero";
 import NavbarSection from "components/views/sections/navbar";
 import React, { FC } from "react";
@@ -20,6 +21,9 @@ const ContentArea: FC = () => {
 
       case "features":
         return <FeaturesSection section={section} />;
+
+      case "footer":
+        return <FooterSection section={section} />;
 
       default:
         break;

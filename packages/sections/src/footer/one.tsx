@@ -5,7 +5,7 @@ interface IProps {
   data: any;
 }
 
-const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
+const FooterLayoutOne: FC<IProps> = ({ theme, data }) => {
   return (
     <div
       className="py-4 px-24"
@@ -14,10 +14,7 @@ const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
         color: theme?.linkColor,
       }}
     >
-      <div className="flex justify-between font-semibold">
-        <div>
-          <a href="/">Writy</a>
-        </div>
+      <div className="flex justify-end font-semibold">
         <div className="space-x-8">
           {data.links.map((link: any, index: number) => {
             return (
@@ -32,4 +29,4 @@ const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
   );
 };
 
-export default NavbarLayoutOne;
+export default FooterLayoutOne;

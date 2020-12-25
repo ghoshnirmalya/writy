@@ -13,7 +13,7 @@ const uno = {
       },
       theme: {
         backgroundColor: "#ffffff",
-        textColor: "#555555",
+        linkColor: "#555555",
       },
       data: {
         links: [
@@ -85,6 +85,28 @@ const uno = {
             heading: "Learning management system",
             subHeading:
               "In et augue eget ipsum congue suscipit at in urna. Integer non nibh vitae purus maximus bibendum nec eu metus. Nulla facilisi.",
+          },
+        ],
+      },
+    },
+    {
+      meta: {
+        type: "footer",
+        layout: "one",
+      },
+      theme: {
+        backgroundColor: "#000000",
+        linkColor: "#ffffff",
+      },
+      data: {
+        links: [
+          {
+            label: "Home",
+            link: "/",
+          },
+          {
+            label: "About us",
+            link: "/about-us",
           },
         ],
       },

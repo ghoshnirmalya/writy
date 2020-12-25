@@ -47,7 +47,7 @@ var NavbarLayoutOne = function (_a) {
   return React__default["default"].createElement(
     "div",
     {
-      className: "p-4",
+      className: "py-4 px-24",
       style: {
         backgroundColor:
           theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
@@ -200,10 +200,46 @@ var FeaturesLayouts = {
   One: FeaturesLayoutOne,
 };
 
+var FooterLayoutOne = function (_a) {
+  var theme = _a.theme,
+    data = _a.data;
+  return React__default["default"].createElement(
+    "div",
+    {
+      className: "py-4 px-24",
+      style: {
+        backgroundColor:
+          theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
+        color: theme === null || theme === void 0 ? void 0 : theme.linkColor,
+      },
+    },
+    React__default["default"].createElement(
+      "div",
+      { className: "flex justify-end font-semibold" },
+      React__default["default"].createElement(
+        "div",
+        { className: "space-x-8" },
+        data.links.map(function (link, index) {
+          return React__default["default"].createElement(
+            "a",
+            { key: index, href: link.link },
+            link.label
+          );
+        })
+      )
+    )
+  );
+};
+
+var FooterLayouts = {
+  One: FooterLayoutOne,
+};
+
 var index = {
   NavbarLayouts: NavbarLayouts,
   HeroLayouts: HeroLayouts,
   FeaturesLayouts: FeaturesLayouts,
+  FooterLayouts: FooterLayouts,
 };
 
 module.exports = index;

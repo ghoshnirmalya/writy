@@ -9,6 +9,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import FeaturesSectionEditor from "components/editor/sections/features";
+import FooterSectionEditor from "components/editor/sections/footer";
 import HeroSectionEditor from "components/editor/sections/hero";
 import NavbarSectionEditor from "components/editor/sections/navbar";
 import AddNewSection from "components/layouts/right-sidebar/add-new-section";
@@ -31,6 +32,9 @@ const RightSidebarSectionsTab: FC = () => {
       case "features":
         return <FeaturesSectionEditor positionOfSection={positionOfSection} />;
 
+      case "footer":
+        return <FooterSectionEditor positionOfSection={positionOfSection} />;
+
       default:
         break;
     }
@@ -46,6 +50,9 @@ const RightSidebarSectionsTab: FC = () => {
 
       case "features":
         return "Features section";
+
+      case "footer":
+        return "Footer section";
 
       default:
         break;
