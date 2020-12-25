@@ -47,7 +47,7 @@ var NavbarLayoutOne = function (_a) {
   return React__default["default"].createElement(
     "div",
     {
-      className: "border-b border-solid border-gray-300 p-4",
+      className: "p-4",
       style: {
         backgroundColor:
           theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
@@ -88,7 +88,7 @@ var HeroLayoutOne = function (_a) {
   return React__default["default"].createElement(
     "div",
     {
-      className: "border-b border-solid border-gray-300 p-24",
+      className: "p-24 flex items-center",
       style: {
         backgroundColor:
           theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
@@ -132,7 +132,11 @@ var HeroLayoutOne = function (_a) {
           );
         })
       )
-    )
+    ),
+    React__default["default"].createElement("img", {
+      src: meta.image,
+      alt: meta.imageAlternativeText,
+    })
   );
 };
 
@@ -147,7 +151,7 @@ var FeaturesLayoutOne = function (_a) {
   return React__default["default"].createElement(
     "div",
     {
-      className: "border-b border-solid border-gray-300 p-24",
+      className: "p-24",
       style: {
         backgroundColor:
           theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
@@ -172,6 +176,13 @@ var FeaturesLayoutOne = function (_a) {
           return React__default["default"].createElement(
             "div",
             { key: index, className: "space-y-4" },
+            React__default["default"].createElement("div", {
+              style: {
+                backgroundImage: "url(" + card.image + ")",
+              },
+              className:
+                "bg-gray-100 object-contain rounded h-64 w-full bg-center bg-cover bg-no-repeat",
+            }),
             React__default["default"].createElement(
               "p",
               { className: "font-bold" },

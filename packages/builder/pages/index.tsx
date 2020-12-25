@@ -1,5 +1,5 @@
 import Page from "components/pages/index";
-import pageData from "data/layout.json";
+import initialUnoTemplateData from "data/templates/uno";
 import { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
@@ -19,7 +19,7 @@ const IndexPage: NextPage = () => {
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
-    store.dispatch(setTemplateData(pageData));
+    store.dispatch(setTemplateData(initialUnoTemplateData));
 
     return {
       props: {},

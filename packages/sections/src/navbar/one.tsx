@@ -8,7 +8,7 @@ interface IProps {
 const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
   return (
     <div
-      className="border-b border-solid border-gray-300 p-4"
+      className="p-4"
       style={{
         backgroundColor: theme?.backgroundColor,
         color: theme?.linkColor,

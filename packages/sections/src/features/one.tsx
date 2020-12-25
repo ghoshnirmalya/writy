@@ -9,7 +9,7 @@ interface IProps {
 const FeaturesLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
   return (
     <div
-      className="border-b border-solid border-gray-300 p-24"
+      className="p-24"
       style={{
         backgroundColor: theme?.backgroundColor,
         color: theme?.textColor,
@@ -25,6 +25,12 @@ const FeaturesLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
 
             return (
               <div key={index} className="space-y-4">
+                <div
+                  style={{
+                    backgroundImage: `url(${card.image})`,
+                  }}
+                  className="bg-gray-100 object-contain rounded h-64 w-full bg-center bg-cover bg-no-repeat"
+                />
                 <p className="font-bold">{card.heading}</p>
                 <p>{card.subHeading}</p>
               </div>

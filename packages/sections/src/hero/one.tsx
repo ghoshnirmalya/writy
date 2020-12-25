@@ -9,7 +9,7 @@ interface IProps {
 const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
   return (
     <div
-      className="border-b border-solid border-gray-300 p-24"
+      className="p-24 flex items-center"
       style={{
         backgroundColor: theme?.backgroundColor,
         color: theme?.textColor,
@@ -40,6 +40,7 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
           })}
         </div>
       </div>
+      <img src={meta.image} alt={meta.imageAlternativeText} />
     </div>
   );
 };
