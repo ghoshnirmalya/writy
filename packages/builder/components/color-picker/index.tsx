@@ -1,15 +1,12 @@
 import {
   Box,
   HStack,
-  Input,
-  Text,
   Popover,
-  PopoverArrow,
   PopoverBody,
-  PopoverCloseButton,
   PopoverContent,
-  PopoverHeader,
   PopoverTrigger,
+  Portal,
+  Text,
 } from "@chakra-ui/react";
 import React, { FC, useState } from "react";
 import { ChromePicker } from "react-color";
@@ -53,9 +50,11 @@ const ColorPicker: FC<IProps> = ({ color, onChange }) => {
           <Text>{color}</Text>
         </HStack>
       </PopoverTrigger>
-      <PopoverContent>
-        <PopoverBody>{pickerNode()}</PopoverBody>
-      </PopoverContent>
+      <Portal>
+        <PopoverContent>
+          <PopoverBody>{pickerNode()}</PopoverBody>
+        </PopoverContent>
+      </Portal>
     </Popover>
   );
 };

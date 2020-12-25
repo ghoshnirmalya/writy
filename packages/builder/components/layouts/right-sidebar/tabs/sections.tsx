@@ -11,11 +11,14 @@ import {
 import FeaturesSectionEditor from "components/editor/sections/features";
 import HeroSectionEditor from "components/editor/sections/hero";
 import NavbarSectionEditor from "components/editor/sections/navbar";
-import pageData from "data/layout.json";
+import AddNewSection from "components/layouts/right-sidebar/add-new-section";
 import React, { FC } from "react";
+import { useSelector } from "react-redux";
+import { getTemplateData } from "selectors/template";
 
 const RightSidebarSectionsTab: FC = () => {
   const editorControlsBgColor = useColorModeValue("white", "black");
+  const template = useSelector(getTemplateData());
 
   const mapSectionTypeToEditor = (section: any, positionOfSection: number) => {
     switch (section.meta.type) {
@@ -50,27 +53,26 @@ const RightSidebarSectionsTab: FC = () => {
   };
 
   return (
-    <Accordion
-      defaultIndex={[0]}
-      borderWidth={1}
-      allowToggle
-      bg={editorControlsBgColor}
-    >
-      {pageData.sections.map((section: any, index: number) => {
+    <Accordion borderWidth={1} allowToggle bg={editorControlsBgColor}>
+      <AddNewSection positionOfSection={0} />
+      {template.sections.map((section: any, index: number) => {
         return (
-          <AccordionItem key={index}>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                <Text fontWeight="bold">
-                  {mapSectionTypeToName(section.meta.type)}
-                </Text>
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-            <AccordionPanel p={0} borderTopWidth={1}>
-              {mapSectionTypeToEditor(section, index)}
-            </AccordionPanel>
-          </AccordionItem>
+          <Box key={index}>
+            <AccordionItem borderBottomWidth={1}>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  <Text fontWeight="bold">
+                    {mapSectionTypeToName(section.meta.type)}
+                  </Text>
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel p={0} borderTopWidth={1}>
+                {mapSectionTypeToEditor(section, index)}
+              </AccordionPanel>
+            </AccordionItem>
+            <AddNewSection positionOfSection={0} />
+          </Box>
         );
       })}
     </Accordion>
