@@ -1,3 +1,9 @@
+## [0.7.1](https://github.com/ghoshnirmalya/writy/compare/0.7.0...0.7.1) (2020-12-25)
+
+### Bug Fixes
+
+- fixes layout issues ([dc7c11d](https://github.com/ghoshnirmalya/writy/commit/dc7c11df960acb9e0905eb1b68285274f6aad11d))
+
 # [0.7.0](https://github.com/ghoshnirmalya/writy/compare/0.6.0...0.7.0) (2020-12-25)
 
 ### Features
