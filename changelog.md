@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/ghoshnirmalya/writy/compare/0.3.0...0.4.0) (2020-12-25)
+
+### Features
+
+- adds option to add new section ([b474dd6](https://github.com/ghoshnirmalya/writy/commit/b474dd66d493c8dacefdea07abed370b81af46b0))
+- adds option to modify features section ([391bf4a](https://github.com/ghoshnirmalya/writy/commit/391bf4ae3a5902baeb2f7a1d18e62aeb4b817cd6))
+
 # [0.3.0](https://github.com/ghoshnirmalya/writy/compare/0.2.0...0.3.0) (2020-12-25)
 
 ### Bug Fixes
