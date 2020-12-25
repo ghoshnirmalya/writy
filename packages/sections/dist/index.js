@@ -77,8 +77,37 @@ var NavbarLayoutOne = function (_a) {
   );
 };
 
+var NavbarLayoutTwo = function (_a) {
+  var theme = _a.theme,
+    data = _a.data;
+  return React__default["default"].createElement(
+    "div",
+    {
+      className: "py-4 px-24",
+      style: {
+        backgroundColor:
+          theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
+        color: theme === null || theme === void 0 ? void 0 : theme.linkColor,
+      },
+    },
+    React__default["default"].createElement(
+      "div",
+      { className: "flex justify-start font-semibold space-x-8" },
+      React__default["default"].createElement("a", { href: "/" }, "Writy"),
+      data.links.map(function (link, index) {
+        return React__default["default"].createElement(
+          "a",
+          { key: index, href: link.link },
+          link.label
+        );
+      })
+    )
+  );
+};
+
 var NavbarLayouts = {
   One: NavbarLayoutOne,
+  Two: NavbarLayoutTwo,
 };
 
 var HeroLayoutOne = function (_a) {

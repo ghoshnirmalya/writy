@@ -11,6 +11,9 @@ const NavbarSectionView: FC<IProps> = ({ section }) => {
       case "one":
         return <NavbarLayouts.One theme={section.theme} data={section.data} />;
 
+      case "two":
+        return <NavbarLayouts.Two theme={section.theme} data={section.data} />;
+
       default:
         break;
     }
