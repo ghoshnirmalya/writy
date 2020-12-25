@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/ghoshnirmalya/writy/compare/0.6.0...0.7.0) (2020-12-25)
+
+### Features
+
+- adds second layout for Navbar section ([6ae4e08](https://github.com/ghoshnirmalya/writy/commit/6ae4e087d9bba27247429bb8fc45ca7bb47f94eb))
+- removes left-sidebar ([877ff2c](https://github.com/ghoshnirmalya/writy/commit/877ff2cf59bf1ca240096e71ca1c19c36caf6fba))
+
 # [0.6.0](https://github.com/ghoshnirmalya/writy/compare/0.5.1...0.6.0) (2020-12-25)
 
 ### Features
