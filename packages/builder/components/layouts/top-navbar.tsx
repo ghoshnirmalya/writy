@@ -49,8 +49,11 @@ const TopNavbar: FC = () => {
             icon={<MdNotifications size={24} />}
           />
           <IconButton
-            aria-label="Report bug"
+            aria-label="Report an issue"
             icon={<MdBugReport size={24} />}
+            as="a"
+            href="https://github.com/ghoshnirmalya/writy/issues/new"
+            target="_blank"
           />
           <IconButton
             aria-label="Report bug"

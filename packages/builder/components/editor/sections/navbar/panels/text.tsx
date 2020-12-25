@@ -25,7 +25,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
   const { data } = useSelector(getSectionData(positionOfSection));
 
-  const handleChange = (
+  const handleDataChange = (
     itemPosition: number,
     itemType: string,
     value: string
@@ -41,7 +41,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
     );
   };
 
-  const handleDelete = (itemPosition: number) => {
+  const handleDataDeletion = (itemPosition: number) => {
     dispatch(
       removeTemplateSectionData({
         positionOfSection,
@@ -51,7 +51,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
     );
   };
 
-  const handleAdd = () => {
+  const handleDataAddition = () => {
     const initialValue = { label: "Link", link: "/link" };
 
     dispatch(
@@ -73,7 +73,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               <Input
                 value={link.label}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  handleChange(index, "label", e.currentTarget.value)
+                  handleDataChange(index, "label", e.currentTarget.value)
                 }
               />
             </FormControl>
@@ -82,7 +82,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               <Input
                 value={link.link}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  handleChange(index, "link", e.currentTarget.value)
+                  handleDataChange(index, "link", e.currentTarget.value)
                 }
               />
             </FormControl>
@@ -91,12 +91,16 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               icon={<MdDelete />}
               colorScheme="red"
               variant="outline"
-              onClick={() => handleDelete(index)}
+              onClick={() => handleDataDeletion(index)}
             />
           </HStack>
         );
       })}
-      <Button leftIcon={<MdAdd />} colorScheme="blue" onClick={handleAdd}>
+      <Button
+        leftIcon={<MdAdd />}
+        colorScheme="blue"
+        onClick={handleDataAddition}
+      >
         Add link
       </Button>
     </VStack>

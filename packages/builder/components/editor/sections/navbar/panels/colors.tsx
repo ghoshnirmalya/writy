@@ -1,17 +1,9 @@
-import {
-  Box,
-  FormControl,
-  FormLabel,
-  HStack,
-  Input,
-  VStack,
-} from "@chakra-ui/react";
-import React, { ChangeEvent, FC } from "react";
+import { FormControl, FormLabel, HStack, VStack } from "@chakra-ui/react";
+import ColorPicker from "components/color-picker";
+import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSectionData } from "selectors/template";
 import { updateTemplateSectionTheme } from "slices/template";
-import { SketchPicker } from "react-color";
-import ColorPicker from "components/color-picker";
 
 interface IProps {
   positionOfSection: number;

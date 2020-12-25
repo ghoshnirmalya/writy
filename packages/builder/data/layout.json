@@ -34,15 +34,17 @@
     {
       "meta": {
         "type": "hero",
-        "layout": "one"
+        "layout": "one",
+        "heading": "Photos for everyone",
+        "subHeading": "Over 2 million free high-resolution images brought to you by the world’s most generous community of photographers."
       },
       "theme": {
         "backgroundColor": "white",
-        "linkColor": "black"
+        "textColor": "black",
+        "buttonBackgroundColor": "blue",
+        "buttonTextColor": "white"
       },
       "data": {
-        "heading": "Photos for everyone",
-        "subHeading": "Over 2 million free high-resolution images brought to you by the world’s most generous community of photographers.",
         "buttons": [
           {
             "label": "Start browsing",
@@ -60,14 +62,14 @@
     {
       "meta": {
         "type": "features",
-        "layout": "one"
+        "layout": "one",
+        "heading": "Unsplash is internet’s source of freely usable images."
       },
       "theme": {
         "backgroundColor": "white",
         "linkColor": "black"
       },
       "data": {
-        "heading": "Unsplash is internet’s source of freely usable images.",
         "cards": [
           {
             "heading": "Over one million curated photos",

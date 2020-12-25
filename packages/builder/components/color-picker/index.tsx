@@ -38,7 +38,7 @@ const ColorPicker: FC<IProps> = ({ color, onChange }) => {
   };
 
   return (
-    <Popover placement="bottom-end">
+    <Popover placement="bottom-start">
       <PopoverTrigger>
         <HStack spacing={4} borderWidth={1} p={1} rounded="lg">
           <Box

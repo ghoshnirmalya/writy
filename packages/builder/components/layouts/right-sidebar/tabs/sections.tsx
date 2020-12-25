@@ -8,6 +8,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import HeroSectionEditor from "components/editor/sections/hero";
 import NavbarSectionEditor from "components/editor/sections/navbar";
 import pageData from "data/layout.json";
 import React, { FC } from "react";
@@ -20,8 +21,8 @@ const RightSidebarSectionsTab: FC = () => {
       case "navbar":
         return <NavbarSectionEditor positionOfSection={positionOfSection} />;
 
-      // case "hero":
-      //   return <HeroSection  positionOfSection={positionOfSection}/>;
+      case "hero":
+        return <HeroSectionEditor positionOfSection={positionOfSection} />;
 
       // case "features":
       //   return <FeaturesSection  positionOfSection={positionOfSection}/>;

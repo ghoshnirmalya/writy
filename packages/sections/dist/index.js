@@ -83,7 +83,8 @@ var NavbarLayouts = {
 
 var HeroLayoutOne = function (_a) {
   var theme = _a.theme,
-    data = _a.data;
+    data = _a.data,
+    meta = _a.meta;
   return React__default["default"].createElement(
     "div",
     {
@@ -91,7 +92,7 @@ var HeroLayoutOne = function (_a) {
       style: {
         backgroundColor:
           theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
-        color: theme === null || theme === void 0 ? void 0 : theme.linkColor,
+        color: theme === null || theme === void 0 ? void 0 : theme.textColor,
       },
     },
     React__default["default"].createElement(
@@ -100,21 +101,36 @@ var HeroLayoutOne = function (_a) {
       React__default["default"].createElement(
         "h2",
         { className: "font-bold text-4xl" },
-        "Photos for everyone"
+        meta.heading
       ),
-      React__default["default"].createElement(
-        "p",
-        null,
-        "Over 2 million free high-resolution images brought to you by the world\u2019s most generous community of photographers."
-      ),
+      React__default["default"].createElement("p", null, meta.subHeading),
       React__default["default"].createElement(
         "div",
         { className: "space-x-4" },
-        React__default["default"].createElement(
-          "button",
-          { className: "bg-blue-500 text-white py-2 px-4 rounded font-bold" },
-          "Start browsing"
-        )
+        data.buttons.map(function (button, index) {
+          if (!button.label) {
+            return false;
+          }
+          return React__default["default"].createElement(
+            "a",
+            {
+              key: index,
+              href: button.link,
+              className: "py-2 px-4 rounded font-bold",
+              style: {
+                backgroundColor:
+                  theme === null || theme === void 0
+                    ? void 0
+                    : theme.buttonBackgroundColor,
+                color:
+                  theme === null || theme === void 0
+                    ? void 0
+                    : theme.buttonTextColor,
+              },
+            },
+            button.label
+          );
+        })
       )
     )
   );

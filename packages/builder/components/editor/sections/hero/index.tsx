@@ -8,8 +8,8 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
-import NavbarSectionEditorColorsPanel from "components/editor/sections/navbar/panels/colors";
-import NavbarSectionEditorTextPanel from "components/editor/sections/navbar/panels/text";
+import HeroSectionEditorColorsPanel from "components/editor/sections/hero/panels/colors";
+import HeroSectionEditorTextPanel from "components/editor/sections/hero/panels/text";
 import React, { FC } from "react";
 import { MdColorLens, MdDvr, MdTextFields } from "react-icons/md";
 
@@ -17,7 +17,7 @@ interface IProps {
   positionOfSection: number;
 }
 
-const NavbarSectionEditor: FC<IProps> = ({ positionOfSection }) => {
+const HeroSectionEditor: FC<IProps> = ({ positionOfSection }) => {
   return (
     <Tabs>
       <TabList>
@@ -42,16 +42,14 @@ const NavbarSectionEditor: FC<IProps> = ({ positionOfSection }) => {
       </TabList>
       <TabPanels minH="400px">
         <TabPanel>
-          <NavbarSectionEditorTextPanel positionOfSection={positionOfSection} />
+          <HeroSectionEditorTextPanel positionOfSection={positionOfSection} />
         </TabPanel>
         <TabPanel>
-          <NavbarSectionEditorColorsPanel
-            positionOfSection={positionOfSection}
-          />
+          <HeroSectionEditorColorsPanel positionOfSection={positionOfSection} />
         </TabPanel>
       </TabPanels>
     </Tabs>
   );
 };
 
-export default NavbarSectionEditor;
+export default HeroSectionEditor;

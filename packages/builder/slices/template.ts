@@ -27,6 +27,21 @@ export const templateSlice = createSlice({
         state.template = action.payload;
       }
     },
+    updateTemplateSectionMeta(state, action) {
+      state.template.sections[action.payload.positionOfSection].meta[
+        action.payload.itemType
+      ] = action.payload.value;
+    },
+    updateTemplateSectionTheme(state, action) {
+      state.template.sections[action.payload.positionOfSection].theme[
+        action.payload.key
+      ] = action.payload.value;
+    },
+    addTemplateSectionData(state, action) {
+      state.template.sections[action.payload.positionOfSection].data[
+        action.payload.itemType
+      ].push(action.payload.value);
+    },
     updateTemplateSectionData(state, action) {
       state.template.sections[action.payload.positionOfSection].data[
         action.payload.itemType
@@ -36,16 +51,6 @@ export const templateSlice = createSlice({
       state.template.sections[action.payload.positionOfSection].data[
         action.payload.itemType
       ].splice(action.payload.itemPosition, 1);
-    },
-    addTemplateSectionData(state, action) {
-      state.template.sections[action.payload.positionOfSection].data[
-        action.payload.itemType
-      ].push(action.payload.value);
-    },
-    updateTemplateSectionTheme(state, action) {
-      state.template.sections[action.payload.positionOfSection].theme[
-        action.payload.key
-      ] = action.payload.value;
     },
   },
   extraReducers(builder) {
@@ -60,8 +65,9 @@ export const templateSlice = createSlice({
 
 export const {
   setTemplateData,
+  updateTemplateSectionMeta,
+  updateTemplateSectionTheme,
+  addTemplateSectionData,
   updateTemplateSectionData,
   removeTemplateSectionData,
-  addTemplateSectionData,
-  updateTemplateSectionTheme,
 } = templateSlice.actions;
