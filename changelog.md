@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/ghoshnirmalya/writy/compare/0.7.1...0.8.0) (2020-12-25)
+
+### Features
+
+- updates deployment and download scripts ([053b10e](https://github.com/ghoshnirmalya/writy/commit/053b10e834b259e599501d24af8cdf59526c4f16))
+- updates design ([ce216c0](https://github.com/ghoshnirmalya/writy/commit/ce216c03d1e135a1c9a6331ee325b34c2e1b224b))
+
 ## [0.7.1](https://github.com/ghoshnirmalya/writy/compare/0.7.0...0.7.1) (2020-12-25)
 
 ### Bug Fixes
