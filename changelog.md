@@ -1,3 +1,5 @@
+## [0.5.1](https://github.com/ghoshnirmalya/writy/compare/0.5.0...0.5.1) (2020-12-25)
+
 # [0.5.0](https://github.com/ghoshnirmalya/writy/compare/0.4.0...0.5.0) (2020-12-25)
 
 ### Features
