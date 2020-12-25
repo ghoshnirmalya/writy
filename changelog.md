@@ -1,3 +1,17 @@
+# [0.3.0](https://github.com/ghoshnirmalya/writy/compare/0.2.0...0.3.0) (2020-12-25)
+
+### Bug Fixes
+
+- removes TailwindCSS preflight ([6cb0b1f](https://github.com/ghoshnirmalya/writy/commit/6cb0b1f33663b5d8e850a65632c111bef72f0f92))
+
+### Features
+
+- adds option to deploy to CodeSandbox ([28987a1](https://github.com/ghoshnirmalya/writy/commit/28987a1a3252e31fa0c98f54009f9e9d51c7e788))
+- adds option to edit Hero section ([0da596b](https://github.com/ghoshnirmalya/writy/commit/0da596b80e62e67f4b695b4cf22f758729b1aeb6))
+- adds TailwindCSS for 'sections' package ([331e60d](https://github.com/ghoshnirmalya/writy/commit/331e60d215fb9091b8de4e1d86c3135a3760ea54))
+- loads content-area lazily ([4b2a6db](https://github.com/ghoshnirmalya/writy/commit/4b2a6dbf9317b039f03d38757cbd66e63492bbef))
+- updates design for Color Picker ([2aa745c](https://github.com/ghoshnirmalya/writy/commit/2aa745c753e8a3b370338647b84dba8f2491f9ce))
+
 # [0.2.0](https://github.com/ghoshnirmalya/writy/compare/0.1.0...0.2.0) (2020-12-24)
 
 ### Bug Fixes
