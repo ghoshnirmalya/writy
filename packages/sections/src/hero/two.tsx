@@ -17,7 +17,7 @@ const HeroLayoutTwo: FC<IProps> = ({ theme, data, meta }) => {
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="space-y-4 text-center md:text-left w-full md:w-1/2 p-8">
-          <h1 className="title-font text-2xl md:text-4xl font-bold">
+          <h1 className="title-font text-2xl md:text-3xl font-bold">
             {meta.heading}
           </h1>
           <p className="mb-8 leading-relaxed">{meta.subHeading}</p>

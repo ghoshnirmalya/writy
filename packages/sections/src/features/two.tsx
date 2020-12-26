@@ -15,7 +15,7 @@ const FeaturesLayoutTwo: FC<IProps> = ({ theme, data, meta }) => {
       }}
     >
       <div className="container mx-auto space-y-8 p-8">
-        <h2 className="font-bold text-2xl md:text-4xl text-center">
+        <h2 className="font-bold text-2xl md:text-3xl text-center">
           {meta.heading}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -1,8 +1,8 @@
 import { Box } from "@chakra-ui/react";
-import FeaturesSection from "components/views/sections/features";
-import FooterSection from "components/views/sections/footer";
-import HeroSection from "components/views/sections/hero";
-import NavbarSection from "components/views/sections/navbar";
+import FeaturesSectionView from "components/views/sections/features";
+import FooterSectionView from "components/views/sections/footer";
+import HeroSectionView from "components/views/sections/hero";
+import NavbarSectionView from "components/views/sections/navbar";
 import React, { FC, useState } from "react";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 import { useSelector } from "react-redux";
@@ -12,19 +12,19 @@ const PreviewIframe: FC = () => {
   const template = useSelector(getTemplateData());
   const [isInitializing, setInitialization] = useState(true);
 
-  const mapSectionToSectionType = (section: any) => {
+  const mapSectionToSectionType = (section: any, positionOfSection: number) => {
     switch (section.meta.type) {
       case "navbar":
-        return <NavbarSection section={section} />;
+        return <NavbarSectionView positionOfSection={positionOfSection} />;
 
       case "hero":
-        return <HeroSection section={section} />;
+        return <HeroSectionView positionOfSection={positionOfSection} />;
 
       case "features":
-        return <FeaturesSection section={section} />;
+        return <FeaturesSectionView positionOfSection={positionOfSection} />;
 
       case "footer":
-        return <FooterSection section={section} />;
+        return <FooterSectionView positionOfSection={positionOfSection} />;
 
       default:
         break;
@@ -44,7 +44,7 @@ const PreviewIframe: FC = () => {
     return template.sections.map((section: any, index: number) => {
       return (
         <Box as="section" key={index}>
-          {mapSectionToSectionType(section)}
+          {mapSectionToSectionType(section, index)}
         </Box>
       );
     });
@@ -56,6 +56,7 @@ const PreviewIframe: FC = () => {
       style={{
         width: "100%",
         height: "100%",
+        pointerEvents: "none",
       }}
       initialContent='
         <!DOCTYPE html>

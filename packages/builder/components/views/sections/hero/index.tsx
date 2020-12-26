@@ -1,30 +1,22 @@
 import { HeroLayouts } from "@writy/sections";
 import React, { FC } from "react";
+import { useSelector } from "react-redux";
+import { getSectionData } from "selectors/template";
 
 interface IProps {
-  section: any;
+  positionOfSection: number;
 }
 
-const HeroSectionView: FC<IProps> = ({ section }) => {
+const HeroSectionView: FC<IProps> = ({ positionOfSection }) => {
+  const { theme, meta, data } = useSelector(getSectionData(positionOfSection));
+
   const renderLayout = () => {
-    switch (section.meta.layout) {
+    switch (meta.layout) {
       case "one":
-        return (
-          <HeroLayouts.One
-            theme={section.theme}
-            data={section.data}
-            meta={section.meta}
-          />
-        );
+        return <HeroLayouts.One theme={theme} data={data} meta={meta} />;
 
       case "two":
-        return (
-          <HeroLayouts.Two
-            theme={section.theme}
-            data={section.data}
-            meta={section.meta}
-          />
-        );
+        return <HeroLayouts.Two theme={theme} data={data} meta={meta} />;
 
       default:
         break;
