@@ -1,3 +1,9 @@
+# [0.9.0](https://github.com/ghoshnirmalya/writy/compare/0.8.0...0.9.0) (2020-12-26)
+
+### Features
+
+- adds support for base64-encoded images ([76090d8](https://github.com/ghoshnirmalya/writy/commit/76090d8af2b827d641ee95eea5581d62fd84f272))
+
 # [0.8.0](https://github.com/ghoshnirmalya/writy/compare/0.7.1...0.8.0) (2020-12-25)
 
 ### Features
