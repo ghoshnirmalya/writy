@@ -7,12 +7,12 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build --stream",
+    "build": "lerna run build --stream --parallel",
     "clean": "lerna clean -y",
-    "dev": "lerna run dev --stream",
-    "export": "lerna run export --stream",
+    "dev": "lerna run dev --stream --parallel",
+    "export": "lerna run export --stream --parallel",
     "release": "release-it",
-    "start": "lerna run start --stream"
+    "start": "lerna run start --stream --parallel"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^2.0.0",
