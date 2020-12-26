@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { html as beautifyHTML } from "js-beautify";
 import deployToCodeSandbox from "lib/deploy-to-code-sandbox";
-import generateAndDownloadCode from "lib/generate-and-download-cod";
+import generateAndDownloadCode from "lib/generate-and-download-code";
 import React, { FC } from "react";
 import { AiOutlineCodeSandbox } from "react-icons/ai";
 import {

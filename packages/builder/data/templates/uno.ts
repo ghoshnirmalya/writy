@@ -1,7 +1,7 @@
-import Image1 from "public/images/section-placeholders/1.jpg";
-import Image2 from "public/images/section-placeholders/2.jpg";
-import Image3 from "public/images/section-placeholders/3.jpg";
-import Image4 from "public/images/section-placeholders/4.jpg";
+import { Image1 } from "@writy/sections";
+import { Image2 } from "@writy/sections";
+import { Image3 } from "@writy/sections";
+import { Image4 } from "@writy/sections";
 
 const uno = {
   meta: {},

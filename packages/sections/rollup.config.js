@@ -1,5 +1,6 @@
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
+import image from "@rollup/plugin-image";
 
 export default {
   input: "src/index.ts",
@@ -16,5 +17,6 @@ export default {
       extensions: [".css"],
       extract: false,
     }),
+    image(),
   ],
 };
