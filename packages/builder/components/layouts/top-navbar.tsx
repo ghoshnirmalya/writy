@@ -8,10 +8,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { html as beautifyHTML } from "js-beautify";
-import deployToCodeSandbox from "lib/deploy-to-code-sandbox";
 import generateAndDownloadCode from "lib/generate-and-download-code";
 import React, { FC } from "react";
-import { AiOutlineCodeSandbox } from "react-icons/ai";
 import {
   MdBugReport,
   MdFileDownload,
@@ -23,14 +21,6 @@ import {
 const TopNavbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue("white", "black");
-
-  const handleDeploymentToCodeSandbox = () => {
-    const codeSandboxURL = deployToCodeSandbox(
-      beautifyHTML(document.getElementById("js-page-content").innerHTML)
-    );
-
-    window.open(codeSandboxURL, "_blank");
-  };
 
   const handleDownloadCode = () => {
     generateAndDownloadCode(
@@ -57,12 +47,6 @@ const TopNavbar: FC = () => {
             variant="outline"
           >
             Reset template
-          </Button>
-          <Button
-            leftIcon={<AiOutlineCodeSandbox />}
-            onClick={handleDeploymentToCodeSandbox}
-          >
-            Deploy to CodeSandbox
           </Button>
           <Button
             leftIcon={<MdFileDownload />}
