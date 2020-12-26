@@ -24,10 +24,7 @@ export const templateSlice = createSlice({
   initialState,
   reducers: {
     setTemplateData(state, action) {
-      if (state.loading === "idle") {
-        state.loading = "fulfilled";
-        state.template = action.payload;
-      }
+      state.template = action.payload;
     },
     addTemplateSection(state, action) {
       state.template.sections.splice(

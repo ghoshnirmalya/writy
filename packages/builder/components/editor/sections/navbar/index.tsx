@@ -11,7 +11,7 @@ import {
 import NavbarSectionEditorColorsPanel from "components/editor/sections/navbar/panels/colors";
 import NavbarSectionEditorLayoutsPanel from "components/editor/sections/navbar/panels/layouts";
 import NavbarSectionEditorTextPanel from "components/editor/sections/navbar/panels/text";
-import DeleteSectionButton from "components/layouts/right-sidebar/delete-section-button";
+import DeleteSectionButton from "components/pages/index/right-sidebar/delete-section-button";
 import React, { FC } from "react";
 import {
   MdColorLens,

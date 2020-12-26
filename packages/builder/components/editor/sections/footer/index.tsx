@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import FooterSectionEditorColorsPanel from "components/editor/sections/footer/panels/colors";
 import FooterSectionEditorTextPanel from "components/editor/sections/footer/panels/text";
-import DeleteSectionButton from "components/layouts/right-sidebar/delete-section-button";
+import DeleteSectionButton from "components/pages/index/right-sidebar/delete-section-button";
 import React, { FC } from "react";
 import { MdColorLens, MdSettings, MdTextFields } from "react-icons/md";
 

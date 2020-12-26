@@ -1,10 +1,9 @@
-import { Image1 } from "@writy/sections";
-import { Image2 } from "@writy/sections";
-import { Image3 } from "@writy/sections";
-import { Image4 } from "@writy/sections";
+import { Image1, Image2, Image3, Image4 } from "@writy/sections";
 
 const uno = {
-  meta: {},
+  meta: {
+    id: "uno",
+  },
   sections: [
     {
       meta: {

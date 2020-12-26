@@ -11,7 +11,7 @@ import {
 import HeroSectionEditorColorsPanel from "components/editor/sections/hero/panels/colors";
 import HeroSectionEditorLayoutsPanel from "components/editor/sections/hero/panels/layouts";
 import HeroSectionEditorTextPanel from "components/editor/sections/hero/panels/text";
-import DeleteSectionButton from "components/layouts/right-sidebar/delete-section-button";
+import DeleteSectionButton from "components/pages/index/right-sidebar/delete-section-button";
 import React, { FC } from "react";
 import {
   MdColorLens,

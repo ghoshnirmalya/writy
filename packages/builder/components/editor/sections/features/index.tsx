@@ -11,7 +11,7 @@ import {
 import FeaturesSectionEditorColorsPanel from "components/editor/sections/features/panels/colors";
 import FeaturesSectionEditorLayoutsPanel from "components/editor/sections/features/panels/layouts";
 import FeaturesSectionEditorTextPanel from "components/editor/sections/features/panels/text";
-import DeleteSectionButton from "components/layouts/right-sidebar/delete-section-button";
+import DeleteSectionButton from "components/pages/index/right-sidebar/delete-section-button";
 import React, { FC } from "react";
 import {
   MdColorLens,

@@ -1,5 +1,7 @@
 type Template = {
-  meta: {};
+  meta: {
+    id?: number;
+  };
   sections: any[];
 };
 
