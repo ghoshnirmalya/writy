@@ -9,10 +9,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import HeroSectionEditorColorsPanel from "components/editor/sections/hero/panels/colors";
+import HeroSectionEditorLayoutsPanel from "components/editor/sections/hero/panels/layouts";
 import HeroSectionEditorTextPanel from "components/editor/sections/hero/panels/text";
 import DeleteSectionButton from "components/layouts/right-sidebar/delete-section-button";
 import React, { FC } from "react";
-import { MdColorLens, MdSettings, MdTextFields } from "react-icons/md";
+import {
+  MdColorLens,
+  MdLandscape,
+  MdSettings,
+  MdTextFields,
+} from "react-icons/md";
 
 interface IProps {
   positionOfSection: number;
@@ -36,6 +42,12 @@ const HeroSectionEditor: FC<IProps> = ({ positionOfSection }) => {
         </Tab>
         <Tab>
           <HStack spacing={1}>
+            <Icon as={MdLandscape} />
+            <Text>Layouts</Text>
+          </HStack>
+        </Tab>
+        <Tab>
+          <HStack spacing={1}>
             <Icon as={MdSettings} />
             <Text>Settings</Text>
           </HStack>
@@ -47,6 +59,11 @@ const HeroSectionEditor: FC<IProps> = ({ positionOfSection }) => {
         </TabPanel>
         <TabPanel>
           <HeroSectionEditorColorsPanel positionOfSection={positionOfSection} />
+        </TabPanel>
+        <TabPanel>
+          <HeroSectionEditorLayoutsPanel
+            positionOfSection={positionOfSection}
+          />
         </TabPanel>
         <TabPanel>
           <DeleteSectionButton positionOfSection={positionOfSection} />

@@ -1,8 +1,8 @@
-import { Button, VStack, Box, layout, Flex } from "@chakra-ui/react";
+import { Flex, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 import React, { FC } from "react";
 import { useDispatch } from "react-redux";
 import { updateTemplateSectionMeta } from "slices/template";
-import Image from "next/image";
 
 interface IProps {
   positionOfSection: number;
@@ -42,7 +42,7 @@ const NavbarSectionEditorLayoutsPanel: FC<IProps> = ({ positionOfSection }) => {
           borderWidth={1}
           alignItems="center"
           _hover={{
-            shadow: "md",
+            shadow: "lg",
           }}
         >
           <Image

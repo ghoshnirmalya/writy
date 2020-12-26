@@ -17,6 +17,15 @@ const HeroSectionView: FC<IProps> = ({ section }) => {
           />
         );
 
+      case "two":
+        return (
+          <HeroLayouts.Two
+            theme={section.theme}
+            data={section.data}
+            meta={section.meta}
+          />
+        );
+
       default:
         break;
     }

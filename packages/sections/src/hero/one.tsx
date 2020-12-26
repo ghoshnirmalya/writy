@@ -9,17 +9,27 @@ interface IProps {
 const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
   return (
     <div
-      className="p-24 lg:flex lg:items-center"
+      className="text-gray-600 body-font"
       style={{
         backgroundColor: theme?.backgroundColor,
         color: theme?.textColor,
       }}
     >
-      <div className="w-1/2 sm:w-full md:w-full lg:w-1/2">
-        <div className="space-y-4">
-          <h2 className="font-bold text-4xl">{meta.heading}</h2>
-          <p>{meta.subHeading}</p>
-          <div className="space-x-4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center">
+        <div className="w-full md:w-1/2">
+          <div
+            style={{
+              backgroundImage: `url(${meta.image})`,
+            }}
+            className="h-64 w-full bg-center bg-cover bg-no-repeat"
+          />
+        </div>
+        <div className="space-y-4 text-center md:text-left w-full md:w-1/2 p-8">
+          <h1 className="title-font text-2xl md:text-4xl font-bold">
+            {meta.heading}
+          </h1>
+          <p className="mb-8 leading-relaxed">{meta.subHeading}</p>
+          <div className="flex justify-center md:justify-start space-x-4">
             {data.buttons.map((button: any, index: number) => {
               if (!button.label) {
                 return false;
@@ -29,7 +39,7 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
                 <a
                   key={index}
                   href={button.link}
-                  className="py-2 px-4 rounded font-bold"
+                  className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg"
                   style={{
                     backgroundColor: theme?.buttonBackgroundColor,
                     color: theme?.buttonTextColor,
@@ -41,13 +51,6 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
             })}
           </div>
         </div>
-      </div>
-      <div className="w-1/2 sm:w-full md:w-full lg:w-1/2">
-        <img
-          src={meta.image}
-          alt={meta.imageAlternativeText}
-          className="w-full"
-        />
       </div>
     </div>
   );

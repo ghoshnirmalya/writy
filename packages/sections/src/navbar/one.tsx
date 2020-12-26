@@ -8,13 +8,13 @@ interface IProps {
 const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
   return (
     <div
-      className="py-4 px-24"
+      className="py-4"
       style={{
         backgroundColor: theme?.backgroundColor,
         color: theme?.linkColor,
       }}
     >
-      <div className="flex justify-between font-semibold">
+      <div className="container mx-auto px-8 flex justify-between font-semibold">
         <div>
           <a href="/">Writy</a>
         </div>

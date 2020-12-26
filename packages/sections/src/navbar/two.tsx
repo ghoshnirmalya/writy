@@ -14,7 +14,7 @@ const NavbarLayoutTwo: FC<IProps> = ({ theme, data }) => {
         color: theme?.linkColor,
       }}
     >
-      <div className="flex justify-start font-semibold space-x-8">
+      <div className="container mx-auto px-8 flex justify-start font-semibold space-x-8">
         <a href="/">Writy</a>
         {data.links.map((link: any, index: number) => {
           return (
