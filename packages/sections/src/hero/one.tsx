@@ -29,7 +29,7 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
             {meta.heading}
           </h1>
           <p className="mb-8 leading-relaxed">{meta.subHeading}</p>
-          <div className="flex justify-center md:justify-start space-x-4">
+          <div className="flex flex-col md:flex-row justify-center md:justify-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
             {data.buttons.map((button: any, index: number) => {
               if (!button.label) {
                 return false;
@@ -39,7 +39,7 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
                 <a
                   key={index}
                   href={button.link}
-                  className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg"
+                  className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg justify-center"
                   style={{
                     backgroundColor: theme?.buttonBackgroundColor,
                     color: theme?.buttonTextColor,

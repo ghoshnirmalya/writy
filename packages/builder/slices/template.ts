@@ -6,6 +6,7 @@ interface IInitialState {
   template: Template;
   loading: string;
   error: any;
+  previewDeviceType: string;
 }
 
 const initialState: IInitialState = {
@@ -15,6 +16,7 @@ const initialState: IInitialState = {
   },
   loading: "idle",
   error: null,
+  previewDeviceType: "desktop",
 };
 
 export const templateSlice = createSlice({
@@ -62,6 +64,9 @@ export const templateSlice = createSlice({
         action.payload.itemType
       ].splice(action.payload.itemPosition, 1);
     },
+    updatePreviewDeviceType(state, action) {
+      state.previewDeviceType = action.payload;
+    },
   },
   extraReducers(builder) {
     builder.addCase(hydrate, (state, action) => {
@@ -82,4 +87,5 @@ export const {
   addTemplateSectionData,
   updateTemplateSectionData,
   removeTemplateSectionData,
+  updatePreviewDeviceType,
 } = templateSlice.actions;

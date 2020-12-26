@@ -22,3 +22,10 @@ export const getSectionData = (id: number) => {
     (state: AppState) => state?.[templateSlice.name].template.sections[id]
   );
 };
+
+export const getPreviewDeviceTypeData = () => {
+  return createDraftSafeSelector(
+    (state: AppState) => state,
+    (state: AppState) => state?.[templateSlice.name].previewDeviceType
+  );
+};
