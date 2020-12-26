@@ -17,6 +17,15 @@ const FeaturesSectionView: FC<IProps> = ({ section }) => {
           />
         );
 
+      case "two":
+        return (
+          <FeaturesLayouts.Two
+            theme={section.theme}
+            data={section.data}
+            meta={section.meta}
+          />
+        );
+
       default:
         break;
     }

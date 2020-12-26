@@ -9,10 +9,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import FeaturesSectionEditorColorsPanel from "components/editor/sections/features/panels/colors";
+import FeaturesSectionEditorLayoutsPanel from "components/editor/sections/features/panels/layouts";
 import FeaturesSectionEditorTextPanel from "components/editor/sections/features/panels/text";
 import DeleteSectionButton from "components/layouts/right-sidebar/delete-section-button";
 import React, { FC } from "react";
-import { MdColorLens, MdSettings, MdTextFields } from "react-icons/md";
+import {
+  MdColorLens,
+  MdLandscape,
+  MdSettings,
+  MdTextFields,
+} from "react-icons/md";
 
 interface IProps {
   positionOfSection: number;
@@ -36,6 +42,12 @@ const FeaturesSectionEditor: FC<IProps> = ({ positionOfSection }) => {
         </Tab>
         <Tab>
           <HStack spacing={1}>
+            <Icon as={MdLandscape} />
+            <Text>Layouts</Text>
+          </HStack>
+        </Tab>
+        <Tab>
+          <HStack spacing={1}>
             <Icon as={MdSettings} />
             <Text>Settings</Text>
           </HStack>
@@ -49,6 +61,11 @@ const FeaturesSectionEditor: FC<IProps> = ({ positionOfSection }) => {
         </TabPanel>
         <TabPanel>
           <FeaturesSectionEditorColorsPanel
+            positionOfSection={positionOfSection}
+          />
+        </TabPanel>
+        <TabPanel>
+          <FeaturesSectionEditorLayoutsPanel
             positionOfSection={positionOfSection}
           />
         </TabPanel>

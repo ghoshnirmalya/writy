@@ -9,15 +9,16 @@ interface IProps {
 const FeaturesLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
   return (
     <div
-      className="p-24"
       style={{
         backgroundColor: theme?.backgroundColor,
         color: theme?.textColor,
       }}
     >
-      <div className="space-y-24">
-        <h2 className="font-bold text-4xl text-center">{meta.heading}</h2>
-        <div className="flex space-x-16">
+      <div className="container mx-auto space-y-8 p-8">
+        <h2 className="font-bold text-2xl md:text-4xl text-center">
+          {meta.heading}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {data.cards.map((card: any, index: number) => {
             if (!card.heading && !card.subheading) {
               return false;
