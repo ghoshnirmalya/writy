@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/ghoshnirmalya/writy/compare/0.9.0...0.10.0) (2020-12-26)
+
+### Features
+
+- adds new Features layout ([ae2a33c](https://github.com/ghoshnirmalya/writy/commit/ae2a33cdc037b32a03ccb9d0a77766761896039b))
+- adds responsive layouts for Hero section ([d14e5ac](https://github.com/ghoshnirmalya/writy/commit/d14e5acfe590a0a0bd116e6865ed815675abefea))
+
 # [0.9.0](https://github.com/ghoshnirmalya/writy/compare/0.8.0...0.9.0) (2020-12-26)
 
 ### Features
