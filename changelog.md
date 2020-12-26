@@ -1,3 +1,13 @@
+# [0.11.0](https://github.com/ghoshnirmalya/writy/compare/0.10.0...0.11.0) (2020-12-26)
+
+### Bug Fixes
+
+- fixes generation of HTML file ([a9bd973](https://github.com/ghoshnirmalya/writy/commit/a9bd973f9b21f677615a87f33158e5192fef09d8))
+
+### Features
+
+- adds device previews ([ee76e4b](https://github.com/ghoshnirmalya/writy/commit/ee76e4b34bfb07ebacb2aa9de202ae91cac550e7))
+
 # [0.10.0](https://github.com/ghoshnirmalya/writy/compare/0.9.0...0.10.0) (2020-12-26)
 
 ### Features
