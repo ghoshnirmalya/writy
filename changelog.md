@@ -1,3 +1,13 @@
+# [0.12.0](https://github.com/ghoshnirmalya/writy/compare/0.11.0...0.12.0) (2020-12-26)
+
+### Bug Fixes
+
+- adds some UI fixes ([0d54ff1](https://github.com/ghoshnirmalya/writy/commit/0d54ff14e7f5efc42f1b0f0bde78f0bff59242da))
+
+### Features
+
+- adds survey on the first screen ([f02f900](https://github.com/ghoshnirmalya/writy/commit/f02f900e3e1a42e61a77aada8434de7545291fad))
+
 # [0.11.0](https://github.com/ghoshnirmalya/writy/compare/0.10.0...0.11.0) (2020-12-26)
 
 ### Bug Fixes
