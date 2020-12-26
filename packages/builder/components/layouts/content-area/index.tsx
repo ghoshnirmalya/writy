@@ -8,12 +8,7 @@ const ContentArea: FC = () => {
   return (
     <Box h="calc(100vh - 80px)" w="calc(100vw - 500px)" bg={bgColor} p={14}>
       <Box shadow="xl">
-        <Box
-          bg={bgColor}
-          h="calc(100vh - 80px - 120px)"
-          overflowY="auto"
-          id="js-page-content"
-        >
+        <Box bg={bgColor} h="calc(100vh - 80px - 120px)" overflowY="auto">
           <PreviewIframe />
         </Box>
       </Box>

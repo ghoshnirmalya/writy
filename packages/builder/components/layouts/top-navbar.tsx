@@ -7,7 +7,6 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { html as beautifyHTML } from "js-beautify";
 import generateAndDownloadCode from "lib/generate-and-download-code";
 import React, { FC } from "react";
 import {
@@ -23,8 +22,10 @@ const TopNavbar: FC = () => {
   const bgColor = useColorModeValue("white", "black");
 
   const handleDownloadCode = () => {
+    const iframeContent: any = document.getElementById("js-preview-iframe");
+
     generateAndDownloadCode(
-      beautifyHTML(document.getElementById("js-page-content").innerHTML)
+      iframeContent.contentWindow.document.documentElement.innerHTML
     );
   };
 

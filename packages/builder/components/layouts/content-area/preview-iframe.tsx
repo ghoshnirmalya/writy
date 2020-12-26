@@ -52,6 +52,7 @@ const PreviewIframe: FC = () => {
 
   return (
     <Frame
+      id="js-preview-iframe"
       style={{
         width: "100%",
         height: "100%",
