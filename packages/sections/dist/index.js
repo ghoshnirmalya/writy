@@ -52,7 +52,7 @@ var NavbarLayoutTwo = function (_a) {
   return React__default["default"].createElement(
     "div",
     {
-      className: "py-4 px-24",
+      className: "py-4",
       style: {
         backgroundColor:
           theme === null || theme === void 0 ? void 0 : theme.backgroundColor,

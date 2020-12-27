@@ -1,11 +1,20 @@
 import { Flex } from "@chakra-ui/react";
+import TopNavbar from "components/layouts/top-navbar";
 import React, { FC } from "react";
 
 const Layout: FC = ({ children }) => {
   return (
-    <Flex minH="100vh" w="100vw" justifyContent="center" alignItems="center">
-      {children}
-    </Flex>
+    <>
+      <TopNavbar />
+      <Flex
+        minH="calc(100vh - 80px)"
+        w="100vw"
+        justifyContent="center"
+        alignItems="center"
+      >
+        {children}
+      </Flex>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ interface IProps {
 const NavbarLayoutTwo: FC<IProps> = ({ theme, data }) => {
   return (
     <div
-      className="py-4 px-24"
+      className="py-4"
       style={{
         backgroundColor: theme?.backgroundColor,
         color: theme?.linkColor,

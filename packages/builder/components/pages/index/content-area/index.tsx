@@ -25,11 +25,16 @@ const ContentArea: FC = () => {
   };
 
   return (
-    <Box h="calc(100vh - 80px)" w="calc(100vw - 500px)" bg={bgColor} p={14}>
+    <Box
+      h="calc(100vh - 80px - 80px)"
+      w="calc(100vw - 500px)"
+      bg={bgColor}
+      p={14}
+    >
       <Box
         shadow="xl"
         bg={bgColor}
-        h="calc(100vh - 80px - 120px)"
+        h="calc(100vh - 80px - 80px - 120px)"
         overflowY="auto"
         maxW={determinePreviewWidth()}
         mx="auto"

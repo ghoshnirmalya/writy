@@ -19,7 +19,7 @@ const LazyContentArea = dynamic(
 
       return (
         <Flex
-          h="calc(100vh - 80px)"
+          h="calc(100vh - 80px - 80px)"
           w="calc(100vw - 500px)"
           bg={bgColor}
           alignItems="center"

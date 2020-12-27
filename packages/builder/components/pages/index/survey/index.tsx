@@ -1,4 +1,11 @@
-import { Text, Box, Grid, VStack, Heading } from "@chakra-ui/react";
+import {
+  Text,
+  Box,
+  Grid,
+  VStack,
+  Heading,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import unoTemplateData from "data/templates/uno";
 import rainbowTemplateData from "data/templates/rainbow";
 import React, { FC } from "react";
@@ -8,6 +15,7 @@ import Image from "next/image";
 
 const Survey: FC = () => {
   const dispatch = useDispatch();
+  const bgColor = useColorModeValue("gray.100", "black");
 
   const mapTemplateIdToData = (templateId: string) => {
     switch (templateId) {
@@ -50,6 +58,7 @@ const Survey: FC = () => {
           onClick={() => handleTemplateSelection(template.id)}
           borderWidth={1}
           alignItems="center"
+          bg={bgColor}
           _hover={{
             shadow: "lg",
           }}
@@ -69,8 +78,9 @@ const Survey: FC = () => {
   };
 
   return (
-    <VStack spacing={8}>
-      <Heading>Select a template to continue</Heading>
+    <VStack spacing={4}>
+      <Heading fontSize="3xl">Templates</Heading>
+      <Text>Click to select your preferred template to continue</Text>
       <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" p={8}>
         {templateNode()}
       </Grid>

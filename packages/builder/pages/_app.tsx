@@ -15,7 +15,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       const gtag = require("lib/google-tag");
 
       const handleRouteChange = (url: URL) => {
-        /* invoke analytics function only for production */
         gtag.pageview(url);
       };
 

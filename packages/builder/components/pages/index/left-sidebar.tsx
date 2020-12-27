@@ -7,7 +7,7 @@ const LeftSidebar: FC = () => {
 
   return (
     <Flex
-      h="calc(100vh - 80px)"
+      h="calc(100vh - 80px - 80px)"
       w="80px"
       borderRightWidth={1}
       py={4}
