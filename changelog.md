@@ -1,3 +1,9 @@
+# [0.14.0](https://github.com/ghoshnirmalya/writy/compare/0.13.0...0.14.0) (2020-12-27)
+
+### Features
+
+- adds UI fixes ([4da4412](https://github.com/ghoshnirmalya/writy/commit/4da4412db4df3891756f36930b11bbce8a238667))
+
 # [0.13.0](https://github.com/ghoshnirmalya/writy/compare/0.12.0...0.13.0) (2020-12-27)
 
 ### Features
