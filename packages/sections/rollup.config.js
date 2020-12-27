@@ -1,5 +1,4 @@
 import typescript from "@rollup/plugin-typescript";
-import postcss from "rollup-plugin-postcss";
 import image from "@rollup/plugin-image";
 
 export default {
@@ -8,15 +7,5 @@ export default {
     dir: "dist",
     format: "cjs",
   },
-  plugins: [
-    typescript(),
-    postcss({
-      config: {
-        path: "./postcss.config.js",
-      },
-      extensions: [".css"],
-      extract: false,
-    }),
-    image(),
-  ],
+  plugins: [typescript(), image()],
 };

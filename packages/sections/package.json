@@ -15,12 +15,6 @@
     "prepublishOnly": "yarn run build"
   },
   "types": "dist/index",
-  "dependencies": {
-    "@tailwindcss/postcss7-compat": "^2.0.2",
-    "autoprefixer": "^9",
-    "postcss": "^7",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
-  },
   "peerDependencies": {
     "react": "17.0.1",
     "react-icons": "^4.1.0"
