@@ -1,10 +1,31 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Layout from "components/layouts";
-import { AppProps } from "next/app";
-import { wrapper } from "../store";
 import "focus-visible/dist/focus-visible";
+import * as gtag from "lib/google-tag";
+import { AppProps } from "next/app";
+import { useRouter } from "next/dist/client/router";
+import { useEffect } from "react";
+import { wrapper } from "../store";
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
+  const isProduction = process.env.NODE_ENV === "production";
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      /* invoke analytics function only for production */
+      if (isProduction) {
+        gtag.pageview(url);
+      }
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+
   const config = {
     useSystemColorMode: false,
     initialColorMode: "dark",
