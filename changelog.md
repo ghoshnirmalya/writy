@@ -1,3 +1,9 @@
+# [0.15.0](https://github.com/ghoshnirmalya/writy/compare/0.14.0...0.15.0) (2020-12-27)
+
+### Features
+
+- adds option scrollIntoView newly added sections ([43b8f29](https://github.com/ghoshnirmalya/writy/commit/43b8f29ab887efd60f0d69506ef9ebb9e2e5be02))
+
 # [0.14.0](https://github.com/ghoshnirmalya/writy/compare/0.13.0...0.14.0) (2020-12-27)
 
 ### Features
