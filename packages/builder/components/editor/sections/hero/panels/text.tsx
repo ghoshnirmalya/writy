@@ -7,11 +7,11 @@ import {
 } from "@chakra-ui/react";
 import React, { ChangeEvent, FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSectionData } from "selectors/template";
+import { getCurrentPageData, getSectionData } from "selectors/site";
 import {
   updateTemplateSectionData,
   updateTemplateSectionMeta,
-} from "slices/template";
+} from "slices/site";
 
 interface IProps {
   positionOfSection: number;
@@ -19,7 +19,10 @@ interface IProps {
 
 const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
-  const { data, meta } = useSelector(getSectionData(positionOfSection));
+  const currentPageId = useSelector(getCurrentPageData());
+  const { data, meta } = useSelector(
+    getSectionData(currentPageId, positionOfSection)
+  );
 
   const handleMetaChange = (itemType: string, value: string) => {
     dispatch(

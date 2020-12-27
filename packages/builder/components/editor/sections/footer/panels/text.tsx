@@ -10,12 +10,12 @@ import {
 import React, { ChangeEvent, FC } from "react";
 import { MdAdd, MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { getSectionData } from "selectors/template";
+import { getCurrentPageData, getSectionData } from "selectors/site";
 import {
   addTemplateSectionData,
   removeTemplateSectionData,
   updateTemplateSectionData,
-} from "slices/template";
+} from "slices/site";
 
 interface IProps {
   positionOfSection: number;
@@ -23,7 +23,10 @@ interface IProps {
 
 const FooterSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
-  const { data } = useSelector(getSectionData(positionOfSection));
+  const currentPageId = useSelector(getCurrentPageData());
+  const { data } = useSelector(
+    getSectionData(currentPageId, positionOfSection)
+  );
 
   const handleDataChange = (
     itemPosition: number,

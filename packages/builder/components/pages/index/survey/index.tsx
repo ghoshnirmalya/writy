@@ -1,21 +1,23 @@
 import {
-  Text,
   Box,
   Grid,
-  VStack,
   Heading,
+  Text,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import unoTemplateData from "data/templates/uno";
 import rainbowTemplateData from "data/templates/rainbow";
-import React, { FC } from "react";
-import { useDispatch } from "react-redux";
-import { setTemplateData } from "slices/template";
+import unoTemplateData from "data/templates/uno";
 import Image from "next/image";
+import React, { FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentPageData } from "selectors/site";
+import { addPage, setTemplateData } from "slices/site";
 
 const Survey: FC = () => {
   const dispatch = useDispatch();
   const bgColor = useColorModeValue("gray.100", "black");
+  const currentPageId = useSelector(getCurrentPageData());
 
   const mapTemplateIdToData = (templateId: string) => {
     switch (templateId) {
@@ -33,7 +35,17 @@ const Survey: FC = () => {
   const handleTemplateSelection = (templateId: string) => {
     const templateData = mapTemplateIdToData(templateId);
 
-    dispatch(setTemplateData(templateData));
+    ["index", "about", "contact"].map((page: string, index: number) => {
+      dispatch(
+        addPage({
+          meta: {
+            id: page,
+          },
+        })
+      );
+
+      dispatch(setTemplateData({ currentPageId: index, templateData }));
+    });
   };
 
   const templateNode = () => {

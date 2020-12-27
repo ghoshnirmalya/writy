@@ -5,7 +5,7 @@ import TopNavbar from "components/pages/index/top-navbar";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { getTemplateData } from "selectors/template";
+import { getSiteData } from "selectors/site";
 
 const LazyContentArea = dynamic(
   () =>
@@ -35,9 +35,9 @@ const LazyContentArea = dynamic(
 );
 
 const IndexPageComponent: FC = () => {
-  const { meta } = useSelector(getTemplateData());
+  const { pages } = useSelector(getSiteData());
 
-  if (!meta?.id) {
+  if (!pages.length) {
     return <Survey />;
   }
 

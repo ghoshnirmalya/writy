@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { MdDelete } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { removeTemplateSection } from "slices/template";
+import { removeTemplateSection } from "slices/site";
 
 interface IProps {
   positionOfSection: number;

@@ -1,31 +1,75 @@
 import {
   Button,
+  ButtonGroup,
   Flex,
   HStack,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   useColorModeValue,
 } from "@chakra-ui/react";
-import generateAndDownloadCode from "lib/generate-and-download-code";
+import { html as beautifyHTML } from "js-beautify";
+import fileDownload from "js-file-download";
+import JSZip from "jszip";
 import React, { FC } from "react";
 import {
+  MdArrowDropDown,
   MdDesktopMac,
   MdFileDownload,
   MdLayersClear,
   MdPhoneIphone,
   MdTabletMac,
 } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { setTemplateData, updatePreviewDeviceType } from "slices/template";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentPageData, getSiteData } from "selectors/site";
+import {
+  setCurrentPageId,
+  setTemplateData,
+  updatePreviewDeviceType,
+} from "slices/site";
 
 const TopNavbar: FC = () => {
   const dispatch = useDispatch();
   const bgColor = useColorModeValue("white", "black");
+  const { pages } = useSelector(getSiteData());
+  const currentPageId = useSelector(getCurrentPageData());
+  const zip = new JSZip();
 
   const handleDownloadCode = () => {
     const iframeContent: any = document.getElementById("js-preview-iframe");
 
-    generateAndDownloadCode(
-      iframeContent.contentWindow.document.documentElement.innerHTML
+    pages.map((page: any, index: number) => {
+      dispatch(setCurrentPageId(index));
+
+      zip.file(
+        `${page.meta.id}.html`,
+        beautifyHTML(`<html>
+            ${iframeContent.contentWindow.document.documentElement.innerHTML}
+          </html>
+        `)
+      );
+    });
+
+    zip
+      .generateAsync({ type: "blob" })
+      .then((blob) => fileDownload(blob, "project.zip"))
+      .catch((e) => console.log(e));
+  };
+
+  const pagesDropdownNode = () => {
+    return (
+      <Menu isLazy>
+        <MenuButton as={Button} rightIcon={<MdArrowDropDown />}>
+          index.html
+        </MenuButton>
+        <MenuList>
+          {pages.map((page, index: number) => {
+            return <MenuItem key={index}>{page.meta.id}.html</MenuItem>;
+          })}
+        </MenuList>
+      </Menu>
     );
   };
 
@@ -49,7 +93,7 @@ const TopNavbar: FC = () => {
     ];
 
     return (
-      <HStack spacing={4} align="center">
+      <ButtonGroup>
         {devices.map((device, index) => {
           return (
             <IconButton
@@ -60,7 +104,7 @@ const TopNavbar: FC = () => {
             />
           );
         })}
-      </HStack>
+      </ButtonGroup>
     );
   };
 
@@ -73,22 +117,26 @@ const TopNavbar: FC = () => {
       bg={bgColor}
     >
       <Flex justifyContent="space-between" w="100%">
-        {deviceButtonsNode()}
+        {pagesDropdownNode()}
         <HStack spacing={4} align="center">
-          <Button
-            leftIcon={<MdLayersClear />}
+          {deviceButtonsNode()}
+          <IconButton
+            icon={<MdLayersClear />}
             colorScheme="red"
             variant="outline"
-            onClick={() => dispatch(setTemplateData(""))}
+            onClick={() =>
+              dispatch(setTemplateData({ currentPageId, templateData: "" }))
+            }
+            aria-label="Reset template"
           >
             Reset template
-          </Button>
+          </IconButton>
           <Button
             leftIcon={<MdFileDownload />}
             colorScheme="blue"
             onClick={handleDownloadCode}
           >
-            Download HTML file
+            Download HTML files
           </Button>
         </HStack>
       </Flex>

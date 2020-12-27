@@ -2,7 +2,7 @@ import { Flex, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import React, { FC } from "react";
 import { useDispatch } from "react-redux";
-import { updateTemplateSectionMeta } from "slices/template";
+import { updateTemplateSectionMeta } from "slices/site";
 
 interface IProps {
   positionOfSection: number;

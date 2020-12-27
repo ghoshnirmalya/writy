@@ -6,10 +6,11 @@ import NavbarSectionView from "components/views/sections/navbar";
 import React, { FC, useState } from "react";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 import { useSelector } from "react-redux";
-import { getTemplateData } from "selectors/template";
+import { getCurrentPageData, getTemplateData } from "selectors/site";
 
 const PreviewIframe: FC = () => {
-  const template = useSelector(getTemplateData());
+  const currentPageId = useSelector(getCurrentPageData());
+  const template = useSelector(getTemplateData(currentPageId));
   const [isInitializing, setInitialization] = useState(true);
 
   const mapSectionToSectionType = (section: any, positionOfSection: number) => {
@@ -41,7 +42,7 @@ const PreviewIframe: FC = () => {
       return false;
     }
 
-    return template.sections.map((section: any, index: number) => {
+    return template?.sections.map((section: any, index: number) => {
       return (
         <Box as="section" key={index} id={`section-${index}`}>
           {mapSectionToSectionType(section, index)}

@@ -16,11 +16,12 @@ import NavbarSectionEditor from "components/editor/sections/navbar";
 import AddNewSection from "components/pages/index/right-sidebar/add-new-section";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { getTemplateData } from "selectors/template";
+import { getCurrentPageData, getTemplateData } from "selectors/site";
 
 const RightSidebarSectionsTab: FC = () => {
+  const currentPageId = useSelector(getCurrentPageData());
   const editorControlsBgColor = useColorModeValue("white", "black");
-  const template = useSelector(getTemplateData());
+  const template = useSelector(getTemplateData(currentPageId));
 
   const mapSectionTypeToEditor = (section: any, positionOfSection: number) => {
     switch (section.meta.type) {
@@ -64,7 +65,7 @@ const RightSidebarSectionsTab: FC = () => {
     <Accordion allowToggle>
       <VStack spacing={4}>
         <AddNewSection positionOfSection={0} />
-        {template.sections.map((section: any, index: number) => {
+        {template?.sections.map((section: any, index: number) => {
           return (
             <VStack key={index} spacing={4} w="100%">
               <AccordionItem

@@ -2,8 +2,8 @@ import { FormControl, FormLabel, VStack } from "@chakra-ui/react";
 import ColorPicker from "components/color-picker";
 import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSectionData } from "selectors/template";
-import { updateTemplateSectionTheme } from "slices/template";
+import { getCurrentPageData, getSectionData } from "selectors/site";
+import { updateTemplateSectionTheme } from "slices/site";
 
 interface IProps {
   positionOfSection: number;
@@ -11,7 +11,10 @@ interface IProps {
 
 const NavbarSectionEditorColorsPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
-  const { theme } = useSelector(getSectionData(positionOfSection));
+  const currentPageId = useSelector(getCurrentPageData());
+  const { theme } = useSelector(
+    getSectionData(currentPageId, positionOfSection)
+  );
 
   const handleChange = (itemType: string, value: string) => {
     dispatch(

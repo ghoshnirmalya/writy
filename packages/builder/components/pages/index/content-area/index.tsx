@@ -2,7 +2,7 @@ import { Box, useColorModeValue } from "@chakra-ui/react";
 import PreviewIframe from "components/pages/index/content-area/preview-iframe";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { getPreviewDeviceTypeData } from "selectors/template";
+import { getPreviewDeviceTypeData } from "selectors/site";
 
 const ContentArea: FC = () => {
   const previewDeviceTypeData = useSelector(getPreviewDeviceTypeData());
