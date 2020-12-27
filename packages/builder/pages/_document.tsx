@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
@@ -34,10 +35,10 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>{this.googleAnalyticsScriptNode()}</Head>
-        <body>
+        <Box as="body" overflow="hidden">
           <Main />
           <NextScript />
-        </body>
+        </Box>
       </Html>
     );
   }

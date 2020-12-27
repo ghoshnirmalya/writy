@@ -11,6 +11,7 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+import scrollPreviewSectionIntoView from "lib/scroll-preview-section-into-view";
 import React, { FC } from "react";
 import { MdAdd } from "react-icons/md";
 import { useDispatch } from "react-redux";
@@ -66,6 +67,8 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
       default:
         break;
     }
+
+    scrollPreviewSectionIntoView(positionOfSection);
 
     onClose();
   };

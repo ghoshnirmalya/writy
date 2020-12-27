@@ -80,7 +80,7 @@ const Survey: FC = () => {
   return (
     <VStack spacing={4}>
       <Heading fontSize="3xl">Templates</Heading>
-      <Text>Click to select your preferred template to continue</Text>
+      <Text>Click to select your preferred template and continue</Text>
       <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" p={8}>
         {templateNode()}
       </Grid>

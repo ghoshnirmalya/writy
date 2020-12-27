@@ -43,7 +43,7 @@ const PreviewIframe: FC = () => {
 
     return template.sections.map((section: any, index: number) => {
       return (
-        <Box as="section" key={index}>
+        <Box as="section" key={index} id={`section-${index}`}>
           {mapSectionToSectionType(section, index)}
         </Box>
       );
@@ -56,7 +56,6 @@ const PreviewIframe: FC = () => {
       style={{
         width: "100%",
         height: "100%",
-        pointerEvents: "none",
       }}
       initialContent='
         <!DOCTYPE html>
@@ -66,6 +65,12 @@ const PreviewIframe: FC = () => {
                 href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
                 rel="stylesheet"
               />
+              <style>
+                a {
+                  pointer-events: none;
+                  transition: none;
+                }
+              </style>
             </head>
             <body>
               <div></div>

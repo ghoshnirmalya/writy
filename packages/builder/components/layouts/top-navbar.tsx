@@ -8,12 +8,10 @@ import {
 } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { MdBugReport, MdWbIncandescent, MdWbSunny } from "react-icons/md";
-import { useDispatch } from "react-redux";
 
 const TopNavbar: FC = () => {
-  const dispatch = useDispatch();
   const { colorMode, toggleColorMode } = useColorMode();
-  const bgColor = useColorModeValue("gray.100", "gray.900");
+  const bgColor = useColorModeValue("white", "black");
 
   return (
     <Flex
