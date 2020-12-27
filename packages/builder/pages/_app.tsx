@@ -1,7 +1,6 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Layout from "components/layouts";
 import "focus-visible/dist/focus-visible";
-import * as gtag from "lib/google-tag";
 import { AppProps } from "next/app";
 import { useRouter } from "next/dist/client/router";
 import { useEffect } from "react";
@@ -12,18 +11,20 @@ const App = ({ Component, pageProps }: AppProps) => {
   const isProduction = process.env.NODE_ENV === "production";
 
   useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      /* invoke analytics function only for production */
-      if (isProduction) {
+    if (isProduction) {
+      const gtag = require("lib/google-tag");
+
+      const handleRouteChange = (url: URL) => {
+        /* invoke analytics function only for production */
         gtag.pageview(url);
-      }
-    };
+      };
 
-    router.events.on("routeChangeComplete", handleRouteChange);
+      router.events.on("routeChangeComplete", handleRouteChange);
 
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
+      return () => {
+        router.events.off("routeChangeComplete", handleRouteChange);
+      };
+    }
   }, [router.events]);
 
   const config = {
