@@ -1,3 +1,9 @@
+# [0.13.0](https://github.com/ghoshnirmalya/writy/compare/0.12.0...0.13.0) (2020-12-27)
+
+### Features
+
+- adds Google Analytics script ([a386c7d](https://github.com/ghoshnirmalya/writy/commit/a386c7d81b3daa3b7ecca18360b0b0fc35c0fd2b))
+
 # [0.12.0](https://github.com/ghoshnirmalya/writy/compare/0.11.0...0.12.0) (2020-12-26)
 
 ### Bug Fixes
