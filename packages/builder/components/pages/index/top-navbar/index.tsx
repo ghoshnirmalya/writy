@@ -41,6 +41,19 @@ const LazyDeviceButtons = dynamic(
   }
 );
 
+const LazyAddPage = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: 'lazyAddPage' */ "components/pages/index/top-navbar/add-page"
+    ),
+  {
+    ssr: false,
+    loading: () => {
+      return <Button isLoading />;
+    },
+  }
+);
+
 const TopNavbar: FC = () => {
   const bgColor = useColorModeValue("white", "black");
 
@@ -53,7 +66,11 @@ const TopNavbar: FC = () => {
       bg={bgColor}
     >
       <Flex justifyContent="space-between" w="100%">
-        <LazyPagesDropdown />
+        <HStack spacing={4} align="center">
+          <LazyPagesDropdown />
+
+          <LazyAddPage />
+        </HStack>
         <HStack spacing={4} align="center">
           <LazyDeviceButtons />
           <LazyDownloadHTMLButton />
