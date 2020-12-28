@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
   Drawer,
@@ -9,7 +11,9 @@ import {
   DrawerHeader,
   DrawerOverlay,
   FormLabel,
+  FormControl,
   HStack,
+  FormHelperText,
   Input,
   InputGroup,
   InputRightAddon,
@@ -58,7 +62,7 @@ const AddPage: FC = () => {
   const drawerNode = () => {
     return (
       <Drawer
-        size="md"
+        size="sm"
         isOpen={isOpen}
         placement="right"
         initialFocusRef={urlField}
@@ -72,7 +76,11 @@ const AddPage: FC = () => {
             </DrawerHeader>
             <DrawerBody>
               <Stack spacing={8}>
-                <Box>
+                <Alert status="info" rounded="lg">
+                  <AlertIcon />
+                  Click on the "Add" button below the form to add a new page.
+                </Alert>
+                <FormControl>
                   <FormLabel htmlFor="url">URL</FormLabel>
                   <InputGroup>
                     <Input
@@ -87,7 +95,11 @@ const AddPage: FC = () => {
                     />
                     <InputRightAddon>.html</InputRightAddon>
                   </InputGroup>
-                </Box>
+                  <FormHelperText>
+                    Enter the url of HTML page in lowercase and hyphenated (eg:
+                    "contact-us" or "about")
+                  </FormHelperText>
+                </FormControl>
               </Stack>
             </DrawerBody>
             <DrawerFooter borderTopWidth="1px">

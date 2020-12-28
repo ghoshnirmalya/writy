@@ -81,8 +81,8 @@ const TopNavbar: FC = () => {
       <Flex justifyContent="space-between" w="100%">
         <HStack spacing={4} align="center">
           <LazyPagesDropdown />
-          <LazyAddPage />
           <LazyManagePages />
+          <LazyAddPage />
         </HStack>
         <HStack spacing={4} align="center">
           <LazyDeviceButtons />

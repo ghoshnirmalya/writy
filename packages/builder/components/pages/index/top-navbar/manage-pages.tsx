@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
   Drawer,
@@ -47,13 +49,18 @@ const ManagePages: FC = () => {
 
   const drawerNode = () => {
     return (
-      <Drawer size="md" isOpen={isOpen} placement="right" onClose={onClose}>
+      <Drawer size="sm" isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay>
           <DrawerContent bg={bgColor}>
             <DrawerCloseButton />
             <DrawerHeader borderBottomWidth="1px">Manage pages</DrawerHeader>
             <DrawerBody>
               <Stack spacing={8}>
+                <Alert status="warning" rounded="lg">
+                  <AlertIcon />
+                  All changes done here are permanent. Please proceed with
+                  caution.
+                </Alert>
                 {pages.map((page: any, index: number) => {
                   return (
                     <Box key={index}>

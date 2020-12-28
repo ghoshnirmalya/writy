@@ -69,7 +69,8 @@ const RightSidebarSectionsTab: FC = () => {
           return (
             <VStack key={index} spacing={4} w="100%">
               <AccordionItem
-                borderBottomWidth={1}
+                borderWidth={1}
+                rounded="lg"
                 w="100%"
                 bg={editorControlsBgColor}
               >
