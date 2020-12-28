@@ -9,6 +9,7 @@ function _interopDefaultLegacy(e) {
 var React__default = /*#__PURE__*/ _interopDefaultLegacy(React);
 
 var NavbarLayoutOne = function (_a) {
+  var _b;
   var theme = _a.theme,
     data = _a.data;
   return React__default["default"].createElement(
@@ -34,19 +35,22 @@ var NavbarLayoutOne = function (_a) {
       React__default["default"].createElement(
         "div",
         { className: "space-x-8" },
-        data.links.map(function (link, index) {
-          return React__default["default"].createElement(
-            "a",
-            { key: index, href: link.link },
-            link.label
-          );
-        })
+        (_b = data.links) === null || _b === void 0
+          ? void 0
+          : _b.map(function (link, index) {
+              return React__default["default"].createElement(
+                "a",
+                { key: index, href: link.link },
+                link.label
+              );
+            })
       )
     )
   );
 };
 
 var NavbarLayoutTwo = function (_a) {
+  var _b;
   var theme = _a.theme,
     data = _a.data;
   return React__default["default"].createElement(
@@ -66,13 +70,15 @@ var NavbarLayoutTwo = function (_a) {
           "container mx-auto px-8 flex justify-start font-semibold space-x-8",
       },
       React__default["default"].createElement("a", { href: "/" }, "Writy"),
-      data.links.map(function (link, index) {
-        return React__default["default"].createElement(
-          "a",
-          { key: index, href: link.link },
-          link.label
-        );
-      })
+      (_b = data.links) === null || _b === void 0
+        ? void 0
+        : _b.map(function (link, index) {
+            return React__default["default"].createElement(
+              "a",
+              { key: index, href: link.link },
+              link.label
+            );
+          })
     )
   );
 };
@@ -83,6 +89,7 @@ var NavbarLayouts = {
 };
 
 var HeroLayoutOne = function (_a) {
+  var _b;
   var theme = _a.theme,
     data = _a.data,
     meta = _a.meta;
@@ -128,31 +135,33 @@ var HeroLayoutOne = function (_a) {
             className:
               "flex flex-col md:flex-row justify-center md:justify-start space-x-0 md:space-x-4 space-y-4 md:space-y-0",
           },
-          data.buttons.map(function (button, index) {
-            if (!button.label) {
-              return false;
-            }
-            return React__default["default"].createElement(
-              "a",
-              {
-                key: index,
-                href: button.link,
-                className:
-                  "inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg justify-center",
-                style: {
-                  backgroundColor:
-                    theme === null || theme === void 0
-                      ? void 0
-                      : theme.buttonBackgroundColor,
-                  color:
-                    theme === null || theme === void 0
-                      ? void 0
-                      : theme.buttonTextColor,
-                },
-              },
-              button.label
-            );
-          })
+          (_b = data.buttons) === null || _b === void 0
+            ? void 0
+            : _b.map(function (button, index) {
+                if (!button.label) {
+                  return false;
+                }
+                return React__default["default"].createElement(
+                  "a",
+                  {
+                    key: index,
+                    href: button.link,
+                    className:
+                      "inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg justify-center",
+                    style: {
+                      backgroundColor:
+                        theme === null || theme === void 0
+                          ? void 0
+                          : theme.buttonBackgroundColor,
+                      color:
+                        theme === null || theme === void 0
+                          ? void 0
+                          : theme.buttonTextColor,
+                    },
+                  },
+                  button.label
+                );
+              })
         )
       )
     )
@@ -160,6 +169,7 @@ var HeroLayoutOne = function (_a) {
 };
 
 var HeroLayoutTwo = function (_a) {
+  var _b;
   var theme = _a.theme,
     data = _a.data,
     meta = _a.meta;
@@ -195,31 +205,33 @@ var HeroLayoutTwo = function (_a) {
             className:
               "flex flex-col md:flex-row justify-center md:justify-start space-x-0 md:space-x-4 space-y-4 md:space-y-0",
           },
-          data.buttons.map(function (button, index) {
-            if (!button.label) {
-              return false;
-            }
-            return React__default["default"].createElement(
-              "a",
-              {
-                key: index,
-                href: button.link,
-                className:
-                  "inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg justify-center",
-                style: {
-                  backgroundColor:
-                    theme === null || theme === void 0
-                      ? void 0
-                      : theme.buttonBackgroundColor,
-                  color:
-                    theme === null || theme === void 0
-                      ? void 0
-                      : theme.buttonTextColor,
-                },
-              },
-              button.label
-            );
-          })
+          (_b = data.buttons) === null || _b === void 0
+            ? void 0
+            : _b.map(function (button, index) {
+                if (!button.label) {
+                  return false;
+                }
+                return React__default["default"].createElement(
+                  "a",
+                  {
+                    key: index,
+                    href: button.link,
+                    className:
+                      "inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg justify-center",
+                    style: {
+                      backgroundColor:
+                        theme === null || theme === void 0
+                          ? void 0
+                          : theme.buttonBackgroundColor,
+                      color:
+                        theme === null || theme === void 0
+                          ? void 0
+                          : theme.buttonTextColor,
+                    },
+                  },
+                  button.label
+                );
+              })
         )
       ),
       React__default["default"].createElement(
@@ -242,6 +254,7 @@ var HeroLayouts = {
 };
 
 var FeaturesLayoutOne = function (_a) {
+  var _b;
   var theme = _a.theme,
     data = _a.data,
     meta = _a.meta;
@@ -265,34 +278,41 @@ var FeaturesLayoutOne = function (_a) {
       React__default["default"].createElement(
         "div",
         { className: "grid grid-cols-1 md:grid-cols-3 gap-8" },
-        data.cards.map(function (card, index) {
-          if (!card.heading && !card.subheading) {
-            return false;
-          }
-          return React__default["default"].createElement(
-            "div",
-            { key: index, className: "space-y-4" },
-            React__default["default"].createElement("div", {
-              style: {
-                backgroundImage: "url(" + card.image + ")",
-              },
-              className:
-                "bg-gray-100 object-contain rounded h-64 w-full bg-center bg-cover bg-no-repeat",
-            }),
-            React__default["default"].createElement(
-              "p",
-              { className: "font-bold" },
-              card.heading
-            ),
-            React__default["default"].createElement("p", null, card.subHeading)
-          );
-        })
+        (_b = data.cards) === null || _b === void 0
+          ? void 0
+          : _b.map(function (card, index) {
+              if (!card.heading && !card.subheading) {
+                return false;
+              }
+              return React__default["default"].createElement(
+                "div",
+                { key: index, className: "space-y-4" },
+                React__default["default"].createElement("div", {
+                  style: {
+                    backgroundImage: "url(" + card.image + ")",
+                  },
+                  className:
+                    "bg-gray-100 object-contain rounded h-64 w-full bg-center bg-cover bg-no-repeat",
+                }),
+                React__default["default"].createElement(
+                  "p",
+                  { className: "font-bold" },
+                  card.heading
+                ),
+                React__default["default"].createElement(
+                  "p",
+                  null,
+                  card.subHeading
+                )
+              );
+            })
       )
     )
   );
 };
 
 var FeaturesLayoutTwo = function (_a) {
+  var _b;
   var theme = _a.theme,
     data = _a.data,
     meta = _a.meta;
@@ -316,28 +336,34 @@ var FeaturesLayoutTwo = function (_a) {
       React__default["default"].createElement(
         "div",
         { className: "grid grid-cols-1 md:grid-cols-2 gap-8" },
-        data.cards.map(function (card, index) {
-          if (!card.heading && !card.subheading) {
-            return false;
-          }
-          return React__default["default"].createElement(
-            "div",
-            { key: index, className: "space-y-4" },
-            React__default["default"].createElement("div", {
-              style: {
-                backgroundImage: "url(" + card.image + ")",
-              },
-              className:
-                "bg-gray-100 object-contain rounded h-64 w-full bg-center bg-cover bg-no-repeat",
-            }),
-            React__default["default"].createElement(
-              "p",
-              { className: "font-bold" },
-              card.heading
-            ),
-            React__default["default"].createElement("p", null, card.subHeading)
-          );
-        })
+        (_b = data.cards) === null || _b === void 0
+          ? void 0
+          : _b.map(function (card, index) {
+              if (!card.heading && !card.subheading) {
+                return false;
+              }
+              return React__default["default"].createElement(
+                "div",
+                { key: index, className: "space-y-4" },
+                React__default["default"].createElement("div", {
+                  style: {
+                    backgroundImage: "url(" + card.image + ")",
+                  },
+                  className:
+                    "bg-gray-100 object-contain rounded h-64 w-full bg-center bg-cover bg-no-repeat",
+                }),
+                React__default["default"].createElement(
+                  "p",
+                  { className: "font-bold" },
+                  card.heading
+                ),
+                React__default["default"].createElement(
+                  "p",
+                  null,
+                  card.subHeading
+                )
+              );
+            })
       )
     )
   );
@@ -349,6 +375,7 @@ var FeaturesLayouts = {
 };
 
 var FooterLayoutOne = function (_a) {
+  var _b;
   var theme = _a.theme,
     data = _a.data;
   return React__default["default"].createElement(
@@ -369,13 +396,15 @@ var FooterLayoutOne = function (_a) {
       React__default["default"].createElement(
         "div",
         { className: "space-x-8" },
-        data.links.map(function (link, index) {
-          return React__default["default"].createElement(
-            "a",
-            { key: index, href: link.link },
-            link.label
-          );
-        })
+        (_b = data.links) === null || _b === void 0
+          ? void 0
+          : _b.map(function (link, index) {
+              return React__default["default"].createElement(
+                "a",
+                { key: index, href: link.link },
+                link.label
+              );
+            })
       )
     )
   );

@@ -19,7 +19,7 @@ const FeaturesLayoutTwo: FC<IProps> = ({ theme, data, meta }) => {
           {meta.heading}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {data.cards.map((card: any, index: number) => {
+          {data.cards?.map((card: any, index: number) => {
             if (!card.heading && !card.subheading) {
               return false;
             }

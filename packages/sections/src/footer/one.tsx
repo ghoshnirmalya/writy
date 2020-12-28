@@ -16,7 +16,7 @@ const FooterLayoutOne: FC<IProps> = ({ theme, data }) => {
     >
       <div className="container mx-auto px-8 flex justify-between font-semibold">
         <div className="space-x-8">
-          {data.links.map((link: any, index: number) => {
+          {data.links?.map((link: any, index: number) => {
             return (
               <a key={index} href={link.link}>
                 {link.label}

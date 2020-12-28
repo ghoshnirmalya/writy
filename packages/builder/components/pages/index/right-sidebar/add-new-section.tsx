@@ -73,7 +73,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
         break;
     }
 
-    scrollPreviewSectionIntoView(positionOfSection);
+    scrollPreviewSectionIntoView(currentPageId, positionOfSection);
 
     onClose();
   };

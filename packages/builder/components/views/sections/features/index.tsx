@@ -9,17 +9,33 @@ interface IProps {
 
 const FeaturesSectionView: FC<IProps> = ({ positionOfSection }) => {
   const currentPageId = useSelector(getCurrentPageData());
-  const { theme, meta, data } = useSelector(
+  const sectionData = useSelector(
     getSectionData(currentPageId, positionOfSection)
   );
 
+  if (!sectionData) {
+    return null;
+  }
+
   const renderLayout = () => {
-    switch (meta.layout) {
+    switch (sectionData.meta.layout) {
       case "one":
-        return <FeaturesLayouts.One theme={theme} data={data} meta={meta} />;
+        return (
+          <FeaturesLayouts.One
+            theme={sectionData.theme}
+            data={sectionData.data}
+            meta={sectionData.meta}
+          />
+        );
 
       case "two":
-        return <FeaturesLayouts.Two theme={theme} data={data} meta={meta} />;
+        return (
+          <FeaturesLayouts.Two
+            theme={sectionData.theme}
+            data={sectionData.data}
+            meta={sectionData.meta}
+          />
+        );
 
       default:
         break;

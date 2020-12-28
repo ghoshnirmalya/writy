@@ -1,5 +1,10 @@
-const scrollPreviewSectionIntoView = (positionOfSection: number) => {
-  const iframeContent: any = document.getElementById("js-preview-iframe");
+const scrollPreviewSectionIntoView = (
+  currentPageId: number,
+  positionOfSection: number
+) => {
+  const iframeContent: any = document.getElementById(
+    `js-preview-iframe-page-${currentPageId}`
+  );
 
   const timeout = setTimeout(() => {
     iframeContent.contentWindow.document

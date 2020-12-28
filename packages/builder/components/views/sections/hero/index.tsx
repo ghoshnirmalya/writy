@@ -9,17 +9,33 @@ interface IProps {
 
 const HeroSectionView: FC<IProps> = ({ positionOfSection }) => {
   const currentPageId = useSelector(getCurrentPageData());
-  const { theme, meta, data } = useSelector(
+  const sectionData = useSelector(
     getSectionData(currentPageId, positionOfSection)
   );
 
+  if (!sectionData) {
+    return null;
+  }
+
   const renderLayout = () => {
-    switch (meta.layout) {
+    switch (sectionData.meta.layout) {
       case "one":
-        return <HeroLayouts.One theme={theme} data={data} meta={meta} />;
+        return (
+          <HeroLayouts.One
+            theme={sectionData.theme}
+            data={sectionData.data}
+            meta={sectionData.meta}
+          />
+        );
 
       case "two":
-        return <HeroLayouts.Two theme={theme} data={data} meta={meta} />;
+        return (
+          <HeroLayouts.Two
+            theme={sectionData.theme}
+            data={sectionData.data}
+            meta={sectionData.meta}
+          />
+        );
 
       default:
         break;

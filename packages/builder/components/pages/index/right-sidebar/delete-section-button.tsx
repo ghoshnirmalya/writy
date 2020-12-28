@@ -1,7 +1,8 @@
 import { Button } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { MdDelete } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentPageData } from "selectors/site";
 import { removeTemplateSection } from "slices/site";
 
 interface IProps {
@@ -10,10 +11,12 @@ interface IProps {
 
 const DeleteSectionButton: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
+  const currentPageId = useSelector(getCurrentPageData());
 
   const handleSectionDeletion = () => {
     dispatch(
       removeTemplateSection({
+        currentPageId,
         positionOfSection,
       })
     );

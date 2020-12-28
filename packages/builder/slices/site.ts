@@ -73,8 +73,7 @@ export const siteSlice = createSlice({
       ].data[action.payload.itemType].splice(action.payload.itemPosition, 1);
     },
     updatePreviewDeviceType(state, action) {
-      state.site.pages[action.payload.currentPageId].previewDeviceType =
-        action.payload;
+      state.previewDeviceType = action.payload;
     },
   },
   extraReducers(builder) {

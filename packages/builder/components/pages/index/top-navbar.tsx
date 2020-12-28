@@ -18,17 +18,12 @@ import {
   MdArrowDropDown,
   MdDesktopMac,
   MdFileDownload,
-  MdLayersClear,
   MdPhoneIphone,
   MdTabletMac,
 } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentPageData, getSiteData } from "selectors/site";
-import {
-  setCurrentPageId,
-  setTemplateData,
-  updatePreviewDeviceType,
-} from "slices/site";
+import { setCurrentPageId, updatePreviewDeviceType } from "slices/site";
 
 const TopNavbar: FC = () => {
   const dispatch = useDispatch();
@@ -38,10 +33,10 @@ const TopNavbar: FC = () => {
   const zip = new JSZip();
 
   const handleDownloadCode = () => {
-    const iframeContent: any = document.getElementById("js-preview-iframe");
-
     pages.map((page: any, index: number) => {
-      dispatch(setCurrentPageId(index));
+      const iframeContent: any = document.getElementById(
+        `js-preview-iframe-page-${index}`
+      );
 
       zip.file(
         `${page.meta.id}.html`,
@@ -62,11 +57,18 @@ const TopNavbar: FC = () => {
     return (
       <Menu isLazy>
         <MenuButton as={Button} rightIcon={<MdArrowDropDown />}>
-          index.html
+          {pages[currentPageId].meta.id}.html
         </MenuButton>
         <MenuList>
           {pages.map((page, index: number) => {
-            return <MenuItem key={index}>{page.meta.id}.html</MenuItem>;
+            return (
+              <MenuItem
+                key={index}
+                onClick={() => dispatch(setCurrentPageId(index))}
+              >
+                {page.meta.id}.html
+              </MenuItem>
+            );
           })}
         </MenuList>
       </Menu>
@@ -120,17 +122,6 @@ const TopNavbar: FC = () => {
         {pagesDropdownNode()}
         <HStack spacing={4} align="center">
           {deviceButtonsNode()}
-          <IconButton
-            icon={<MdLayersClear />}
-            colorScheme="red"
-            variant="outline"
-            onClick={() =>
-              dispatch(setTemplateData({ currentPageId, templateData: "" }))
-            }
-            aria-label="Reset template"
-          >
-            Reset template
-          </IconButton>
           <Button
             leftIcon={<MdFileDownload />}
             colorScheme="blue"

@@ -47,6 +47,7 @@ const FooterSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const handleDataDeletion = (itemPosition: number) => {
     dispatch(
       removeTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "links",
         itemPosition,

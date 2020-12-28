@@ -9,15 +9,23 @@ interface IProps {
 
 const FooterSectionView: FC<IProps> = ({ positionOfSection }) => {
   const currentPageId = useSelector(getCurrentPageData());
-  const { theme, meta, data } = useSelector(
+  const sectionData = useSelector(
     getSectionData(currentPageId, positionOfSection)
   );
 
-  const renderLayout = () => {
-    switch (meta.layout) {
-      case "one":
-        return <FooterLayouts.One theme={theme} data={data} />;
+  if (!sectionData) {
+    return null;
+  }
 
+  const renderLayout = () => {
+    switch (sectionData.meta.layout) {
+      case "one":
+        return (
+          <FooterLayouts.One
+            theme={sectionData.theme}
+            data={sectionData.data}
+          />
+        );
       default:
         break;
     }

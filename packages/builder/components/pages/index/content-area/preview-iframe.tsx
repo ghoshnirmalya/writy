@@ -6,12 +6,14 @@ import NavbarSectionView from "components/views/sections/navbar";
 import React, { FC, useState } from "react";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 import { useSelector } from "react-redux";
-import { getCurrentPageData, getTemplateData } from "selectors/site";
+import { getCurrentPageData, getSiteData } from "selectors/site";
 
 const PreviewIframe: FC = () => {
   const currentPageId = useSelector(getCurrentPageData());
-  const template = useSelector(getTemplateData(currentPageId));
   const [isInitializing, setInitialization] = useState(true);
+  const site = useSelector(getSiteData());
+
+  console.log(site);
 
   const mapSectionToSectionType = (section: any, positionOfSection: number) => {
     switch (section.meta.type) {
@@ -32,7 +34,7 @@ const PreviewIframe: FC = () => {
     }
   };
 
-  const viewNode = () => {
+  const viewNode = (template: any) => {
     // Wait for TailwindCSS to be downloaded in the background inside the iFrame
     setTimeout(() => {
       setInitialization(false);
@@ -51,37 +53,51 @@ const PreviewIframe: FC = () => {
     });
   };
 
-  return (
-    <Frame
-      id="js-preview-iframe"
-      style={{
-        width: "100%",
-        height: "100%",
-      }}
-      initialContent='
-        <!DOCTYPE html>
-          <html>
-            <head>
-              <link
-                href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-                rel="stylesheet"
-              />
-              <style>
-                a {
-                  pointer-events: none;
-                  transition: none;
-                }
-              </style>
-            </head>
-            <body>
-              <div></div>
-            </body>
-          </html>
-        '
-    >
-      <FrameContextConsumer>{() => viewNode()}</FrameContextConsumer>
-    </Frame>
-  );
+  const iframesNode = () => {
+    return site.pages.map((page: any, index: number) => {
+      return (
+        <Box
+          key={index}
+          display={index === currentPageId ? "block" : "none"}
+          h="100%"
+        >
+          <Frame
+            id={`js-preview-iframe-page-${index}`}
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+            initialContent='
+              <!DOCTYPE html>
+                <html>
+                  <head>
+                    <link
+                      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+                      rel="stylesheet"
+                    />
+                    <style>
+                      a {
+                        pointer-events: none;
+                        transition: none;
+                      }
+                    </style>
+                  </head>
+                  <body>
+                    <div></div>
+                  </body>
+                </html>
+              '
+          >
+            <FrameContextConsumer>
+              {() => viewNode(page.template)}
+            </FrameContextConsumer>
+          </Frame>
+        </Box>
+      );
+    });
+  };
+
+  return <>{iframesNode()}</>;
 };
 
 export default PreviewIframe;
