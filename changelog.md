@@ -1,3 +1,22 @@
+# [0.16.0](https://github.com/ghoshnirmalya/writy/compare/0.15.0...0.16.0) (2020-12-28)
+
+### Bug Fixes
+
+- fixes issues with iframe ([f88bdd9](https://github.com/ghoshnirmalya/writy/commit/f88bdd94b83970d9648852dd747b2a42712106ba))
+
+### Features
+
+- adds initial building blocks for generating a multi-page site ([26b6cd0](https://github.com/ghoshnirmalya/writy/commit/26b6cd03cca43ac7ddd41b9fa0c2711d4a5d5954))
+- adds minor UI updates ([869e3b4](https://github.com/ghoshnirmalya/writy/commit/869e3b4f4d0ab103d7b1a3e03a3b5a4b152530e6))
+- adds option to add new pages ([006e4a0](https://github.com/ghoshnirmalya/writy/commit/006e4a02fbc1cad1b9f5f223031e3e0506c46980))
+- adds option to delete a page ([0fca4e9](https://github.com/ghoshnirmalya/writy/commit/0fca4e9d018f5b865831911993fcf2607df44b55))
+- adds option to update existing pages ([92a50a2](https://github.com/ghoshnirmalya/writy/commit/92a50a232afa3315ca5b235e6e7cd9d489bb3169))
+- fixes Lighthouse issues ([a0a75b5](https://github.com/ghoshnirmalya/writy/commit/a0a75b52134b75a4ec67c24793a6c628688d6ca6))
+- hides all pages apart from the current active page in the iframes ([3463a97](https://github.com/ghoshnirmalya/writy/commit/3463a9707ab309b1256c4a7cba108bd12b2f7a7a))
+- loads all unnecessary buttons lazily ([0047729](https://github.com/ghoshnirmalya/writy/commit/00477292cd50e9dbbb40d4cb27c46777889c078e))
+- makes all buttons smaller ([ab4efd5](https://github.com/ghoshnirmalya/writy/commit/ab4efd51d7c48ee5cc7c1590b7f30e6c3c908da8))
+- updates microcopies ([2e471b9](https://github.com/ghoshnirmalya/writy/commit/2e471b98e696268237b464374e7f7739adc8b5d0))
+
 # [0.15.0](https://github.com/ghoshnirmalya/writy/compare/0.14.0...0.15.0) (2020-12-27)
 
 ### Features
