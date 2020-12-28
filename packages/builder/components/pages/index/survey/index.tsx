@@ -76,7 +76,7 @@ const Survey: FC = () => {
           <Image
             src={template.image}
             alt={template.label}
-            width={459}
+            width={440}
             height={440}
           />
           <Text p={4} borderTopWidth={1} fontWeight="bold">
