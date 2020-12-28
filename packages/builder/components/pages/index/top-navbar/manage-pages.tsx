@@ -8,8 +8,10 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  FormControl,
   FormLabel,
   HStack,
+  IconButton,
   Input,
   InputGroup,
   InputRightAddon,
@@ -18,10 +20,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React, { ChangeEvent, FC } from "react";
-import { MdSettings } from "react-icons/md";
+import { MdDelete, MdSettings } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { getSiteData } from "selectors/site";
-import { updatePageMeta } from "slices/site";
+import { removePage, updatePageMeta } from "slices/site";
 
 const ManagePages: FC = () => {
   const dispatch = useDispatch();
@@ -39,6 +41,10 @@ const ManagePages: FC = () => {
     );
   };
 
+  const handleDeletion = (pageId: number) => {
+    dispatch(removePage(pageId));
+  };
+
   const drawerNode = () => {
     return (
       <Drawer size="md" isOpen={isOpen} placement="right" onClose={onClose}>
@@ -51,19 +57,32 @@ const ManagePages: FC = () => {
                 {pages.map((page: any, index: number) => {
                   return (
                     <Box key={index}>
-                      <FormLabel htmlFor="url">Page {index + 1} URL</FormLabel>
-                      <InputGroup>
-                        <Input
-                          type="url"
-                          id="url"
-                          placeholder="URL"
-                          value={page.meta.id}
-                          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                            handleUpdation(e.currentTarget.value, index)
-                          }
+                      <HStack spacing={4} key={index} alignItems="flex-end">
+                        <FormControl>
+                          <FormLabel htmlFor="url">
+                            Page {index + 1} URL
+                          </FormLabel>
+                          <InputGroup>
+                            <Input
+                              type="url"
+                              id="url"
+                              placeholder="URL"
+                              value={page.meta.id}
+                              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                handleUpdation(e.currentTarget.value, index)
+                              }
+                            />
+                            <InputRightAddon>.html</InputRightAddon>
+                          </InputGroup>
+                        </FormControl>
+                        <IconButton
+                          aria-label="Delete"
+                          icon={<MdDelete />}
+                          colorScheme="red"
+                          variant="outline"
+                          onClick={() => handleDeletion(index)}
                         />
-                        <InputRightAddon>.html</InputRightAddon>
-                      </InputGroup>
+                      </HStack>
                     </Box>
                   );
                 })}

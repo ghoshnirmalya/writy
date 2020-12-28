@@ -25,6 +25,9 @@ export const siteSlice = createSlice({
     addPage(state, action) {
       state.site.pages.push(action.payload);
     },
+    removePage(state, action) {
+      state.site.pages.splice(action.payload, 1);
+    },
     setCurrentPageId(state, action) {
       state.currentPage = action.payload;
     },
@@ -92,6 +95,7 @@ export const siteSlice = createSlice({
 
 export const {
   addPage,
+  removePage,
   setCurrentPageId,
   updatePageMeta,
   setTemplateData,
