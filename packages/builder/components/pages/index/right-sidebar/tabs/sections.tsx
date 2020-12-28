@@ -20,7 +20,7 @@ import { getCurrentPageData, getTemplateData } from "selectors/site";
 
 const RightSidebarSectionsTab: FC = () => {
   const currentPageId = useSelector(getCurrentPageData());
-  const editorControlsBgColor = useColorModeValue("white", "black");
+  const editorControlsBgColor = useColorModeValue("brand.100", "brand.900");
   const template = useSelector(getTemplateData(currentPageId));
 
   const mapSectionTypeToEditor = (section: any, positionOfSection: number) => {
@@ -76,7 +76,7 @@ const RightSidebarSectionsTab: FC = () => {
               >
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <Text fontWeight="bold">
+                    <Text fontWeight="bold" fontSize="sm">
                       {mapSectionTypeToName(section.meta.type)}
                     </Text>
                   </Box>

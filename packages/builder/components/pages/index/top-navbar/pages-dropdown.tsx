@@ -6,6 +6,7 @@ import {
   MenuItem,
   MenuList,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { MdArrowDropDown } from "react-icons/md";
@@ -17,11 +18,12 @@ const PagesDropdown: FC = () => {
   const dispatch = useDispatch();
   const { pages } = useSelector(getSiteData());
   const currentPageId = useSelector(getCurrentPageData());
+  const bgColor = useColorModeValue("brand.100", "brand.900");
 
   return (
     <Box>
       <Menu isLazy>
-        <MenuButton as={Button} rightIcon={<MdArrowDropDown />}>
+        <MenuButton size="sm" as={Button} rightIcon={<MdArrowDropDown />}>
           <Text
             w={24}
             overflow="hidden"
@@ -32,7 +34,7 @@ const PagesDropdown: FC = () => {
             {pages[currentPageId].meta.id}.html
           </Text>
         </MenuButton>
-        <MenuList>
+        <MenuList bgColor={bgColor}>
           {pages.map((page, index: number) => {
             return (
               <MenuItem

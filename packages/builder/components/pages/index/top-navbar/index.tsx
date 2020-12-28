@@ -10,7 +10,7 @@ const LazyDownloadHTMLButton = dynamic(
   {
     ssr: false,
     loading: () => {
-      return <Button isLoading />;
+      return <Button size="sm" isLoading />;
     },
   }
 );
@@ -23,7 +23,7 @@ const LazyPagesDropdown = dynamic(
   {
     ssr: false,
     loading: () => {
-      return <Button isLoading />;
+      return <Button size="sm" isLoading />;
     },
   }
 );
@@ -36,7 +36,7 @@ const LazyDeviceButtons = dynamic(
   {
     ssr: false,
     loading: () => {
-      return <Button isLoading />;
+      return <Button size="sm" isLoading />;
     },
   }
 );
@@ -49,7 +49,7 @@ const LazyAddPage = dynamic(
   {
     ssr: false,
     loading: () => {
-      return <Button isLoading />;
+      return <Button size="sm" isLoading />;
     },
   }
 );
@@ -62,17 +62,17 @@ const LazyManagePages = dynamic(
   {
     ssr: false,
     loading: () => {
-      return <Button isLoading />;
+      return <Button size="sm" isLoading />;
     },
   }
 );
 
 const TopNavbar: FC = () => {
-  const bgColor = useColorModeValue("white", "black");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
 
   return (
     <Flex
-      h="80px"
+      h="50px"
       borderBottomWidth={1}
       px={4}
       alignItems="center"

@@ -30,7 +30,22 @@ const App = ({ Component, pageProps }: AppProps) => {
     useSystemColorMode: false,
     initialColorMode: "dark",
   };
-  const customTheme = extendTheme({ config });
+  const customTheme = extendTheme({
+    config,
+    colors: {
+      brand: {
+        100: "#ffffff",
+        200: "#bfbfbf",
+        300: "#a6a6a6",
+        400: "#8c8c8c",
+        500: "#737373",
+        600: "#595959",
+        700: "#404040",
+        800: "#262626",
+        900: "#151515",
+      },
+    },
+  });
 
   return (
     <ChakraProvider theme={customTheme}>

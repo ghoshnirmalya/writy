@@ -11,11 +11,11 @@ import { MdBugReport, MdWbIncandescent, MdWbSunny } from "react-icons/md";
 
 const TopNavbar: FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const bgColor = useColorModeValue("white", "black");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
 
   return (
     <Flex
-      h="80px"
+      h="50px"
       borderBottomWidth={1}
       px={4}
       alignItems="center"
@@ -27,6 +27,7 @@ const TopNavbar: FC = () => {
         </HStack>
         <HStack spacing={4} align="center">
           <IconButton
+            size="sm"
             aria-label="Report an issue"
             rel="noopener"
             icon={<MdBugReport size={24} />}
@@ -35,6 +36,7 @@ const TopNavbar: FC = () => {
             target="_blank"
           />
           <IconButton
+            size="sm"
             aria-label="Report bug"
             icon={
               colorMode === "light" ? (

@@ -34,6 +34,7 @@ const DownloadHTMLButton: FC = () => {
 
   return (
     <Button
+      size="sm"
       leftIcon={<MdFileDownload />}
       colorScheme="blue"
       onClick={handleDownloadCode}

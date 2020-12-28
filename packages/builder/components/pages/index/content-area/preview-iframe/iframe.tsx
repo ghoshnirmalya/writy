@@ -1,4 +1,4 @@
-import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import FeaturesSectionView from "components/views/sections/features";
 import FooterSectionView from "components/views/sections/footer";
 import HeroSectionView from "components/views/sections/hero";
@@ -13,7 +13,6 @@ interface IProps {
 
 const Iframe: FC<IProps> = ({ pageId, page }) => {
   const [isInitializing, setInitialization] = useState(true);
-  const color = useColorModeValue("black", "white");
 
   const mapSectionToSectionType = (section: any, positionOfSection: number) => {
     switch (section.meta.type) {
@@ -64,14 +63,13 @@ const Iframe: FC<IProps> = ({ pageId, page }) => {
       return (
         <div
           style={{
-            height: "calc(100vh - 80px)",
+            height: "calc(100vh - 50px)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             fontSize: "1rem",
             fontWeight: "bold",
             fontFamily: "system-ui, sans-serif",
-            color,
           }}
         >
           <p>Loading...</p>

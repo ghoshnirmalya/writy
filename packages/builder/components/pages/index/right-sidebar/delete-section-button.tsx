@@ -24,6 +24,7 @@ const DeleteSectionButton: FC<IProps> = ({ positionOfSection }) => {
 
   return (
     <Button
+      size="sm"
       leftIcon={<MdDelete />}
       w="100%"
       onClick={handleSectionDeletion}

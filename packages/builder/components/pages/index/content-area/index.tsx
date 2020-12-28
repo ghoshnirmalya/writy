@@ -6,7 +6,7 @@ import { getPreviewDeviceTypeData } from "selectors/site";
 
 const ContentArea: FC = () => {
   const previewDeviceTypeData = useSelector(getPreviewDeviceTypeData());
-  const bgColor = useColorModeValue("gray.200", "gray.800");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
 
   const determinePreviewWidth = () => {
     switch (previewDeviceTypeData) {
@@ -26,7 +26,7 @@ const ContentArea: FC = () => {
 
   return (
     <Box
-      h="calc(100vh - 80px - 80px)"
+      h="calc(100vh - 50px - 50px)"
       w="calc(100vw - 500px)"
       bg={bgColor}
       p={14}
@@ -34,7 +34,7 @@ const ContentArea: FC = () => {
       <Box
         shadow="xl"
         bg={bgColor}
-        h="calc(100vh - 80px - 80px - 120px)"
+        h="calc(100vh - 50px - 50px - 120px)"
         overflowY="auto"
         maxW={determinePreviewWidth()}
         mx="auto"

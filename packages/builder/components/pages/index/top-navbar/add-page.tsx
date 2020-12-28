@@ -34,7 +34,7 @@ const AddPage: FC = () => {
   const urlField = useRef();
   const [url, setURL] = useState("");
   const { pages } = useSelector(getSiteData());
-  const bgColor = useColorModeValue("white", "black");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
 
   const handlePageAddition = () => {
     dispatch(
@@ -82,7 +82,7 @@ const AddPage: FC = () => {
                 </Alert>
                 <FormControl>
                   <FormLabel htmlFor="url">URL</FormLabel>
-                  <InputGroup>
+                  <InputGroup size="sm">
                     <Input
                       ref={urlField}
                       type="url"
@@ -104,10 +104,14 @@ const AddPage: FC = () => {
             </DrawerBody>
             <DrawerFooter borderTopWidth="1px">
               <HStack spacing={4}>
-                <Button variant="outline" onClick={onClose}>
+                <Button size="sm" variant="outline" onClick={onClose}>
                   Cancel
                 </Button>
-                <Button colorScheme="blue" onClick={handlePageAddition}>
+                <Button
+                  size="sm"
+                  colorScheme="blue"
+                  onClick={handlePageAddition}
+                >
                   Add
                 </Button>
               </HStack>
@@ -120,7 +124,12 @@ const AddPage: FC = () => {
 
   return (
     <>
-      <Button leftIcon={<MdAddBox />} colorScheme="blue" onClick={onOpen}>
+      <Button
+        size="sm"
+        leftIcon={<MdAddBox />}
+        colorScheme="blue"
+        onClick={onOpen}
+      >
         Add page
       </Button>
       {drawerNode()}

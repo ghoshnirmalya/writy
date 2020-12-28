@@ -23,7 +23,7 @@ interface IProps {
 }
 
 const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
-  const bgColor = useColorModeValue("white", "black");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
   const dispatch = useDispatch();
   const { onOpen, onClose, isOpen } = useDisclosure();
   const currentPageId = useSelector(getCurrentPageData());
@@ -90,6 +90,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
         {sections.map((section: any, index: number) => {
           return (
             <Button
+              size="sm"
               key={index}
               onClick={() => handleNewSectionAddition(section.key)}
             >
@@ -106,9 +107,9 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
       <Popover isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
         <PopoverTrigger>
           <Button
+            size="sm"
             leftIcon={<MdAdd />}
             w="100%"
-            size="sm"
             disabled={isOpen}
             colorScheme="blue"
           >

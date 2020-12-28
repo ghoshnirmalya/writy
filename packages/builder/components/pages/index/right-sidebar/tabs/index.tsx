@@ -54,7 +54,7 @@ const LazyRightSidebarTemplatesTab = dynamic(
 );
 
 const RightSidebarTabs: FC = () => {
-  const editorControlsBgColor = useColorModeValue("white", "black");
+  const editorControlsBgColor = useColorModeValue("brand.100", "brand.900");
 
   return (
     <Tabs isLazy>

@@ -75,6 +75,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>Label</FormLabel>
               <Input
+                size="sm"
                 value={link.label}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "label", e.currentTarget.value)
@@ -84,6 +85,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>URL</FormLabel>
               <Input
+                size="sm"
                 value={link.link}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "link", e.currentTarget.value)
@@ -91,6 +93,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               />
             </FormControl>
             <IconButton
+              size="sm"
               aria-label="Delete"
               icon={<MdDelete />}
               colorScheme="red"
@@ -101,6 +104,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
         );
       })}
       <Button
+        size="sm"
         leftIcon={<MdAdd />}
         colorScheme="blue"
         onClick={handleDataAddition}

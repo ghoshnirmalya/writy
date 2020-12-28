@@ -9,7 +9,7 @@ import { setTemplateData } from "slices/site";
 
 const RightSidebarTemplatesTab: FC = () => {
   const dispatch = useDispatch();
-  const editorControlsBgColor = useColorModeValue("white", "black");
+  const editorControlsBgColor = useColorModeValue("brand.100", "brand.900");
   const currentPageId = useSelector(getCurrentPageData());
 
   const mapTemplateIdToData = (templateId: string) => {
@@ -64,7 +64,7 @@ const RightSidebarTemplatesTab: FC = () => {
             width={466.76}
             height={450}
           />
-          <Text p={4} borderTopWidth={1} fontWeight="bold">
+          <Text p={1} borderTopWidth={1} fontWeight="bold">
             {template.label}
           </Text>
         </Box>

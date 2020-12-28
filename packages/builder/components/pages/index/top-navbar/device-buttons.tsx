@@ -29,6 +29,7 @@ const DeviceButtons: FC = () => {
       {devices.map((device, index) => {
         return (
           <IconButton
+            size="sm"
             key={index}
             aria-label={device.label}
             icon={device.icon}

@@ -15,11 +15,11 @@ const LazyContentArea = dynamic(
   {
     ssr: false,
     loading: () => {
-      const bgColor = useColorModeValue("gray.200", "gray.800");
+      const bgColor = useColorModeValue("brand.100", "brand.900");
 
       return (
         <Flex
-          h="calc(100vh - 80px - 80px)"
+          h="calc(100vh - 50px - 50px)"
           w="calc(100vw - 500px)"
           bg={bgColor}
           alignItems="center"

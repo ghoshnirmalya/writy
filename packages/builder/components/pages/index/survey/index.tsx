@@ -16,7 +16,7 @@ import { addPage, setTemplateData } from "slices/site";
 
 const Survey: FC = () => {
   const dispatch = useDispatch();
-  const bgColor = useColorModeValue("gray.100", "black");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
 
   const mapTemplateIdToData = (templateId: string) => {
     switch (templateId) {

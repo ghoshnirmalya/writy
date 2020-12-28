@@ -86,6 +86,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
       <FormControl>
         <FormLabel>Heading</FormLabel>
         <Input
+          size="sm"
           value={meta.heading}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleMetaChange("heading", e.currentTarget.value)
@@ -98,6 +99,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>Card {index + 1} heading</FormLabel>
               <Input
+                size="sm"
                 value={card.heading}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "heading", e.currentTarget.value)
@@ -107,6 +109,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>Card {index + 1} sub-heading</FormLabel>
               <Input
+                size="sm"
                 value={card.subHeading}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "subHeading", e.currentTarget.value)
@@ -114,6 +117,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               />
             </FormControl>
             <IconButton
+              size="sm"
               aria-label="Delete"
               icon={<MdDelete />}
               colorScheme="red"
@@ -124,6 +128,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
         );
       })}
       <Button
+        size="sm"
         leftIcon={<MdAdd />}
         colorScheme="blue"
         onClick={handleDataAddition}

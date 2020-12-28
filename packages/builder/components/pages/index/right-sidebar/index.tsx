@@ -3,12 +3,12 @@ import Tabs from "components/pages/index/right-sidebar/tabs";
 import React, { FC } from "react";
 
 const RightSidebar: FC = () => {
-  const bgColor = useColorModeValue("gray.100", "gray.900");
-  const editorControlsBgColor = useColorModeValue("white", "black");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
+  const editorControlsBgColor = useColorModeValue("brand.100", "brand.900");
 
   return (
     <Box
-      h="calc(100vh - 80px - 80px)"
+      h="calc(100vh - 50px - 50px)"
       w="500px"
       bg={bgColor}
       borderLeftWidth={1}

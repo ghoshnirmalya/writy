@@ -31,7 +31,7 @@ const ManagePages: FC = () => {
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { pages } = useSelector(getSiteData());
-  const bgColor = useColorModeValue("white", "black");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
 
   const handleUpdation = (value: string, pageId: number) => {
     dispatch(
@@ -69,7 +69,7 @@ const ManagePages: FC = () => {
                           <FormLabel htmlFor="url">
                             Page {index + 1} URL
                           </FormLabel>
-                          <InputGroup>
+                          <InputGroup size="sm">
                             <Input
                               type="url"
                               id="url"
@@ -83,6 +83,7 @@ const ManagePages: FC = () => {
                           </InputGroup>
                         </FormControl>
                         <IconButton
+                          size="sm"
                           aria-label="Delete"
                           icon={<MdDelete />}
                           colorScheme="red"
@@ -97,7 +98,7 @@ const ManagePages: FC = () => {
             </DrawerBody>
             <DrawerFooter borderTopWidth="1px">
               <HStack spacing={4}>
-                <Button variant="outline" onClick={onClose}>
+                <Button size="sm" variant="outline" onClick={onClose}>
                   Close
                 </Button>
               </HStack>
@@ -110,7 +111,7 @@ const ManagePages: FC = () => {
 
   return (
     <>
-      <Button leftIcon={<MdSettings />} onClick={onOpen}>
+      <Button size="sm" leftIcon={<MdSettings />} onClick={onOpen}>
         Manage pages
       </Button>
       {drawerNode()}
