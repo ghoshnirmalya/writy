@@ -71,6 +71,7 @@ const ManagePages: FC = () => {
                           </FormLabel>
                           <InputGroup size="sm">
                             <Input
+                              rounded="lg"
                               type="url"
                               id="url"
                               placeholder="URL"
@@ -79,7 +80,9 @@ const ManagePages: FC = () => {
                                 handleUpdation(e.currentTarget.value, index)
                               }
                             />
-                            <InputRightAddon>.html</InputRightAddon>
+                            <InputRightAddon rounded="lg">
+                              .html
+                            </InputRightAddon>
                           </InputGroup>
                         </FormControl>
                         <IconButton

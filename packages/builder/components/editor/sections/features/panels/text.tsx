@@ -87,6 +87,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
         <FormLabel>Heading</FormLabel>
         <Input
           size="sm"
+          rounded="lg"
           value={meta.heading}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleMetaChange("heading", e.currentTarget.value)
@@ -100,6 +101,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               <FormLabel>Card {index + 1} heading</FormLabel>
               <Input
                 size="sm"
+                rounded="lg"
                 value={card.heading}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "heading", e.currentTarget.value)
@@ -110,6 +112,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               <FormLabel>Card {index + 1} sub-heading</FormLabel>
               <Input
                 size="sm"
+                rounded="lg"
                 value={card.subHeading}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "subHeading", e.currentTarget.value)

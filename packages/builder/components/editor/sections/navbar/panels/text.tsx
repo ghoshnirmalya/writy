@@ -76,6 +76,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               <FormLabel>Label</FormLabel>
               <Input
                 size="sm"
+                rounded="lg"
                 value={link.label}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "label", e.currentTarget.value)
@@ -86,6 +87,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               <FormLabel>URL</FormLabel>
               <Input
                 size="sm"
+                rounded="lg"
                 value={link.link}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "link", e.currentTarget.value)

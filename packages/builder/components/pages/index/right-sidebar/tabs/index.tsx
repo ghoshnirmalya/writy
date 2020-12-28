@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
-import { MdChromeReaderMode, MdDns } from "react-icons/md";
+import { MdChromeReaderMode, MdCollections, MdDns } from "react-icons/md";
 
 const LazyRightSidebarSectionsTab = dynamic(
   () =>
@@ -53,6 +53,25 @@ const LazyRightSidebarTemplatesTab = dynamic(
   }
 );
 
+const LazyRightSidebarPagesTab = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: 'lazyRightSidebarPagesTab' */ "components/pages/index/right-sidebar/tabs/pages"
+    ),
+  {
+    ssr: false,
+    loading: () => {
+      return (
+        <Flex h={100} alignItems="center" justifyContent="center">
+          <Text fontSize="20" fontWeight="bold">
+            Loading...
+          </Text>
+        </Flex>
+      );
+    },
+  }
+);
+
 const RightSidebarTabs: FC = () => {
   const editorControlsBgColor = useColorModeValue("brand.100", "brand.900");
 
@@ -71,6 +90,12 @@ const RightSidebarTabs: FC = () => {
             <Text>Templates</Text>
           </HStack>
         </Tab>
+        <Tab>
+          <HStack spacing={1}>
+            <Icon as={MdCollections} />
+            <Text>Pages</Text>
+          </HStack>
+        </Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
@@ -81,6 +106,11 @@ const RightSidebarTabs: FC = () => {
         <TabPanel>
           <Box>
             <LazyRightSidebarTemplatesTab />
+          </Box>
+        </TabPanel>
+        <TabPanel>
+          <Box>
+            <LazyRightSidebarPagesTab />
           </Box>
         </TabPanel>
       </TabPanels>

@@ -1,7 +1,6 @@
-import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import RightSidebar from "components/pages/index/right-sidebar";
 import Survey from "components/pages/index/survey";
-import TopNavbar from "components/pages/index/top-navbar";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
@@ -19,7 +18,7 @@ const LazyContentArea = dynamic(
 
       return (
         <Flex
-          h="calc(100vh - 50px - 50px)"
+          h="calc(100vh - 50px)"
           w="calc(100vw - 500px)"
           bg={bgColor}
           alignItems="center"
@@ -43,9 +42,6 @@ const IndexPageComponent: FC = () => {
 
   return (
     <Flex overflow="hidden" flexDir="column">
-      <Box>
-        <TopNavbar />
-      </Box>
       <Flex>
         <LazyContentArea />
         <RightSidebar />

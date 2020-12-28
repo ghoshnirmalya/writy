@@ -84,6 +84,7 @@ const AddPage: FC = () => {
                   <FormLabel htmlFor="url">URL</FormLabel>
                   <InputGroup size="sm">
                     <Input
+                      rounded="lg"
                       ref={urlField}
                       type="url"
                       id="url"
@@ -93,7 +94,7 @@ const AddPage: FC = () => {
                         setURL(e.currentTarget.value)
                       }
                     />
-                    <InputRightAddon>.html</InputRightAddon>
+                    <InputRightAddon rounded="lg">.html</InputRightAddon>
                   </InputGroup>
                   <FormHelperText>
                     Enter the url of HTML page in lowercase and hyphenated (eg:

@@ -56,6 +56,7 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
         <FormLabel>Heading</FormLabel>
         <Input
           size="sm"
+          rounded="lg"
           value={meta.heading}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleMetaChange("heading", e.currentTarget.value)
@@ -66,6 +67,7 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
         <FormLabel>Sub heading</FormLabel>
         <Input
           size="sm"
+          rounded="lg"
           value={meta.subHeading}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleMetaChange("subHeading", e.currentTarget.value)
@@ -79,6 +81,7 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               <FormLabel>Button {index + 1} label</FormLabel>
               <Input
                 size="sm"
+                rounded="lg"
                 value={button.label}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "label", e.currentTarget.value)
@@ -89,6 +92,7 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               <FormLabel>Button {index + 1} URL</FormLabel>
               <Input
                 size="sm"
+                rounded="lg"
                 value={button.link}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "link", e.currentTarget.value)

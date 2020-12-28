@@ -107,7 +107,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
       <Popover isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
         <PopoverTrigger>
           <Button
-            size="sm"
+            size="xs"
             leftIcon={<MdAdd />}
             w="100%"
             disabled={isOpen}
