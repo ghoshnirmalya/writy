@@ -1,31 +1,22 @@
 import { FooterLayouts } from "@writy/sections";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { getCurrentPageData, getSectionData } from "selectors/site";
+import { getSectionData } from "selectors/site";
 
 interface IProps {
   positionOfSection: number;
+  pageId: number;
 }
 
-const FooterSectionView: FC<IProps> = ({ positionOfSection }) => {
-  const currentPageId = useSelector(getCurrentPageData());
-  const sectionData = useSelector(
-    getSectionData(currentPageId, positionOfSection)
+const FooterSectionView: FC<IProps> = ({ positionOfSection, pageId }) => {
+  const { meta, data, theme } = useSelector(
+    getSectionData(pageId, positionOfSection)
   );
 
-  if (!sectionData) {
-    return null;
-  }
-
   const renderLayout = () => {
-    switch (sectionData.meta.layout) {
+    switch (meta.layout) {
       case "one":
-        return (
-          <FooterLayouts.One
-            theme={sectionData.theme}
-            data={sectionData.data}
-          />
-        );
+        return <FooterLayouts.One theme={theme} data={data} />;
       default:
         break;
     }

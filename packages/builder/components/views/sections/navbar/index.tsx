@@ -1,39 +1,25 @@
 import { NavbarLayouts } from "@writy/sections";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { getCurrentPageData, getSectionData } from "selectors/site";
+import { getSectionData } from "selectors/site";
 
 interface IProps {
   positionOfSection: number;
+  pageId: number;
 }
 
-const NavbarSectionView: FC<IProps> = ({ positionOfSection }) => {
-  const currentPageId = useSelector(getCurrentPageData());
-  const sectionData = useSelector(
-    getSectionData(currentPageId, positionOfSection)
+const NavbarSectionView: FC<IProps> = ({ positionOfSection, pageId }) => {
+  const { meta, data, theme } = useSelector(
+    getSectionData(pageId, positionOfSection)
   );
 
-  if (!sectionData) {
-    return null;
-  }
-
   const renderLayout = () => {
-    switch (sectionData.meta.layout) {
+    switch (meta.layout) {
       case "one":
-        return (
-          <NavbarLayouts.One
-            theme={sectionData.theme}
-            data={sectionData.data}
-          />
-        );
+        return <NavbarLayouts.One theme={theme} data={data} />;
 
       case "two":
-        return (
-          <NavbarLayouts.Two
-            theme={sectionData.theme}
-            data={sectionData.data}
-          />
-        );
+        return <NavbarLayouts.Two theme={theme} data={data} />;
 
       default:
         break;
