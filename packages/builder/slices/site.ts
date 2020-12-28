@@ -28,6 +28,10 @@ export const siteSlice = createSlice({
     setCurrentPageId(state, action) {
       state.currentPage = action.payload;
     },
+    updatePageMeta(state, action) {
+      state.site.pages[action.payload.pageId].meta[action.payload.key] =
+        action.payload.value;
+    },
     setTemplateData(state, action) {
       state.site.pages[action.payload.currentPageId].template =
         action.payload.templateData;
@@ -89,6 +93,7 @@ export const siteSlice = createSlice({
 export const {
   addPage,
   setCurrentPageId,
+  updatePageMeta,
   setTemplateData,
   addTemplateSection,
   removeTemplateSection,

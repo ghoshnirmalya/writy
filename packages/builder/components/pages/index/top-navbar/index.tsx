@@ -54,6 +54,19 @@ const LazyAddPage = dynamic(
   }
 );
 
+const LazyManagePages = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: 'lazyManagePages' */ "components/pages/index/top-navbar/manage-pages"
+    ),
+  {
+    ssr: false,
+    loading: () => {
+      return <Button isLoading />;
+    },
+  }
+);
+
 const TopNavbar: FC = () => {
   const bgColor = useColorModeValue("white", "black");
 
@@ -68,8 +81,8 @@ const TopNavbar: FC = () => {
       <Flex justifyContent="space-between" w="100%">
         <HStack spacing={4} align="center">
           <LazyPagesDropdown />
-
           <LazyAddPage />
+          <LazyManagePages />
         </HStack>
         <HStack spacing={4} align="center">
           <LazyDeviceButtons />

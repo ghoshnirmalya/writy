@@ -14,6 +14,7 @@ import {
   InputGroup,
   InputRightAddon,
   Stack,
+  useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
 import unoTemplateData from "data/templates/uno";
@@ -23,12 +24,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSiteData } from "selectors/site";
 import { addPage, setCurrentPageId, setTemplateData } from "slices/site";
 
-const AddPageButton: FC = () => {
+const AddPage: FC = () => {
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const urlField = useRef();
   const [url, setURL] = useState("");
   const { pages } = useSelector(getSiteData());
+  const bgColor = useColorModeValue("white", "black");
 
   const handlePageAddition = () => {
     dispatch(
@@ -63,10 +65,10 @@ const AddPageButton: FC = () => {
         onClose={onClose}
       >
         <DrawerOverlay>
-          <DrawerContent>
+          <DrawerContent bg={bgColor}>
             <DrawerCloseButton />
             <DrawerHeader borderBottomWidth="1px">
-              Create a new account
+              Create a new page
             </DrawerHeader>
             <DrawerBody>
               <Stack spacing={8}>
@@ -114,4 +116,4 @@ const AddPageButton: FC = () => {
   );
 };
 
-export default AddPageButton;
+export default AddPage;

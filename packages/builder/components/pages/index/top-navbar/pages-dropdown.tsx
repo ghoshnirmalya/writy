@@ -5,6 +5,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Text,
 } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { MdArrowDropDown } from "react-icons/md";
@@ -21,7 +22,15 @@ const PagesDropdown: FC = () => {
     <Box>
       <Menu isLazy>
         <MenuButton as={Button} rightIcon={<MdArrowDropDown />}>
-          {pages[currentPageId].meta.id}.html
+          <Text
+            w={24}
+            overflow="hidden"
+            textOverflow="ellipsis"
+            whiteSpace="nowrap"
+            textAlign="left"
+          >
+            {pages[currentPageId].meta.id}.html
+          </Text>
         </MenuButton>
         <MenuList>
           {pages.map((page, index: number) => {
