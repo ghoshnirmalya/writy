@@ -1,21 +1,22 @@
 import {
-  Text,
   Box,
+  Container,
   Grid,
-  VStack,
   Heading,
+  Text,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
-import unoTemplateData from "data/templates/uno";
 import rainbowTemplateData from "data/templates/rainbow";
+import unoTemplateData from "data/templates/uno";
+import Image from "next/image";
 import React, { FC } from "react";
 import { useDispatch } from "react-redux";
-import { setTemplateData } from "slices/template";
-import Image from "next/image";
+import { addPage, setTemplateData } from "slices/site";
 
 const Survey: FC = () => {
   const dispatch = useDispatch();
-  const bgColor = useColorModeValue("gray.100", "black");
+  const bgColor = useColorModeValue("brand.100", "brand.900");
 
   const mapTemplateIdToData = (templateId: string) => {
     switch (templateId) {
@@ -33,7 +34,17 @@ const Survey: FC = () => {
   const handleTemplateSelection = (templateId: string) => {
     const templateData = mapTemplateIdToData(templateId);
 
-    dispatch(setTemplateData(templateData));
+    ["index", "about", "contact"].map((page: string, index: number) => {
+      dispatch(
+        addPage({
+          meta: {
+            id: page,
+          },
+        })
+      );
+
+      dispatch(setTemplateData({ currentPageId: index, templateData }));
+    });
   };
 
   const templateNode = () => {
@@ -66,7 +77,7 @@ const Survey: FC = () => {
           <Image
             src={template.image}
             alt={template.label}
-            width={459}
+            width={440}
             height={440}
           />
           <Text p={4} borderTopWidth={1} fontWeight="bold">
@@ -78,13 +89,15 @@ const Survey: FC = () => {
   };
 
   return (
-    <VStack spacing={4}>
-      <Heading fontSize="3xl">Templates</Heading>
-      <Text>Click to select your preferred template and continue</Text>
-      <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" p={8}>
-        {templateNode()}
-      </Grid>
-    </VStack>
+    <Container maxW="4xl">
+      <VStack spacing={4}>
+        <Heading fontSize="3xl">Templates</Heading>
+        <Text>Click to select your preferred template and continue</Text>
+        <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" p={8}>
+          {templateNode()}
+        </Grid>
+      </VStack>
+    </Container>
   );
 };
 

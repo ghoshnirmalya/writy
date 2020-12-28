@@ -33,8 +33,11 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head>{this.googleAnalyticsScriptNode()}</Head>
+      <Html lang="en">
+        <Head>
+          {this.googleAnalyticsScriptNode()}
+          <meta name="Description" content="Website builder" />
+        </Head>
         <Box as="body" overflow="hidden">
           <Main />
           <NextScript />

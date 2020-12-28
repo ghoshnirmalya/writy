@@ -10,12 +10,12 @@ import {
 import React, { ChangeEvent, FC } from "react";
 import { MdAdd, MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { getSectionData } from "selectors/template";
+import { getCurrentPageData, getSectionData } from "selectors/site";
 import {
   addTemplateSectionData,
   removeTemplateSectionData,
   updateTemplateSectionData,
-} from "slices/template";
+} from "slices/site";
 
 interface IProps {
   positionOfSection: number;
@@ -23,7 +23,10 @@ interface IProps {
 
 const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
-  const { data } = useSelector(getSectionData(positionOfSection));
+  const currentPageId = useSelector(getCurrentPageData());
+  const { data } = useSelector(
+    getSectionData(currentPageId, positionOfSection)
+  );
 
   const handleDataChange = (
     itemPosition: number,
@@ -44,6 +47,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const handleDataDeletion = (itemPosition: number) => {
     dispatch(
       removeTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "links",
         itemPosition,
@@ -71,6 +75,8 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>Label</FormLabel>
               <Input
+                size="sm"
+                rounded="lg"
                 value={link.label}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "label", e.currentTarget.value)
@@ -80,6 +86,8 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>URL</FormLabel>
               <Input
+                size="sm"
+                rounded="lg"
                 value={link.link}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "link", e.currentTarget.value)
@@ -87,6 +95,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               />
             </FormControl>
             <IconButton
+              size="sm"
               aria-label="Delete"
               icon={<MdDelete />}
               colorScheme="red"
@@ -97,6 +106,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
         );
       })}
       <Button
+        size="sm"
         leftIcon={<MdAdd />}
         colorScheme="blue"
         onClick={handleDataAddition}

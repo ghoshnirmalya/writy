@@ -26,7 +26,7 @@ interface IProps {
 
 const FeaturesSectionEditor: FC<IProps> = ({ positionOfSection }) => {
   return (
-    <Tabs>
+    <Tabs isLazy>
       <TabList>
         <Tab>
           <HStack spacing={1}>

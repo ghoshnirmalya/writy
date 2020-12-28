@@ -10,13 +10,13 @@ import {
 import React, { ChangeEvent, FC } from "react";
 import { MdAdd, MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { getSectionData } from "selectors/template";
+import { getCurrentPageData, getSectionData } from "selectors/site";
 import {
   addTemplateSectionData,
   removeTemplateSectionData,
   updateTemplateSectionData,
   updateTemplateSectionMeta,
-} from "slices/template";
+} from "slices/site";
 
 interface IProps {
   positionOfSection: number;
@@ -24,7 +24,10 @@ interface IProps {
 
 const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
-  const { data, meta } = useSelector(getSectionData(positionOfSection));
+  const currentPageId = useSelector(getCurrentPageData());
+  const { data, meta } = useSelector(
+    getSectionData(currentPageId, positionOfSection)
+  );
 
   const handleMetaChange = (itemType: string, value: string) => {
     dispatch(
@@ -70,6 +73,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const handleDataDeletion = (itemPosition: number) => {
     dispatch(
       removeTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "cards",
         itemPosition,
@@ -82,6 +86,8 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
       <FormControl>
         <FormLabel>Heading</FormLabel>
         <Input
+          size="sm"
+          rounded="lg"
           value={meta.heading}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleMetaChange("heading", e.currentTarget.value)
@@ -94,6 +100,8 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>Card {index + 1} heading</FormLabel>
               <Input
+                size="sm"
+                rounded="lg"
                 value={card.heading}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "heading", e.currentTarget.value)
@@ -103,6 +111,8 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>Card {index + 1} sub-heading</FormLabel>
               <Input
+                size="sm"
+                rounded="lg"
                 value={card.subHeading}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "subHeading", e.currentTarget.value)
@@ -110,6 +120,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
               />
             </FormControl>
             <IconButton
+              size="sm"
               aria-label="Delete"
               icon={<MdDelete />}
               colorScheme="red"
@@ -120,6 +131,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
         );
       })}
       <Button
+        size="sm"
         leftIcon={<MdAdd />}
         colorScheme="blue"
         onClick={handleDataAddition}

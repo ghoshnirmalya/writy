@@ -19,7 +19,7 @@ const NavbarLayoutOne: FC<IProps> = ({ theme, data }) => {
           <a href="/">Writy</a>
         </div>
         <div className="space-x-8">
-          {data.links.map((link: any, index: number) => {
+          {data.links?.map((link: any, index: number) => {
             return (
               <a key={index} href={link.link}>
                 {link.label}

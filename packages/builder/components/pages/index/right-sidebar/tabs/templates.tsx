@@ -1,14 +1,16 @@
-import { Box, Text, VStack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import rainbowTemplateData from "data/templates/rainbow";
 import unoTemplateData from "data/templates/uno";
 import Image from "next/image";
 import React, { FC } from "react";
-import { useDispatch } from "react-redux";
-import { setTemplateData } from "slices/template";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentPageData } from "selectors/site";
+import { setTemplateData } from "slices/site";
 
 const RightSidebarTemplatesTab: FC = () => {
   const dispatch = useDispatch();
-  const editorControlsBgColor = useColorModeValue("white", "black");
+  const editorControlsBgColor = useColorModeValue("brand.100", "brand.900");
+  const currentPageId = useSelector(getCurrentPageData());
 
   const mapTemplateIdToData = (templateId: string) => {
     switch (templateId) {
@@ -26,7 +28,7 @@ const RightSidebarTemplatesTab: FC = () => {
   const handleTemplateSelection = (templateId: string) => {
     const templateData = mapTemplateIdToData(templateId);
 
-    dispatch(setTemplateData(templateData));
+    dispatch(setTemplateData({ currentPageId, templateData }));
   };
 
   const templateNode = () => {
@@ -62,7 +64,7 @@ const RightSidebarTemplatesTab: FC = () => {
             width={466.76}
             height={450}
           />
-          <Text p={4} borderTopWidth={1} fontWeight="bold">
+          <Text p={1} borderTopWidth={1} fontWeight="bold">
             {template.label}
           </Text>
         </Box>

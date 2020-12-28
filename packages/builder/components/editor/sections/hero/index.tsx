@@ -26,7 +26,7 @@ interface IProps {
 
 const HeroSectionEditor: FC<IProps> = ({ positionOfSection }) => {
   return (
-    <Tabs>
+    <Tabs isLazy>
       <TabList>
         <Tab>
           <HStack spacing={1}>

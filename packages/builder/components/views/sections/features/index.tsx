@@ -1,14 +1,17 @@
 import { FeaturesLayouts } from "@writy/sections";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { getSectionData } from "selectors/template";
+import { getSectionData } from "selectors/site";
 
 interface IProps {
   positionOfSection: number;
+  pageId: number;
 }
 
-const FeaturesSectionView: FC<IProps> = ({ positionOfSection }) => {
-  const { theme, meta, data } = useSelector(getSectionData(positionOfSection));
+const FeaturesSectionView: FC<IProps> = ({ positionOfSection, pageId }) => {
+  const { meta, data, theme } = useSelector(
+    getSectionData(pageId, positionOfSection)
+  );
 
   const renderLayout = () => {
     switch (meta.layout) {

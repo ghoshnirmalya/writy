@@ -1,11 +1,10 @@
-import { Box, Flex, Text, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import RightSidebar from "components/pages/index/right-sidebar";
 import Survey from "components/pages/index/survey";
-import TopNavbar from "components/pages/index/top-navbar";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import { getTemplateData } from "selectors/template";
+import { getSiteData } from "selectors/site";
 
 const LazyContentArea = dynamic(
   () =>
@@ -15,11 +14,11 @@ const LazyContentArea = dynamic(
   {
     ssr: false,
     loading: () => {
-      const bgColor = useColorModeValue("gray.200", "gray.800");
+      const bgColor = useColorModeValue("brand.100", "brand.900");
 
       return (
         <Flex
-          h="calc(100vh - 80px - 80px)"
+          h="calc(100vh - 50px)"
           w="calc(100vw - 500px)"
           bg={bgColor}
           alignItems="center"
@@ -35,17 +34,14 @@ const LazyContentArea = dynamic(
 );
 
 const IndexPageComponent: FC = () => {
-  const { meta } = useSelector(getTemplateData());
+  const { pages } = useSelector(getSiteData());
 
-  if (!meta?.id) {
+  if (!pages.length) {
     return <Survey />;
   }
 
   return (
     <Flex overflow="hidden" flexDir="column">
-      <Box>
-        <TopNavbar />
-      </Box>
       <Flex>
         <LazyContentArea />
         <RightSidebar />

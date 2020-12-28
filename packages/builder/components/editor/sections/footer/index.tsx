@@ -20,7 +20,7 @@ interface IProps {
 
 const FooterSectionEditor: FC<IProps> = ({ positionOfSection }) => {
   return (
-    <Tabs>
+    <Tabs isLazy>
       <TabList>
         <Tab>
           <HStack spacing={1}>

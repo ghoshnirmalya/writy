@@ -7,11 +7,11 @@ import {
 } from "@chakra-ui/react";
 import React, { ChangeEvent, FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getSectionData } from "selectors/template";
+import { getCurrentPageData, getSectionData } from "selectors/site";
 import {
   updateTemplateSectionData,
   updateTemplateSectionMeta,
-} from "slices/template";
+} from "slices/site";
 
 interface IProps {
   positionOfSection: number;
@@ -19,7 +19,10 @@ interface IProps {
 
 const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
-  const { data, meta } = useSelector(getSectionData(positionOfSection));
+  const currentPageId = useSelector(getCurrentPageData());
+  const { data, meta } = useSelector(
+    getSectionData(currentPageId, positionOfSection)
+  );
 
   const handleMetaChange = (itemType: string, value: string) => {
     dispatch(
@@ -52,6 +55,8 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
       <FormControl>
         <FormLabel>Heading</FormLabel>
         <Input
+          size="sm"
+          rounded="lg"
           value={meta.heading}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleMetaChange("heading", e.currentTarget.value)
@@ -61,6 +66,8 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
       <FormControl>
         <FormLabel>Sub heading</FormLabel>
         <Input
+          size="sm"
+          rounded="lg"
           value={meta.subHeading}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleMetaChange("subHeading", e.currentTarget.value)
@@ -73,6 +80,8 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>Button {index + 1} label</FormLabel>
               <Input
+                size="sm"
+                rounded="lg"
                 value={button.label}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "label", e.currentTarget.value)
@@ -82,6 +91,8 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
             <FormControl>
               <FormLabel>Button {index + 1} URL</FormLabel>
               <Input
+                size="sm"
+                rounded="lg"
                 value={button.link}
                 onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   handleDataChange(index, "link", e.currentTarget.value)
