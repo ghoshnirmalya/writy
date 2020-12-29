@@ -116,7 +116,9 @@ const GetStarted: FC = () => {
       <Button
         onClick={onOpen}
         colorScheme="blue"
-        size="lg"
+        width="250px"
+        p={8}
+        fontSize={24}
         rightIcon={<MdArrowForward />}
       >
         Get started

@@ -120,9 +120,9 @@ const Survey: FC = () => {
   };
 
   return (
-    <Container maxW="4xl">
+    <Container maxW="4xl" py={24}>
       <VStack spacing={16}>
-        <VStack spacing={8} py={24} alignItems="flex-start">
+        <VStack spacing={8} alignItems="flex-start">
           <Heading
             as="h1"
             bgGradient="linear(to-l, #7928CA,#FF0080)"
