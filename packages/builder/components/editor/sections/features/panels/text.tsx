@@ -32,6 +32,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const handleMetaChange = (itemType: string, value: string) => {
     dispatch(
       updateTemplateSectionMeta({
+        currentPageId,
         positionOfSection,
         itemType,
         value,

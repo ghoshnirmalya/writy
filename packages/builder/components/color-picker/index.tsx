@@ -46,7 +46,7 @@ const ColorPicker: FC<IProps> = ({ color, onChange }) => {
           rounded="lg"
           onClick={() => setPickerVisibility(true)}
         >
-          <Box bg={color} h={8} w={16} rounded="lg" borderWidth={1} />
+          <Box bg={color} h={8} w={8} rounded="lg" borderWidth={1} />
           <Text>{color}</Text>
         </HStack>
       </PopoverTrigger>

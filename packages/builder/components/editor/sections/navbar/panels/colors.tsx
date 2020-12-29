@@ -19,6 +19,7 @@ const NavbarSectionEditorColorsPanel: FC<IProps> = ({ positionOfSection }) => {
   const handleChange = (itemType: string, value: string) => {
     dispatch(
       updateTemplateSectionTheme({
+        currentPageId,
         positionOfSection,
         key: itemType,
         value,

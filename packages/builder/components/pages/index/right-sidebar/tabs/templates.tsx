@@ -1,7 +1,6 @@
-import { Box, Text, useColorModeValue, VStack } from "@chakra-ui/react";
+import { Box, Image, Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import rainbowTemplateData from "data/templates/rainbow";
 import unoTemplateData from "data/templates/uno";
-import Image from "next/image";
 import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentPageData } from "selectors/site";
@@ -58,12 +57,7 @@ const RightSidebarTemplatesTab: FC = () => {
             shadow: "lg",
           }}
         >
-          <Image
-            src={template.image}
-            alt={template.label}
-            width={466.76}
-            height={450}
-          />
+          <Image src={template.image} alt={template.label} rounded="lg" />
           <Text p={1} borderTopWidth={1} fontWeight="bold">
             {template.label}
           </Text>

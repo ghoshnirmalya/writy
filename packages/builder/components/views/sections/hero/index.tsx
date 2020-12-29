@@ -21,6 +21,12 @@ const HeroSectionView: FC<IProps> = ({ positionOfSection, pageId }) => {
       case "two":
         return <HeroLayouts.Two theme={theme} data={data} meta={meta} />;
 
+      case "three":
+        return <HeroLayouts.Three theme={theme} data={data} meta={meta} />;
+
+      case "four":
+        return <HeroLayouts.Four theme={theme} data={data} meta={meta} />;
+
       default:
         break;
     }

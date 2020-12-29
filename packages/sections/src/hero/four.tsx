@@ -6,7 +6,7 @@ interface IProps {
   meta: any;
 }
 
-const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
+const HeroLayoutFour: FC<IProps> = ({ theme, data, meta }) => {
   return (
     <div
       className="text-gray-600 body-font"
@@ -15,19 +15,13 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
         color: theme?.textColor,
       }}
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2">
-          <div
-            style={{
-              backgroundImage: `url(${meta.image})`,
-            }}
-            className="h-64 w-full bg-center bg-cover bg-no-repeat"
-          />
-        </div>
-        <div className="space-y-4 text-center md:text-left w-full md:w-1/2 p-8">
-          <h1 className="text-2xl md:text-3xl font-bold">{meta.heading}</h1>
-          <p className="mb-8 leading-relaxed">{meta.subHeading}</p>
-          <div className="flex flex-col md:flex-row justify-center md:justify-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+      <div className="container mx-auto">
+        <div className="text-center space-y-4 p-8">
+          <h1 className="title-font text-2xl md:text-3xl font-bold">
+            {meta.heading}
+          </h1>
+          <p className="leading-relaxed">{meta.subHeading}</p>
+          <div className="flex flex-col md:flex-row justify-center space-x-0 md:space-x-4 space-y-4 md:space-y-0">
             {data.buttons?.map((button: any, index: number) => {
               if (!button.label) {
                 return false;
@@ -50,8 +44,16 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
           </div>
         </div>
       </div>
+      <div className="w-full">
+        <div
+          style={{
+            backgroundImage: `url(${meta.image})`,
+          }}
+          className="h-96 w-full bg-center bg-cover bg-no-repeat"
+        ></div>
+      </div>
     </div>
   );
 };
 
-export default HeroLayoutOne;
+export default HeroLayoutFour;

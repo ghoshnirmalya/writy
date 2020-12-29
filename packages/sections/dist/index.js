@@ -121,7 +121,7 @@ var HeroLayoutOne = function (_a) {
         { className: "space-y-4 text-center md:text-left w-full md:w-1/2 p-8" },
         React__default["default"].createElement(
           "h1",
-          { className: "title-font text-2xl md:text-3xl font-bold" },
+          { className: "text-2xl md:text-3xl font-bold" },
           meta.heading
         ),
         React__default["default"].createElement(
@@ -248,9 +248,171 @@ var HeroLayoutTwo = function (_a) {
   );
 };
 
+var HeroLayoutThree = function (_a) {
+  var _b;
+  var theme = _a.theme,
+    data = _a.data,
+    meta = _a.meta;
+  return React__default["default"].createElement(
+    "div",
+    {
+      className: "text-gray-600 body-font",
+      style: {
+        backgroundColor:
+          theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
+        color: theme === null || theme === void 0 ? void 0 : theme.textColor,
+      },
+    },
+    React__default["default"].createElement(
+      "div",
+      { className: "w-full" },
+      React__default["default"].createElement("div", {
+        style: {
+          backgroundImage: "url(" + meta.image + ")",
+        },
+        className: "h-96 w-full bg-center bg-cover bg-no-repeat",
+      })
+    ),
+    React__default["default"].createElement(
+      "div",
+      { className: "container mx-auto" },
+      React__default["default"].createElement(
+        "div",
+        { className: "text-center space-y-4 p-8" },
+        React__default["default"].createElement(
+          "h1",
+          { className: "title-font text-2xl md:text-3xl font-bold" },
+          meta.heading
+        ),
+        React__default["default"].createElement(
+          "p",
+          { className: "leading-relaxed" },
+          meta.subHeading
+        ),
+        React__default["default"].createElement(
+          "div",
+          {
+            className:
+              "flex flex-col md:flex-row justify-center space-x-0 md:space-x-4 space-y-4 md:space-y-0",
+          },
+          (_b = data.buttons) === null || _b === void 0
+            ? void 0
+            : _b.map(function (button, index) {
+                if (!button.label) {
+                  return false;
+                }
+                return React__default["default"].createElement(
+                  "a",
+                  {
+                    key: index,
+                    href: button.link,
+                    className:
+                      "inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg justify-center",
+                    style: {
+                      backgroundColor:
+                        theme === null || theme === void 0
+                          ? void 0
+                          : theme.buttonBackgroundColor,
+                      color:
+                        theme === null || theme === void 0
+                          ? void 0
+                          : theme.buttonTextColor,
+                    },
+                  },
+                  button.label
+                );
+              })
+        )
+      )
+    )
+  );
+};
+
+var HeroLayoutFour = function (_a) {
+  var _b;
+  var theme = _a.theme,
+    data = _a.data,
+    meta = _a.meta;
+  return React__default["default"].createElement(
+    "div",
+    {
+      className: "text-gray-600 body-font",
+      style: {
+        backgroundColor:
+          theme === null || theme === void 0 ? void 0 : theme.backgroundColor,
+        color: theme === null || theme === void 0 ? void 0 : theme.textColor,
+      },
+    },
+    React__default["default"].createElement(
+      "div",
+      { className: "container mx-auto" },
+      React__default["default"].createElement(
+        "div",
+        { className: "text-center space-y-4 p-8" },
+        React__default["default"].createElement(
+          "h1",
+          { className: "title-font text-2xl md:text-3xl font-bold" },
+          meta.heading
+        ),
+        React__default["default"].createElement(
+          "p",
+          { className: "leading-relaxed" },
+          meta.subHeading
+        ),
+        React__default["default"].createElement(
+          "div",
+          {
+            className:
+              "flex flex-col md:flex-row justify-center space-x-0 md:space-x-4 space-y-4 md:space-y-0",
+          },
+          (_b = data.buttons) === null || _b === void 0
+            ? void 0
+            : _b.map(function (button, index) {
+                if (!button.label) {
+                  return false;
+                }
+                return React__default["default"].createElement(
+                  "a",
+                  {
+                    key: index,
+                    href: button.link,
+                    className:
+                      "inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg justify-center",
+                    style: {
+                      backgroundColor:
+                        theme === null || theme === void 0
+                          ? void 0
+                          : theme.buttonBackgroundColor,
+                      color:
+                        theme === null || theme === void 0
+                          ? void 0
+                          : theme.buttonTextColor,
+                    },
+                  },
+                  button.label
+                );
+              })
+        )
+      )
+    ),
+    React__default["default"].createElement(
+      "div",
+      { className: "w-full" },
+      React__default["default"].createElement("div", {
+        style: {
+          backgroundImage: "url(" + meta.image + ")",
+        },
+        className: "h-96 w-full bg-center bg-cover bg-no-repeat",
+      })
+    )
+  );
+};
+
 var HeroLayouts = {
   One: HeroLayoutOne,
   Two: HeroLayoutTwo,
+  Three: HeroLayoutThree,
+  Four: HeroLayoutFour,
 };
 
 var FeaturesLayoutOne = function (_a) {

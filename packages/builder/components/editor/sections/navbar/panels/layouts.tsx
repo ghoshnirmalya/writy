@@ -1,7 +1,7 @@
-import { Flex, VStack } from "@chakra-ui/react";
-import Image from "next/image";
+import { Flex, Image, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getCurrentPageData } from "selectors/site";
 import { updateTemplateSectionMeta } from "slices/site";
 
 interface IProps {
@@ -10,10 +10,12 @@ interface IProps {
 
 const NavbarSectionEditorLayoutsPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
+  const currentPageId = useSelector(getCurrentPageData());
 
   const handleChange = (layoutId: string) => {
     dispatch(
       updateTemplateSectionMeta({
+        currentPageId,
         positionOfSection,
         itemType: "layout",
         value: layoutId,
@@ -41,6 +43,7 @@ const NavbarSectionEditorLayoutsPanel: FC<IProps> = ({ positionOfSection }) => {
           onClick={() => handleChange(layout.key)}
           borderWidth={1}
           alignItems="center"
+          rounded="lg"
           _hover={{
             shadow: "lg",
           }}
@@ -48,8 +51,7 @@ const NavbarSectionEditorLayoutsPanel: FC<IProps> = ({ positionOfSection }) => {
           <Image
             src={`/images/section-layouts/navbar/${index + 1}.png`}
             alt={`Layout ${layout.key}`}
-            width={533}
-            height={30}
+            rounded="lg"
           />
         </Flex>
       );

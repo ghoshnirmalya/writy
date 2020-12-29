@@ -3,13 +3,13 @@ import {
   Container,
   Grid,
   Heading,
+  Image,
   Text,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import rainbowTemplateData from "data/templates/rainbow";
 import unoTemplateData from "data/templates/uno";
-import Image from "next/image";
 import React, { FC } from "react";
 import { useDispatch } from "react-redux";
 import { addPage, setTemplateData } from "slices/site";
@@ -70,16 +70,12 @@ const Survey: FC = () => {
           borderWidth={1}
           alignItems="center"
           bg={bgColor}
+          rounded="lg"
           _hover={{
             shadow: "lg",
           }}
         >
-          <Image
-            src={template.image}
-            alt={template.label}
-            width={440}
-            height={440}
-          />
+          <Image src={template.image} alt={template.label} rounded="lg" />
           <Text p={4} borderTopWidth={1} fontWeight="bold">
             {template.label}
           </Text>
@@ -91,7 +87,7 @@ const Survey: FC = () => {
   return (
     <Container maxW="4xl">
       <VStack spacing={4}>
-        <Heading fontSize="3xl">Templates</Heading>
+        <Heading fontSize="3xl">Get started</Heading>
         <Text>Click to select your preferred template and continue</Text>
         <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" p={8}>
           {templateNode()}
