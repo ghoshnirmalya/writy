@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
           {this.googleAnalyticsScriptNode()}
           <meta name="Description" content="Website builder" />
         </Head>
-        <Box as="body">
+        <Box as="body" overflowY="hidden">
           <Main />
           <NextScript />
         </Box>
