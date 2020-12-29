@@ -13,7 +13,7 @@ import FeaturesSectionEditor from "components/editor/sections/features";
 import FooterSectionEditor from "components/editor/sections/footer";
 import HeroSectionEditor from "components/editor/sections/hero";
 import NavbarSectionEditor from "components/editor/sections/navbar";
-import AddNewSection from "components/pages/index/right-sidebar/add-new-section";
+import AddNewSection from "components/pages/index/right-sidebar/tabs/sections/add-new-section";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
 import { getCurrentPageData, getTemplateData } from "selectors/site";

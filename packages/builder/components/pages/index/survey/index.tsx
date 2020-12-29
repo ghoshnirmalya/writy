@@ -81,12 +81,38 @@ const Survey: FC = () => {
 
   return (
     <Container maxW="4xl">
-      <VStack spacing={4}>
-        <Heading fontSize="3xl">Get started</Heading>
-        <Text>Click to select your preferred template and continue</Text>
-        <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" p={8}>
-          {templateNode()}
-        </Grid>
+      <VStack spacing={16}>
+        <VStack spacing={8} py={24} alignItems="flex-start">
+          <Heading
+            as="h1"
+            bgGradient="linear(to-l, #7928CA,#FF0080)"
+            bgClip="text"
+            fontSize="6xl"
+            fontWeight="extrabold"
+          >
+            Writy
+          </Heading>
+          <Heading as="h2" fontSize="6xl" fontWeight="bold">
+            Build good-looking websites without writing a single line of code.
+          </Heading>
+          <Text fontSize="2xl">
+            Writy is an Open Source website builder powered by Next.js, Chakra
+            UI and TailwindCSS.
+          </Text>
+        </VStack>
+        <VStack spacing={4} alignItems="flex-start">
+          <Heading
+            fontSize="4xl"
+            bgGradient="linear(to-l, #7928CA,#FF0080)"
+            bgClip="text"
+          >
+            Get started
+          </Heading>
+          <Text>Click to select your preferred template to continue.</Text>
+          <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" py={8}>
+            {templateNode()}
+          </Grid>
+        </VStack>
       </VStack>
     </Container>
   );
