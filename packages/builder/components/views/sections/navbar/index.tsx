@@ -16,10 +16,10 @@ const NavbarSectionView: FC<IProps> = ({ positionOfSection, pageId }) => {
   const renderLayout = () => {
     switch (meta.layout) {
       case "one":
-        return <NavbarLayouts.One theme={theme} data={data} />;
+        return <NavbarLayouts.One theme={theme} data={data} meta={meta} />;
 
       case "two":
-        return <NavbarLayouts.Two theme={theme} data={data} />;
+        return <NavbarLayouts.Two theme={theme} data={data} meta={meta} />;
 
       default:
         break;

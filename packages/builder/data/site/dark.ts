@@ -16,6 +16,7 @@ const darkModeSiteData = {
             meta: {
               type: "navbar",
               layout: "one",
+              siteName: "Writy",
             },
             theme: {
               backgroundColor: "#000000",
@@ -141,6 +142,7 @@ const darkModeSiteData = {
             meta: {
               type: "navbar",
               layout: "one",
+              siteName: "Writy",
             },
             theme: {
               backgroundColor: "#000000",
@@ -266,6 +268,7 @@ const darkModeSiteData = {
             meta: {
               type: "navbar",
               layout: "one",
+              siteName: "Writy",
             },
             theme: {
               backgroundColor: "#000000",
@@ -379,7 +382,9 @@ const darkModeSiteData = {
       },
     },
   ],
-  theme: {},
+  theme: {
+    mode: "dark",
+  },
 };
 
 export default darkModeSiteData;

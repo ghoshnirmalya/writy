@@ -15,7 +15,7 @@ import scrollPreviewSectionIntoView from "lib/scroll-preview-section-into-view";
 import React, { FC } from "react";
 import { MdAdd } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { getCurrentPageData } from "selectors/site";
+import { getCurrentPageData, getSiteData } from "selectors/site";
 import { addTemplateSection } from "slices/site";
 
 interface IProps {
@@ -27,6 +27,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
   const { onOpen, onClose, isOpen } = useDisclosure();
   const currentPageId = useSelector(getCurrentPageData());
+  const { theme } = useSelector(getSiteData());
 
   const handleNewSectionAddition = (sectionType: string) => {
     switch (sectionType) {
@@ -37,7 +38,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
           addTemplateSection({
             currentPageId,
             positionOfSection,
-            sectionContent: navbarSectionData,
+            sectionContent: navbarSectionData(theme.mode),
           })
         );
 
@@ -50,7 +51,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
           addTemplateSection({
             currentPageId,
             positionOfSection,
-            sectionContent: heroSectionData,
+            sectionContent: heroSectionData(theme.mode),
           })
         );
 
@@ -63,7 +64,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
           addTemplateSection({
             currentPageId,
             positionOfSection,
-            sectionContent: featuresSectionData,
+            sectionContent: featuresSectionData(theme.mode),
           })
         );
 

@@ -1,11 +1,11 @@
-const footerSectionData = {
+const footerSectionData = (mode: "light" | "dark") => ({
   meta: {
     type: "footer",
     layout: "one",
   },
   theme: {
-    backgroundColor: "#f2f2f2",
-    linkColor: "#000000",
+    backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+    linkColor: mode === "dark" ? "#ffffff" : "#000000",
   },
   data: {
     links: [
@@ -23,6 +23,6 @@ const footerSectionData = {
       },
     ],
   },
-};
+});
 
 export default footerSectionData;

@@ -16,6 +16,7 @@ const lightModeSiteData = {
             meta: {
               type: "navbar",
               layout: "one",
+              siteName: "Writy",
             },
             theme: {
               backgroundColor: "#f2f2f2",
@@ -141,6 +142,7 @@ const lightModeSiteData = {
             meta: {
               type: "navbar",
               layout: "one",
+              siteName: "Writy",
             },
             theme: {
               backgroundColor: "#f2f2f2",
@@ -266,6 +268,7 @@ const lightModeSiteData = {
             meta: {
               type: "navbar",
               layout: "one",
+              siteName: "Writy",
             },
             theme: {
               backgroundColor: "#f2f2f2",
@@ -379,7 +382,9 @@ const lightModeSiteData = {
       },
     },
   ],
-  theme: {},
+  theme: {
+    mode: "light",
+  },
 };
 
 export default lightModeSiteData;

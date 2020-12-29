@@ -1,11 +1,12 @@
-const navbarSectionData = {
+const navbarSectionData = (mode: "light" | "dark") => ({
   meta: {
     type: "navbar",
     layout: "one",
+    siteName: "Writy",
   },
   theme: {
-    backgroundColor: "#f2f2f2",
-    linkColor: "#000000",
+    backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+    linkColor: mode === "dark" ? "#ffffff" : "#000000",
   },
   data: {
     links: [
@@ -23,6 +24,6 @@ const navbarSectionData = {
       },
     ],
   },
-};
+});
 
 export default navbarSectionData;

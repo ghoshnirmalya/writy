@@ -86,18 +86,18 @@ const RightSidebarTabs: FC = () => {
         </Tab>
         <Tab>
           <HStack spacing={1}>
-            <Icon as={MdChromeReaderMode} />
-            <Text>Templates</Text>
-          </HStack>
-        </Tab>
-        <Tab>
-          <HStack spacing={1}>
             <Icon as={MdCollections} />
             <Text>Pages</Text>
           </HStack>
         </Tab>
+        <Tab>
+          <HStack spacing={1}>
+            <Icon as={MdChromeReaderMode} />
+            <Text>Templates</Text>
+          </HStack>
+        </Tab>
       </TabList>
-      <TabPanels>
+      <TabPanels height="calc(100vh - 50px - 42px - 65px)" overflowY="scroll">
         <TabPanel>
           <Box>
             <LazyRightSidebarSectionsTab />
@@ -105,12 +105,12 @@ const RightSidebarTabs: FC = () => {
         </TabPanel>
         <TabPanel>
           <Box>
-            <LazyRightSidebarTemplatesTab />
+            <LazyRightSidebarPagesTab />
           </Box>
         </TabPanel>
         <TabPanel>
           <Box>
-            <LazyRightSidebarPagesTab />
+            <LazyRightSidebarTemplatesTab />
           </Box>
         </TabPanel>
       </TabPanels>

@@ -9,6 +9,7 @@ const uno = {
       meta: {
         type: "navbar",
         layout: "one",
+        siteName: "Writy",
       },
       theme: {
         backgroundColor: "#ffffff",

@@ -1,6 +1,6 @@
 import { Image1 } from "@writy/sections";
 
-const heroSectionData = {
+const heroSectionData = (mode: "light" | "dark") => ({
   meta: {
     type: "hero",
     layout: "one",
@@ -10,10 +10,10 @@ const heroSectionData = {
     image: Image1,
   },
   theme: {
-    backgroundColor: "#ffffff",
-    textColor: "#000000",
-    buttonBackgroundColor: "#000000",
-    buttonTextColor: "#ffffff",
+    backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+    textColor: mode === "dark" ? "#ffffff" : "#000000",
+    buttonBackgroundColor: mode === "dark" ? "#ffffff" : "#000000",
+    buttonTextColor: mode === "dark" ? "#000000" : "#ffffff",
   },
   data: {
     buttons: [
@@ -27,6 +27,6 @@ const heroSectionData = {
       },
     ],
   },
-};
+});
 
 export default heroSectionData;

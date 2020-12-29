@@ -1,4 +1,12 @@
-import { Box, Img, Text, useColorModeValue, VStack } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertIcon,
+  Box,
+  Img,
+  Text,
+  useColorModeValue,
+  VStack,
+} from "@chakra-ui/react";
 import rainbowTemplateData from "data/templates/rainbow";
 import unoTemplateData from "data/templates/uno";
 import React, { FC } from "react";
@@ -73,7 +81,15 @@ const RightSidebarTemplatesTab: FC = () => {
     });
   };
 
-  return <VStack spacing={4}>{templateNode()}</VStack>;
+  return (
+    <VStack spacing={4}>
+      <Alert status="warning" rounded="lg">
+        <AlertIcon />
+        All changes done here are permanent. Please proceed with caution.
+      </Alert>
+      {templateNode()}
+    </VStack>
+  );
 };
 
 export default RightSidebarTemplatesTab;

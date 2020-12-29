@@ -9,6 +9,7 @@ const rainbow = {
       meta: {
         type: "navbar",
         layout: "two",
+        siteName: "Writy",
       },
       theme: {
         backgroundColor: "#f2f2f2",

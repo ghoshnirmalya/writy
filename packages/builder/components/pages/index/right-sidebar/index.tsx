@@ -33,13 +33,7 @@ const RightSidebar: FC = () => {
   const bgColor = useColorModeValue("brand.100", "brand.900");
 
   return (
-    <Box
-      h="calc(100vh - 50px)"
-      w="500px"
-      bg={bgColor}
-      borderLeftWidth={1}
-      overflowY="auto"
-    >
+    <Box w="500px" bg={bgColor} borderLeftWidth={1} overflowY="hidden">
       <HStack
         spacing={4}
         align="center"
