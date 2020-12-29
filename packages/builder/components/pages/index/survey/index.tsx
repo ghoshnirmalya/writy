@@ -1,22 +1,33 @@
 import {
+  Button,
   Container,
   Flex,
   Grid,
   Heading,
   Img,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Text,
   useColorModeValue,
+  useDisclosure,
   VStack,
 } from "@chakra-ui/react";
 import rainbowTemplateData from "data/templates/rainbow";
 import unoTemplateData from "data/templates/uno";
 import React, { FC } from "react";
+import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { addPage, setTemplateData } from "slices/site";
 
 const Survey: FC = () => {
   const dispatch = useDispatch();
   const bgColor = useColorModeValue("brand.100", "brand.900");
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const mapTemplateIdToData = (templateId: string) => {
     switch (templateId) {
@@ -70,13 +81,43 @@ const Survey: FC = () => {
           justifyContent="center"
           alignItems="center"
           bg={bgColor}
-          rounded="lg"
           borderWidth={1}
+          rounded="lg"
+          _hover={{
+            shadow: "lg",
+          }}
         >
           <Img src={template.image} alt={template.label} rounded="lg" />
         </Flex>
       );
     });
+  };
+
+  const modalNode = () => {
+    return (
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size="xl">
+        <ModalOverlay />
+        <ModalContent bg={bgColor}>
+          <ModalHeader />
+          <ModalCloseButton />
+          <ModalBody>
+            <VStack alignItems="flex-start">
+              <Heading
+                fontSize="4xl"
+                bgGradient="linear(to-l, #7928CA,#FF0080)"
+                bgClip="text"
+              >
+                Get started
+              </Heading>
+              <Text>Click to select your preferred template to continue.</Text>
+              <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" py={8}>
+                {templateNode()}
+              </Grid>
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    );
   };
 
   return (
@@ -99,19 +140,15 @@ const Survey: FC = () => {
             Writy is an Open Source website builder powered by Next.js, Chakra
             UI and TailwindCSS.
           </Text>
-        </VStack>
-        <VStack spacing={4} alignItems="flex-start">
-          <Heading
-            fontSize="4xl"
-            bgGradient="linear(to-l, #7928CA,#FF0080)"
-            bgClip="text"
+          <Button
+            onClick={onOpen}
+            colorScheme="blue"
+            size="lg"
+            rightIcon={<MdArrowForward />}
           >
             Get started
-          </Heading>
-          <Text>Click to select your preferred template to continue.</Text>
-          <Grid templateColumns="repeat(2, 1fr)" gap={8} w="100%" py={8}>
-            {templateNode()}
-          </Grid>
+          </Button>
+          {modalNode()}
         </VStack>
       </VStack>
     </Container>
