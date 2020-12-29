@@ -1,3 +1,20 @@
+# [0.17.0](https://github.com/ghoshnirmalya/writy/compare/0.16.0...0.17.0) (2020-12-29)
+
+### Bug Fixes
+
+- fixes issue with background-color ([3b58427](https://github.com/ghoshnirmalya/writy/commit/3b58427b3237eb292c7eb7c5def5253a1e8711d8))
+- fixes scroll issue ([b74f360](https://github.com/ghoshnirmalya/writy/commit/b74f3605e4706a2a78484639171a3cf9a659d870))
+
+### Features
+
+- adds a couple of Hero layouts ([fce5325](https://github.com/ghoshnirmalya/writy/commit/fce53255a4d7c4e58d5b5c40f73f391218f1f541))
+- adds a temporary landing page ([fa5a612](https://github.com/ghoshnirmalya/writy/commit/fa5a6125426e969fbd8bbb90ddfc5fa69e109068))
+- adds initial boilerplate for supporting dark mode ([de7ca00](https://github.com/ghoshnirmalya/writy/commit/de7ca0047a1b4347754c344b9ac0f0b90cb7d8c0))
+- adds minor UI improvements ([e05e730](https://github.com/ghoshnirmalya/writy/commit/e05e7300b88ddfe41035b86625f6c787b1269a6a))
+- adds support for dark mode ([74b6c16](https://github.com/ghoshnirmalya/writy/commit/74b6c16e0fc6dc0f211d232b04c24687a667b83e))
+- remove the templates tab ([5c27fc1](https://github.com/ghoshnirmalya/writy/commit/5c27fc1a3c12a27e84cfe076e468b58509b9f282))
+- updates design of landing page ([3fadd44](https://github.com/ghoshnirmalya/writy/commit/3fadd44fc40e593bfe6479742300fbde4e0d43f0))
+
 # [0.16.0](https://github.com/ghoshnirmalya/writy/compare/0.15.0...0.16.0) (2020-12-28)
 
 ### Bug Fixes
