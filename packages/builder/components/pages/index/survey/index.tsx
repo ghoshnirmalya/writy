@@ -141,6 +141,7 @@ const Survey: FC = () => {
               href="https://github.com/ghoshnirmalya/writy"
               target="_blank"
               color="blue.500"
+              rel="noopener"
             >
               Open Source
             </Link>{" "}
