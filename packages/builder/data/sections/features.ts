@@ -1,14 +1,14 @@
 import { Image2, Image3, Image4 } from "@writy/sections";
 
-const featuresSectionData = {
+const featuresSectionData = (mode: "light" | "dark") => ({
   meta: {
     type: "features",
     layout: "one",
     heading: "We've developed and shipped over 500 products",
   },
   theme: {
-    backgroundColor: "#ffffff",
-    textColor: "#555555",
+    backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+    textColor: mode === "dark" ? "#ffffff" : "#000000",
   },
   data: {
     cards: [
@@ -32,6 +32,6 @@ const featuresSectionData = {
       },
     ],
   },
-};
+});
 
 export default featuresSectionData;

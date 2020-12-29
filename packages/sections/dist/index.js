@@ -11,7 +11,8 @@ var React__default = /*#__PURE__*/ _interopDefaultLegacy(React);
 var NavbarLayoutOne = function (_a) {
   var _b;
   var theme = _a.theme,
-    data = _a.data;
+    data = _a.data,
+    meta = _a.meta;
   return React__default["default"].createElement(
     "div",
     {
@@ -30,7 +31,11 @@ var NavbarLayoutOne = function (_a) {
       React__default["default"].createElement(
         "div",
         null,
-        React__default["default"].createElement("a", { href: "/" }, "Writy")
+        React__default["default"].createElement(
+          "a",
+          { href: "/" },
+          meta.siteName
+        )
       ),
       React__default["default"].createElement(
         "div",
@@ -52,7 +57,8 @@ var NavbarLayoutOne = function (_a) {
 var NavbarLayoutTwo = function (_a) {
   var _b;
   var theme = _a.theme,
-    data = _a.data;
+    data = _a.data,
+    meta = _a.meta;
   return React__default["default"].createElement(
     "div",
     {
@@ -69,7 +75,11 @@ var NavbarLayoutTwo = function (_a) {
         className:
           "container mx-auto px-8 flex justify-start font-semibold space-x-8",
       },
-      React__default["default"].createElement("a", { href: "/" }, "Writy"),
+      React__default["default"].createElement(
+        "a",
+        { href: "/" },
+        meta.siteName
+      ),
       (_b = data.links) === null || _b === void 0
         ? void 0
         : _b.map(function (link, index) {
@@ -108,12 +118,12 @@ var HeroLayoutOne = function (_a) {
       { className: "container mx-auto flex flex-col md:flex-row items-center" },
       React__default["default"].createElement(
         "div",
-        { className: "w-full md:w-1/2" },
+        { className: "w-full md:w-1/2 p-8" },
         React__default["default"].createElement("div", {
           style: {
             backgroundImage: "url(" + meta.image + ")",
           },
-          className: "h-64 w-full bg-center bg-cover bg-no-repeat",
+          className: "h-64 w-full bg-center bg-cover bg-no-repeat rounded",
         })
       ),
       React__default["default"].createElement(
@@ -236,12 +246,12 @@ var HeroLayoutTwo = function (_a) {
       ),
       React__default["default"].createElement(
         "div",
-        { className: "w-full md:w-1/2" },
+        { className: "w-full md:w-1/2 p-8" },
         React__default["default"].createElement("div", {
           style: {
             backgroundImage: "url(" + meta.image + ")",
           },
-          className: "h-64 w-full bg-center bg-cover bg-no-repeat",
+          className: "h-64 w-full bg-center bg-cover bg-no-repeat rounded",
         })
       )
     )

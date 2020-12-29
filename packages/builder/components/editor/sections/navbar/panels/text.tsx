@@ -15,6 +15,7 @@ import {
   addTemplateSectionData,
   removeTemplateSectionData,
   updateTemplateSectionData,
+  updateTemplateSectionMeta,
 } from "slices/site";
 
 interface IProps {
@@ -24,7 +25,7 @@ interface IProps {
 const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   const dispatch = useDispatch();
   const currentPageId = useSelector(getCurrentPageData());
-  const { data } = useSelector(
+  const { data, meta } = useSelector(
     getSectionData(currentPageId, positionOfSection)
   );
 
@@ -35,10 +36,22 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   ) => {
     dispatch(
       updateTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "links",
         itemPosition,
         key: itemType,
+        value,
+      })
+    );
+  };
+
+  const handleMetaChange = (itemType: string, value: string) => {
+    dispatch(
+      updateTemplateSectionMeta({
+        currentPageId,
+        positionOfSection,
+        itemType,
         value,
       })
     );
@@ -60,6 +73,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
 
     dispatch(
       addTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "links",
         value: initialValue,
@@ -69,6 +83,17 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
 
   return (
     <VStack spacing={4} align="stretch">
+      <FormControl>
+        <FormLabel>Name of the site</FormLabel>
+        <Input
+          size="sm"
+          rounded="lg"
+          value={meta.siteName}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            handleMetaChange("siteName", e.currentTarget.value)
+          }
+        />
+      </FormControl>
       {data.links.map((link: any, index: number) => {
         return (
           <HStack spacing={4} key={index} alignItems="flex-end">

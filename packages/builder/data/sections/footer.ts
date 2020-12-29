@@ -1,32 +1,28 @@
-const footerSectionData = {
+const footerSectionData = (mode: "light" | "dark") => ({
   meta: {
     type: "footer",
     layout: "one",
   },
   theme: {
-    backgroundColor: "white",
-    linkColor: "black",
+    backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+    linkColor: mode === "dark" ? "#ffffff" : "#000000",
   },
   data: {
     links: [
       {
         label: "Home",
-        link: "/",
+        link: "/index.html",
       },
       {
-        label: "History",
-        link: "/history",
+        label: "About",
+        link: "/about.html",
       },
       {
-        label: "Join the team",
-        link: "/join",
-      },
-      {
-        label: "Press",
-        link: "/press",
+        label: "Contact",
+        link: "/contact.html",
       },
     ],
   },
-};
+});
 
 export default footerSectionData;

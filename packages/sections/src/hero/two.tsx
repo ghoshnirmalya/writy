@@ -43,12 +43,12 @@ const HeroLayoutTwo: FC<IProps> = ({ theme, data, meta }) => {
             })}
           </div>
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 p-8">
           <div
             style={{
               backgroundImage: `url(${meta.image})`,
             }}
-            className="h-64 w-full bg-center bg-cover bg-no-repeat"
+            className="h-64 w-full bg-center bg-cover bg-no-repeat rounded"
           />
         </div>
       </div>

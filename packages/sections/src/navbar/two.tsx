@@ -3,9 +3,10 @@ import React, { FC } from "react";
 interface IProps {
   theme: any;
   data: any;
+  meta: any;
 }
 
-const NavbarLayoutTwo: FC<IProps> = ({ theme, data }) => {
+const NavbarLayoutTwo: FC<IProps> = ({ theme, data, meta }) => {
   return (
     <div
       className="py-4"
@@ -15,7 +16,7 @@ const NavbarLayoutTwo: FC<IProps> = ({ theme, data }) => {
       }}
     >
       <div className="container mx-auto px-8 flex justify-start font-semibold space-x-8">
-        <a href="/">Writy</a>
+        <a href="/">{meta.siteName}</a>
         {data.links?.map((link: any, index: number) => {
           return (
             <a key={index} href={link.link}>

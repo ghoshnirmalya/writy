@@ -10,12 +10,13 @@ const Layout: FC = ({ children }) => {
     <>
       <TopNavbar />
       <Flex
-        minH="calc(100vh - 50px)"
+        h="calc(100vh - 50px)"
         w="100vw"
         justifyContent="center"
         alignItems="center"
         bg={bgColor}
         color={color}
+        overflowY="scroll"
       >
         {children}
       </Flex>

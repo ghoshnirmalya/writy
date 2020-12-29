@@ -22,6 +22,9 @@ export const siteSlice = createSlice({
   name: "site",
   initialState,
   reducers: {
+    setSiteData(state, action) {
+      state.site = action.payload;
+    },
     addPage(state, action) {
       state.site.pages.push(action.payload);
     },
@@ -94,6 +97,7 @@ export const siteSlice = createSlice({
 });
 
 export const {
+  setSiteData,
   addPage,
   removePage,
   setCurrentPageId,

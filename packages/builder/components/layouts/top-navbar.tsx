@@ -23,7 +23,9 @@ const TopNavbar: FC = () => {
     >
       <Flex justifyContent="space-between" w="100%">
         <HStack spacing={4} align="center">
-          <Link href="/">Writy</Link>
+          <Link href="/" fontWeight="bold">
+            Writy
+          </Link>
         </HStack>
         <HStack spacing={4} align="center">
           <IconButton

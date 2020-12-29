@@ -16,12 +16,12 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
       }}
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 p-8">
           <div
             style={{
               backgroundImage: `url(${meta.image})`,
             }}
-            className="h-64 w-full bg-center bg-cover bg-no-repeat"
+            className="h-64 w-full bg-center bg-cover bg-no-repeat rounded"
           />
         </div>
         <div className="space-y-4 text-center md:text-left w-full md:w-1/2 p-8">

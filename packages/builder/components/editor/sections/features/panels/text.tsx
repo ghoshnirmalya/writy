@@ -47,6 +47,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   ) => {
     dispatch(
       updateTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "cards",
         itemPosition,
@@ -64,6 +65,7 @@ const FeaturesSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
 
     dispatch(
       addTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "cards",
         value: initialValue,

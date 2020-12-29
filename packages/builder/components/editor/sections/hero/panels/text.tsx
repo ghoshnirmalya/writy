@@ -42,6 +42,7 @@ const HeroSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   ) => {
     dispatch(
       updateTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "buttons",
         itemPosition,
