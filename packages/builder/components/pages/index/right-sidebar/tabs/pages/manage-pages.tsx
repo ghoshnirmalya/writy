@@ -53,7 +53,13 @@ const ManagePages: FC = () => {
         <DrawerOverlay>
           <DrawerContent bg={bgColor}>
             <DrawerCloseButton />
-            <DrawerHeader borderBottomWidth="1px">Manage pages</DrawerHeader>
+            <DrawerHeader
+              borderBottomWidth="1px"
+              fontSize="md"
+              fontWeight="bold"
+            >
+              Manage pages
+            </DrawerHeader>
             <DrawerBody>
               <Stack spacing={8}>
                 <Alert status="warning" rounded="lg">

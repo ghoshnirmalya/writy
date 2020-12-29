@@ -71,7 +71,11 @@ const AddPage: FC = () => {
         <DrawerOverlay>
           <DrawerContent bg={bgColor}>
             <DrawerCloseButton />
-            <DrawerHeader borderBottomWidth="1px">
+            <DrawerHeader
+              borderBottomWidth="1px"
+              fontSize="md"
+              fontWeight="bold"
+            >
               Create a new page
             </DrawerHeader>
             <DrawerBody>

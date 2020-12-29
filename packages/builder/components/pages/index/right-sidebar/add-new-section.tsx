@@ -112,8 +112,9 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
             w="100%"
             disabled={isOpen}
             colorScheme="blue"
+            variant="ghost"
           >
-            Add
+            Add section
           </Button>
         </PopoverTrigger>
         <Portal>

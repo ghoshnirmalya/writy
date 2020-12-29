@@ -1,4 +1,4 @@
-import { Box, Image, Text, useColorModeValue, VStack } from "@chakra-ui/react";
+import { Box, Img, Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import rainbowTemplateData from "data/templates/rainbow";
 import unoTemplateData from "data/templates/uno";
 import React, { FC } from "react";
@@ -52,12 +52,14 @@ const RightSidebarTemplatesTab: FC = () => {
           onClick={() => handleTemplateSelection(template.id)}
           borderWidth={1}
           alignItems="center"
+          w="100%"
           bg={editorControlsBgColor}
+          rounded="lg"
           _hover={{
             shadow: "lg",
           }}
         >
-          <Image src={template.image} alt={template.label} rounded="lg" />
+          <Img src={template.image} alt={template.label} rounded="lg" />
           <Text p={1} borderTopWidth={1} fontWeight="bold">
             {template.label}
           </Text>

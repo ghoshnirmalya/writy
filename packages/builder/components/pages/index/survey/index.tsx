@@ -1,9 +1,9 @@
 import {
-  Box,
   Container,
+  Flex,
   Grid,
   Heading,
-  Image,
+  Img,
   Text,
   useColorModeValue,
   VStack,
@@ -63,23 +63,18 @@ const Survey: FC = () => {
 
     return templates.map((template) => {
       return (
-        <Box
+        <Flex
           key={template.id}
           as="button"
           onClick={() => handleTemplateSelection(template.id)}
-          borderWidth={1}
+          justifyContent="center"
           alignItems="center"
           bg={bgColor}
           rounded="lg"
-          _hover={{
-            shadow: "lg",
-          }}
+          borderWidth={1}
         >
-          <Image src={template.image} alt={template.label} rounded="lg" />
-          <Text p={4} borderTopWidth={1} fontWeight="bold">
-            {template.label}
-          </Text>
-        </Box>
+          <Img src={template.image} alt={template.label} rounded="lg" />
+        </Flex>
       );
     });
   };

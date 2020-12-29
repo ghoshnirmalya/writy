@@ -1,4 +1,4 @@
-import { Flex, Image, VStack } from "@chakra-ui/react";
+import { Flex, Img, VStack } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentPageData } from "selectors/site";
@@ -56,7 +56,7 @@ const HeroSectionEditorLayoutsPanel: FC<IProps> = ({ positionOfSection }) => {
             shadow: "lg",
           }}
         >
-          <Image
+          <Img
             src={`/images/section-layouts/hero/${index + 1}.png`}
             alt={`Layout ${layout.key}`}
             rounded="lg"
