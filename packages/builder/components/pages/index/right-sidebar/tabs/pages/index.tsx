@@ -1,4 +1,11 @@
-import { Box, Button, HStack, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  HStack,
+  Text,
+  useColorModeValue,
+  VStack,
+} from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -35,32 +42,40 @@ const RightSidebarPagesTab: FC = () => {
   const dispatch = useDispatch();
   const { pages } = useSelector(getSiteData());
   const currentPageId = useSelector(getCurrentPageData());
+  const activePageBgColor = useColorModeValue("gray.100", "brand.700");
 
   const pagesNode = () => {
-    return pages.map((page, index: number) => {
-      return (
-        <Box
-          key={index}
-          as="button"
-          onClick={() => dispatch(setCurrentPageId(index))}
-          bg={index === currentPageId ? "brand.700" : "brand.900"}
-          alignItems="center"
-          w="100%"
-          rounded="lg"
-          _hover={{
-            shadow: "lg",
-          }}
-        >
-          <Text px={2} py={1} fontWeight="bold" textAlign="left" fontSize="sm">
-            {page.meta.id}.html
-          </Text>
-        </Box>
-      );
-    });
+    return (
+      <VStack spacing={1} w="100%">
+        {pages.map((page, index: number) => {
+          return (
+            <Box
+              key={index}
+              as="button"
+              onClick={() => dispatch(setCurrentPageId(index))}
+              bg={index === currentPageId ? activePageBgColor : "transparent"}
+              alignItems="center"
+              w="100%"
+              rounded="lg"
+            >
+              <Text
+                px={2}
+                py={1}
+                fontWeight="bold"
+                textAlign="left"
+                fontSize="sm"
+              >
+                {page.meta.id}.html
+              </Text>
+            </Box>
+          );
+        })}
+      </VStack>
+    );
   };
 
   return (
-    <VStack spacing={2}>
+    <VStack spacing={4}>
       <HStack spacing={4} justifyContent="flex-end" w="100%">
         <LazyManagePages />
         <LazyAddPage />
