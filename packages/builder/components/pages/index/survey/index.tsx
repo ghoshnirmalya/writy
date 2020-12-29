@@ -1,15 +1,14 @@
 import {
-  Button,
   Container,
   Flex,
   Grid,
   Heading,
   Img,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
   Text,
@@ -17,10 +16,10 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+import GetStarted from "components/pages/index/survey/get-started";
 import rainbowTemplateData from "data/templates/rainbow";
 import unoTemplateData from "data/templates/uno";
 import React, { FC } from "react";
-import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { addPage, setTemplateData } from "slices/site";
 
@@ -137,18 +136,17 @@ const Survey: FC = () => {
             Build good-looking websites without writing a single line of code.
           </Heading>
           <Text fontSize="2xl">
-            Writy is an Open Source website builder powered by Next.js, Chakra
-            UI and TailwindCSS.
+            Writy is an{" "}
+            <Link
+              href="https://github.com/ghoshnirmalya/writy"
+              target="_blank"
+              color="blue.500"
+            >
+              Open Source
+            </Link>{" "}
+            website builder powered by Next.js, Chakra UI and TailwindCSS.
           </Text>
-          <Button
-            onClick={onOpen}
-            colorScheme="blue"
-            size="lg"
-            rightIcon={<MdArrowForward />}
-          >
-            Get started
-          </Button>
-          {modalNode()}
+          <GetStarted />
         </VStack>
       </VStack>
     </Container>

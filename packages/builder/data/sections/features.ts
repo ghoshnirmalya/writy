@@ -8,7 +8,7 @@ const featuresSectionData = {
   },
   theme: {
     backgroundColor: "#ffffff",
-    textColor: "#555555",
+    textColor: "#000000",
   },
   data: {
     cards: [

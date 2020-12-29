@@ -35,6 +35,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
   ) => {
     dispatch(
       updateTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "links",
         itemPosition,
@@ -60,6 +61,7 @@ const NavbarSectionEditorTextPanel: FC<IProps> = ({ positionOfSection }) => {
 
     dispatch(
       addTemplateSectionData({
+        currentPageId,
         positionOfSection,
         itemType: "links",
         value: initialValue,

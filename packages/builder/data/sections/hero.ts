@@ -10,9 +10,9 @@ const heroSectionData = {
     image: Image1,
   },
   theme: {
-    backgroundColor: "#f2f2f2",
-    textColor: "#555555",
-    buttonBackgroundColor: "#555555",
+    backgroundColor: "#ffffff",
+    textColor: "#000000",
+    buttonBackgroundColor: "#000000",
     buttonTextColor: "#ffffff",
   },
   data: {

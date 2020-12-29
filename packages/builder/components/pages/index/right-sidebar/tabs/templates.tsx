@@ -59,7 +59,12 @@ const RightSidebarTemplatesTab: FC = () => {
             shadow: "lg",
           }}
         >
-          <Img src={template.image} alt={template.label} rounded="lg" />
+          <Img
+            src={template.image}
+            alt={template.label}
+            rounded="lg"
+            borderBottomRadius={0}
+          />
           <Text p={1} borderTopWidth={1} fontWeight="bold">
             {template.label}
           </Text>
