@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="https://user-images.githubusercontent.com/6391763/103354181-dc9f1c00-4ad0-11eb-9261-21c23d422828.png" alt="Logo"/>
+</p>
+
+<p align="center">
   <a href="https://twitter.com/nirmalyaghosh23">
     <img alt="Twitter: Nirmalya Ghosh" src="https://img.shields.io/twitter/follow/nirmalyaghosh23.svg?style=social" target="_blank" />
   </a>
