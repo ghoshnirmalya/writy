@@ -70,6 +70,19 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
 
         break;
 
+      case "text":
+        const textSectionData = require("data/sections/text").default;
+
+        dispatch(
+          addTemplateSection({
+            currentPageId,
+            positionOfSection,
+            sectionContent: textSectionData(theme.mode),
+          })
+        );
+
+        break;
+
       default:
         break;
     }
@@ -84,6 +97,7 @@ const AddNewSection: FC<IProps> = ({ positionOfSection }) => {
       { key: "navbar", label: "Navbar" },
       { key: "hero", label: "Hero" },
       { key: "features", label: "Features" },
+      { key: "text", label: "Text" },
     ];
 
     return (

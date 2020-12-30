@@ -33,6 +33,25 @@ const LazyContentArea = dynamic(
   }
 );
 
+const LazyRightSidebar = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: 'lazyRightSidebar' */ "components/pages/index/right-sidebar"
+    ),
+  {
+    ssr: false,
+    loading: () => {
+      return (
+        <Flex h={100} alignItems="center" justifyContent="center">
+          <Text fontSize="20" fontWeight="bold">
+            Loading...
+          </Text>
+        </Flex>
+      );
+    },
+  }
+);
+
 const IndexPageComponent: FC = () => {
   const { pages } = useSelector(getSiteData());
 
@@ -44,7 +63,7 @@ const IndexPageComponent: FC = () => {
     <Flex overflow="hidden" flexDir="column">
       <Flex>
         <LazyContentArea />
-        <RightSidebar />
+        <LazyRightSidebar />
       </Flex>
     </Flex>
   );

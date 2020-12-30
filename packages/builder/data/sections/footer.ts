@@ -17,10 +17,6 @@ const footerSectionData = (mode: "light" | "dark") => ({
         label: "About",
         link: "/about.html",
       },
-      {
-        label: "Contact",
-        link: "/contact.html",
-      },
     ],
   },
 });

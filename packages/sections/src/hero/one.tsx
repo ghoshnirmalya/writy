@@ -25,7 +25,7 @@ const HeroLayoutOne: FC<IProps> = ({ theme, data, meta }) => {
           />
         </div>
         <div className="space-y-4 text-center md:text-left w-full md:w-1/2 p-8">
-          <h1 className="text-2xl md:text-3xl font-bold">{meta.heading}</h1>
+          <h2 className="text-2xl md:text-3xl font-bold">{meta.heading}</h2>
           <p className="mb-8 leading-relaxed">{meta.subHeading}</p>
           <div className="flex flex-col md:flex-row justify-center md:justify-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
             {data.buttons?.map((button: any, index: number) => {

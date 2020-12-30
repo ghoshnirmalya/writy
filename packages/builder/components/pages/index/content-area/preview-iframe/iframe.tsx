@@ -3,6 +3,7 @@ import FeaturesSectionView from "components/views/sections/features";
 import FooterSectionView from "components/views/sections/footer";
 import HeroSectionView from "components/views/sections/hero";
 import NavbarSectionView from "components/views/sections/navbar";
+import TextSectionView from "components/views/sections/text";
 import React, { FC, useState } from "react";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 
@@ -35,6 +36,14 @@ const Iframe: FC<IProps> = ({ pageId, page }) => {
       case "features":
         return (
           <FeaturesSectionView
+            positionOfSection={positionOfSection}
+            pageId={pageId}
+          />
+        );
+
+      case "text":
+        return (
+          <TextSectionView
             positionOfSection={positionOfSection}
             pageId={pageId}
           />
@@ -79,9 +88,9 @@ const Iframe: FC<IProps> = ({ pageId, page }) => {
 
     return template?.sections.map((section: any, index: number) => {
       return (
-        <Box as="section" key={index} id={`section-${index}`}>
+        <section key={index} id={`section-${index}`}>
           {mapSectionToSectionType(section, index)}
-        </Box>
+        </section>
       );
     });
   };

@@ -74,6 +74,7 @@ const GetStarted: FC = () => {
           borderWidth={1}
           rounded="lg"
           p={8}
+          fontWeight="bold"
           _hover={{
             shadow: "lg",
           }}

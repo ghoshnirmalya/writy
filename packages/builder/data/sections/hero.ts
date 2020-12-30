@@ -4,9 +4,9 @@ const heroSectionData = (mode: "light" | "dark") => ({
   meta: {
     type: "hero",
     layout: "one",
-    heading: "Welcome to our website",
+    heading: "Campaigns to grow your community online",
     subHeading:
-      "Building products is hard. We've been building applications for over two decades. Let us help you.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu mattis leo. Nulla eu orci metus. Integer cursus tincidunt elit at ullamcorper.",
     image: Image1,
   },
   theme: {
@@ -19,11 +19,11 @@ const heroSectionData = (mode: "light" | "dark") => ({
     buttons: [
       {
         label: "Read more",
-        link: "/read-more",
+        link: "/",
       },
       {
         label: "Contact us",
-        link: "/contact-us",
+        link: "/",
       },
     ],
   },

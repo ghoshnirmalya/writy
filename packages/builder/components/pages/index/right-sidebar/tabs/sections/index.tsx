@@ -13,6 +13,7 @@ import FeaturesSectionEditor from "components/editor/sections/features";
 import FooterSectionEditor from "components/editor/sections/footer";
 import HeroSectionEditor from "components/editor/sections/hero";
 import NavbarSectionEditor from "components/editor/sections/navbar";
+import TextSectionEditor from "components/editor/sections/text";
 import AddNewSection from "components/pages/index/right-sidebar/tabs/sections/add-new-section";
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
@@ -33,6 +34,9 @@ const RightSidebarSectionsTab: FC = () => {
 
       case "features":
         return <FeaturesSectionEditor positionOfSection={positionOfSection} />;
+
+      case "text":
+        return <TextSectionEditor positionOfSection={positionOfSection} />;
 
       case "footer":
         return <FooterSectionEditor positionOfSection={positionOfSection} />;

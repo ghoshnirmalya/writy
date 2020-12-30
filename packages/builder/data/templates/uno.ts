@@ -32,9 +32,9 @@ const uno = {
       meta: {
         type: "hero",
         layout: "one",
-        heading: "Welcome to our website",
+        heading: "Campaigns to grow your community online",
         subHeading:
-          "Building products is hard. We've been building applications for over two decades. Let us help you.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu mattis leo. Nulla eu orci metus. Integer cursus tincidunt elit at ullamcorper.",
         image: Image1,
       },
       theme: {
@@ -60,7 +60,7 @@ const uno = {
       meta: {
         type: "features",
         layout: "one",
-        heading: "We've developed and shipped over 500 products",
+        heading: "Capture and generate reports to grow your online presence",
       },
       theme: {
         backgroundColor: "#ffffff",
@@ -70,19 +70,19 @@ const uno = {
         cards: [
           {
             image: Image2,
-            heading: "E-commerce application",
+            heading: "Capture reports",
             subHeading:
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis commodo enim. Morbi eleifend lacinia massa, id elementum lorem lacinia in.",
           },
           {
             image: Image3,
-            heading: "Booking application",
+            heading: "Analyze your online presence",
             subHeading:
               "Proin mauris nisl, scelerisque quis ante non, scelerisque tempor dui. In sit amet dui blandit nunc consequat volutpat. In euismod felis sed velit sodales finibus.",
           },
           {
             image: Image4,
-            heading: "Learning management system",
+            heading: "Increase your profits",
             subHeading:
               "In et augue eget ipsum congue suscipit at in urna. Integer non nibh vitae purus maximus bibendum nec eu metus. Nulla facilisi.",
           },

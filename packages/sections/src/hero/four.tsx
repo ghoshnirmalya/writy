@@ -17,9 +17,9 @@ const HeroLayoutFour: FC<IProps> = ({ theme, data, meta }) => {
     >
       <div className="container mx-auto">
         <div className="text-center space-y-4 p-8">
-          <h1 className="title-font text-2xl md:text-3xl font-bold">
+          <h2 className="title-font text-2xl md:text-3xl font-bold">
             {meta.heading}
-          </h1>
+          </h2>
           <p className="leading-relaxed">{meta.subHeading}</p>
           <div className="flex flex-col md:flex-row justify-center space-x-0 md:space-x-4 space-y-4 md:space-y-0">
             {data.buttons?.map((button: any, index: number) => {

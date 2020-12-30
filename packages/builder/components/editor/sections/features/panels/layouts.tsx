@@ -35,6 +35,10 @@ const FeaturesSectionEditorLayoutsPanel: FC<IProps> = ({
         key: "two",
         label: "Second layout",
       },
+      {
+        key: "three",
+        label: "Third layout",
+      },
     ];
 
     return layouts.map((layout: any, index: number) => {

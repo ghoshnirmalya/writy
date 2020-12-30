@@ -21,6 +21,9 @@ const FeaturesSectionView: FC<IProps> = ({ positionOfSection, pageId }) => {
       case "two":
         return <FeaturesLayouts.Two theme={theme} data={data} meta={meta} />;
 
+      case "three":
+        return <FeaturesLayouts.Three theme={theme} data={data} meta={meta} />;
+
       default:
         break;
     }
