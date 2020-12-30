@@ -1,3 +1,9 @@
+## [0.18.1](https://github.com/ghoshnirmalya/writy/compare/0.18.0...0.18.1) (2020-12-30)
+
+### Bug Fixes
+
+- fixes Lighthouse issue ([3064916](https://github.com/ghoshnirmalya/writy/commit/3064916408c59f209095a07d9fa6188d0e12939f))
+
 # [0.18.0](https://github.com/ghoshnirmalya/writy/compare/0.17.0...0.18.0) (2020-12-30)
 
 ### Features
