@@ -1,4 +1,11 @@
-import { Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  Container,
+  Heading,
+  Link,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import dynamic from "next/dynamic";
 import React, { FC } from "react";
 
@@ -9,6 +16,18 @@ const LazyGetStarted = dynamic(
     ),
   {
     ssr: false,
+    loading: () => {
+      return (
+        <Button
+          size="sm"
+          colorScheme="blue"
+          width="250px"
+          p={8}
+          fontSize={24}
+          isLoading
+        />
+      );
+    },
   }
 );
 

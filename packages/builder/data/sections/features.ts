@@ -7,7 +7,7 @@ const featuresSectionData = (mode: "light" | "dark") => ({
     heading: "Capture and generate reports to grow your online presence",
   },
   theme: {
-    backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+    backgroundColor: mode === "dark" ? "#000000" : "#ffffff",
     textColor: mode === "dark" ? "#ffffff" : "#000000",
   },
   data: {

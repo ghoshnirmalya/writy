@@ -10,7 +10,7 @@ const heroSectionData = (mode: "light" | "dark") => ({
     image: Image1,
   },
   theme: {
-    backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+    backgroundColor: mode === "dark" ? "#000000" : "#ffffff",
     textColor: mode === "dark" ? "#ffffff" : "#000000",
     buttonBackgroundColor: mode === "dark" ? "#ffffff" : "#000000",
     buttonTextColor: mode === "dark" ? "#000000" : "#ffffff",
