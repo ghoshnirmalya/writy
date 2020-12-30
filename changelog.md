@@ -1,3 +1,11 @@
+# [0.18.0](https://github.com/ghoshnirmalya/writy/compare/0.17.0...0.18.0) (2020-12-30)
+
+### Features
+
+- adds minor UI improvements ([25dc302](https://github.com/ghoshnirmalya/writy/commit/25dc3021638c24cf3141e92ba882b9be2be18e91))
+- fixes accessibility issue ([9b7280e](https://github.com/ghoshnirmalya/writy/commit/9b7280e267ff40a4d875be307dfbc7815e320d36))
+- increases the size of the CTA button in survey ([f31f4d1](https://github.com/ghoshnirmalya/writy/commit/f31f4d12e64ae7a45203903d12b6330695e9451a))
+
 # [0.17.0](https://github.com/ghoshnirmalya/writy/compare/0.16.0...0.17.0) (2020-12-29)
 
 ### Bug Fixes
