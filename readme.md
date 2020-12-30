@@ -13,6 +13,8 @@ This is an application for building HTML pages using Next.js, TailwindCSS and Ch
 1. [**builder**](https://github.com/ghoshnirmalya/writy/tree/main/packages/builder): Next.js application built with Chakra UI.
 2. [**backend**](https://github.com/ghoshnirmalya/writy/tree/main/packages/sections): TailwindCSS components built using React.js.
 
+## Table of contents
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
