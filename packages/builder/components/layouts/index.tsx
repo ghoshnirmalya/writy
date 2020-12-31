@@ -16,7 +16,6 @@ const Layout: FC = ({ children }) => {
         alignItems="center"
         bg={bgColor}
         color={color}
-        overflowY="scroll"
       >
         {children}
       </Flex>
