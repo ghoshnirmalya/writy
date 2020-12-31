@@ -33,7 +33,7 @@ const AddPage: FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const urlField = useRef();
   const [url, setURL] = useState("");
-  const { pages } = useSelector(getSiteData());
+  const { pages, theme } = useSelector(getSiteData());
   const bgColor = useColorModeValue("brand.100", "brand.900");
 
   const handlePageAddition = () => {
@@ -48,7 +48,7 @@ const AddPage: FC = () => {
     dispatch(
       setTemplateData({
         currentPageId: pages.length,
-        templateData: unoTemplateData,
+        templateData: unoTemplateData(theme.mode),
       })
     );
 

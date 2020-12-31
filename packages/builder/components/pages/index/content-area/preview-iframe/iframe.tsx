@@ -3,7 +3,7 @@ import FooterSectionView from "components/views/sections/footer";
 import HeroSectionView from "components/views/sections/hero";
 import NavbarSectionView from "components/views/sections/navbar";
 import TextSectionView from "components/views/sections/text";
-import React, { FC, useState } from "react";
+import React, { ChangeEvent, FC, useState } from "react";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 
 interface IProps {
@@ -64,6 +64,21 @@ const Iframe: FC<IProps> = ({ pageId, page }) => {
   const viewNode = (template: any) => {
     // Wait for TailwindCSS to be downloaded in the background inside the iFrame
     setTimeout(() => {
+      // Prevent clicking of links inside the iframe
+      const iframeContent: any = document.getElementById(
+        `js-preview-iframe-page-${pageId}`
+      );
+
+      iframeContent.contentWindow.document.addEventListener(
+        "click",
+        (e: ChangeEvent<HTMLInputElement>) => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          return false;
+        }
+      );
+
       setInitialization(false);
     }, 2000);
 
@@ -100,7 +115,6 @@ const Iframe: FC<IProps> = ({ pageId, page }) => {
       style={{
         width: "100%",
         height: "100%",
-        pointerEvents: "none",
       }}
       initialContent='
         <!DOCTYPE html>

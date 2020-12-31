@@ -1,6 +1,6 @@
 import { Image1, Image2, Image3 } from "@writy/sections";
 
-const rainbow = {
+const rainbow = (mode: "light" | "dark") => ({
   meta: {
     id: "rainbow",
   },
@@ -12,8 +12,8 @@ const rainbow = {
         siteName: "Writy",
       },
       theme: {
-        backgroundColor: "#f2f2f2",
-        linkColor: "#555555",
+        backgroundColor: mode === "dark" ? "#000000" : "#ffffff",
+        linkColor: mode === "dark" ? "#ffffff" : "#000000",
       },
       data: {
         links: [
@@ -36,7 +36,7 @@ const rainbow = {
       },
       theme: {
         backgroundColor: "#ffffff",
-        textColor: "#555555",
+        textColor: mode === "dark" ? "#ffffff" : "#000000",
       },
       data: {
         cards: [
@@ -65,10 +65,10 @@ const rainbow = {
         image: Image1,
       },
       theme: {
-        backgroundColor: "#f2f2f2",
-        textColor: "#555555",
-        buttonBackgroundColor: "#555555",
-        buttonTextColor: "#ffffff",
+        backgroundColor: mode === "dark" ? "#000000" : "#ffffff",
+        textColor: mode === "dark" ? "#ffffff" : "#000000",
+        buttonBackgroundColor: mode === "dark" ? "#ffffff" : "#000000",
+        buttonTextColor: mode === "dark" ? "#000000" : "#ffffff",
       },
       data: {
         buttons: [
@@ -89,8 +89,8 @@ const rainbow = {
         layout: "one",
       },
       theme: {
-        backgroundColor: "#000000",
-        linkColor: "#ffffff",
+        backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+        linkColor: mode === "dark" ? "#ffffff" : "#000000",
       },
       data: {
         links: [
@@ -106,6 +106,6 @@ const rainbow = {
       },
     },
   ],
-};
+});
 
 export default rainbow;

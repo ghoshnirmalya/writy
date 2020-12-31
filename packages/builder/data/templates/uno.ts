@@ -1,6 +1,6 @@
 import { Image1, Image2, Image3, Image4 } from "@writy/sections";
 
-const uno = {
+const uno = (mode: "light" | "dark") => ({
   meta: {
     id: "uno",
   },
@@ -12,8 +12,8 @@ const uno = {
         siteName: "Writy",
       },
       theme: {
-        backgroundColor: "#ffffff",
-        linkColor: "#555555",
+        backgroundColor: mode === "dark" ? "#000000" : "#ffffff",
+        linkColor: mode === "dark" ? "#ffffff" : "#000000",
       },
       data: {
         links: [
@@ -38,10 +38,10 @@ const uno = {
         image: Image1,
       },
       theme: {
-        backgroundColor: "#f2f2f2",
-        textColor: "#555555",
-        buttonBackgroundColor: "#555555",
-        buttonTextColor: "#ffffff",
+        backgroundColor: mode === "dark" ? "#000000" : "#ffffff",
+        textColor: mode === "dark" ? "#ffffff" : "#000000",
+        buttonBackgroundColor: mode === "dark" ? "#ffffff" : "#000000",
+        buttonTextColor: mode === "dark" ? "#000000" : "#ffffff",
       },
       data: {
         buttons: [
@@ -63,8 +63,8 @@ const uno = {
         heading: "Capture and generate reports to grow your online presence",
       },
       theme: {
-        backgroundColor: "#ffffff",
-        textColor: "#555555",
+        backgroundColor: mode === "dark" ? "#000000" : "#ffffff",
+        textColor: mode === "dark" ? "#ffffff" : "#000000",
       },
       data: {
         cards: [
@@ -95,8 +95,8 @@ const uno = {
         layout: "one",
       },
       theme: {
-        backgroundColor: "#000000",
-        linkColor: "#ffffff",
+        backgroundColor: mode === "dark" ? "#000000" : "#f2f2f2",
+        linkColor: mode === "dark" ? "#ffffff" : "#000000",
       },
       data: {
         links: [
@@ -112,6 +112,6 @@ const uno = {
       },
     },
   ],
-};
+});
 
 export default uno;
