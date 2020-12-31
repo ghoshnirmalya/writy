@@ -11,11 +11,11 @@ const footerSectionData = (mode: "light" | "dark") => ({
     links: [
       {
         label: "Home",
-        link: "/index.html",
+        link: "index.html",
       },
       {
         label: "About",
-        link: "/about.html",
+        link: "about.html",
       },
     ],
   },
