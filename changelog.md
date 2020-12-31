@@ -1,3 +1,10 @@
+## [0.18.2](https://github.com/ghoshnirmalya/writy/compare/0.18.1...0.18.2) (2020-12-31)
+
+### Bug Fixes
+
+- fixes issue with scrolling ([6c16796](https://github.com/ghoshnirmalya/writy/commit/6c167964def460c458af4f6fc32bff48227ffb1a))
+- fixes pointer-events on HTML files ([3e6c2d6](https://github.com/ghoshnirmalya/writy/commit/3e6c2d619685993d31e9a4003a0cd602dc133db4))
+
 ## [0.18.1](https://github.com/ghoshnirmalya/writy/compare/0.18.0...0.18.1) (2020-12-30)
 
 ### Bug Fixes
