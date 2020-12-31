@@ -12,7 +12,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { MdCollections, MdDns } from "react-icons/md";
 
 const LazyRightSidebarSectionsTab = dynamic(
@@ -55,6 +55,15 @@ const LazyRightSidebarPagesTab = dynamic(
 
 const RightSidebarTabs: FC = () => {
   const editorControlsBgColor = useColorModeValue("brand.100", "brand.900");
+
+  useEffect(() => {
+    // This is a hack to prevent overflow due to the accordion component
+    document.body.style.overflow = "hidden";
+
+    return function cleanup() {
+      document.body.style.overflow = "visible";
+    };
+  }, []);
 
   return (
     <Tabs isLazy>

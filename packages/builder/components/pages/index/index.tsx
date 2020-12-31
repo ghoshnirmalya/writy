@@ -60,7 +60,7 @@ const IndexPageComponent: FC = () => {
   }
 
   return (
-    <Flex overflow="hidden" flexDir="column">
+    <Flex flexDir="column">
       <Flex>
         <LazyContentArea />
         <LazyRightSidebar />

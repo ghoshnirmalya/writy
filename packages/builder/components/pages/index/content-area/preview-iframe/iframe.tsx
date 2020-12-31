@@ -1,4 +1,3 @@
-import { Box } from "@chakra-ui/react";
 import FeaturesSectionView from "components/views/sections/features";
 import FooterSectionView from "components/views/sections/footer";
 import HeroSectionView from "components/views/sections/hero";
@@ -101,27 +100,22 @@ const Iframe: FC<IProps> = ({ pageId, page }) => {
       style={{
         width: "100%",
         height: "100%",
+        pointerEvents: "none",
       }}
       initialContent='
-    <!DOCTYPE html>
-      <html>
-        <head>
-          <link
-            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-            rel="stylesheet"
-          />
-          <style>
-            a {
-              pointer-events: none;
-              transition: none;
-            }
-          </style>
-        </head>
-        <body>
-          <div></div>
-        </body>
-      </html>
-    '
+        <!DOCTYPE html>
+          <html>
+            <head>
+              <link
+                href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+                rel="stylesheet"
+              />
+            </head>
+            <body>
+              <div></div>
+            </body>
+          </html>
+      '
     >
       <FrameContextConsumer>
         {() => viewNode(page.template)}

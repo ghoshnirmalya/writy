@@ -26,11 +26,11 @@ const darkModeSiteData = {
               links: [
                 {
                   label: "Home",
-                  link: "/index.html",
+                  link: "index.html",
                 },
                 {
                   label: "About",
-                  link: "/about.html",
+                  link: "about.html",
                 },
               ],
             },
@@ -166,11 +166,11 @@ const darkModeSiteData = {
               links: [
                 {
                   label: "Home",
-                  link: "/index.html",
+                  link: "index.html",
                 },
                 {
                   label: "About",
-                  link: "/about.html",
+                  link: "about.html",
                 },
               ],
             },
@@ -201,11 +201,11 @@ const darkModeSiteData = {
               links: [
                 {
                   label: "Home",
-                  link: "/index.html",
+                  link: "index.html",
                 },
                 {
                   label: "About",
-                  link: "/about.html",
+                  link: "about.html",
                 },
               ],
             },
@@ -246,11 +246,11 @@ const darkModeSiteData = {
               links: [
                 {
                   label: "Home",
-                  link: "/index.html",
+                  link: "index.html",
                 },
                 {
                   label: "About",
-                  link: "/about.html",
+                  link: "about.html",
                 },
               ],
             },
