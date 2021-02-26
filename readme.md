@@ -67,13 +67,19 @@ This application is the primary user-facing application. Once it’s up and runn
 git clone https://github.com/ghoshnirmalya/writy
 ```
 
-### 2. **Install necessary dependencies for the frontend application**
+### 2. **Change Directory**
+
+```sh
+cd writy
+```
+
+### 3. **Install necessary dependencies for the frontend application**
 
 ```sh
 yarn bootstrap
 ```
 
-### 3. **Start the packages**
+### 4. **Start the packages**
 
 From the root directory, we can run the following command to start both our packages:
 
