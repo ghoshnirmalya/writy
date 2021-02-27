@@ -67,7 +67,7 @@ This application is the primary user-facing application. Once it’s up and runn
 git clone https://github.com/ghoshnirmalya/writy
 ```
 
-### 2. **Change Directory**
+### 2. **Change directory**
 
 ```sh
 cd writy
