@@ -15,7 +15,7 @@
     "start": "lerna run start --stream --parallel"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^2.0.0",
+    "@release-it/conventional-changelog": "^3.0.0",
     "@rollup/plugin-image": "^2.0.6",
     "@rollup/plugin-typescript": "^8.1.0",
     "@types/gtag.js": "^0.0.5",
