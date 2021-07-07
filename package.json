@@ -18,7 +18,7 @@
     "@release-it/conventional-changelog": "^3.0.0",
     "@rollup/plugin-image": "^2.0.6",
     "@rollup/plugin-typescript": "^8.1.0",
-    "@types/gtag.js": "^0.0.6",
+    "@types/gtag.js": "^0.0.7",
     "@types/js-beautify": "^1.13.1",
     "@types/node": "^16.0.0",
     "@types/react": "^17.0.0",
