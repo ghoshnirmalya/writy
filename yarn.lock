@@ -1823,10 +1823,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
-"@types/gtag.js@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@types/gtag.js/-/gtag.js-0.0.9.tgz#a1f5d1d92e6f1e1e4ab5d86455989ce9591109df"
-  integrity sha512-ueI80KiWg/1EQuj6jKure5JigT9Jo4CXdKPI2yXyo8jf9g16OIpAt5oA/WA1kNoO4XGQGBv5ou4WhKs21/Ntzw==
+"@types/gtag.js@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@types/gtag.js/-/gtag.js-0.0.10.tgz#ac90d9b79c00daac447725a4b78ec1c398796760"
+  integrity sha512-98Hy7woUb3jMAMXkZQwfIOYNyfxmI0+U4m0PpCGdnd/FHk0tDpQFCqgXdNkdEoXsKkcGya/2Gew1cAJjKJspVw==
 
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
