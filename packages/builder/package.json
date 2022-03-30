@@ -23,7 +23,7 @@
     "jszip": "^3.5.0",
     "next": "12.1.2",
     "next-redux-wrapper": "7.0.5",
-    "react": "17.0.2",
+    "react": "18.0.0",
     "react-color": "^2.19.3",
     "react-dom": "18.0.0",
     "react-frame-component": "^5.0.0",
