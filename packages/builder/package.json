@@ -28,6 +28,6 @@
     "react-dom": "18.0.0",
     "react-frame-component": "^5.0.0",
     "react-icons": "^4.1.0",
-    "react-redux": "^7.2.2"
+    "react-redux": "^8.0.0"
   }
 }
