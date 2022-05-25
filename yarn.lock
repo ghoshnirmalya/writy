@@ -6720,9 +6720,9 @@ react-focus-lock@^2.9.1:
     use-sidecar "^1.1.2"
 
 react-frame-component@^5.0.0:
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/react-frame-component/-/react-frame-component-5.2.2.tgz#588711562d07f37741798aa4844b88e637212d2b"
-  integrity sha512-nqQaNUHUlLf3VFMWhFmURWaK2TS8RxZxptnU4JY4D2p059vIIJbdqyfJvwYoIHZoQ2h8Gm4mPfzfvcF57zOY7g==
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/react-frame-component/-/react-frame-component-5.2.3.tgz#2d5d1e29b23d5b915c839b44980d03bb9cafc453"
+  integrity sha512-r+h0o3r/uqOLNT724z4CRVkxQouKJvoi3OPfjqWACD30Y87rtEmeJrNZf1WYPGknn1Y8200HAjx7hY/dPUGgmA==
 
 react-icons@^4.1.0:
   version "4.3.1"
