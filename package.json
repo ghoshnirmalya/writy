@@ -20,7 +20,7 @@
     "@rollup/plugin-typescript": "^8.1.0",
     "@types/gtag.js": "^0.0.10",
     "@types/js-beautify": "^1.13.1",
-    "@types/node": "^17.0.0",
+    "@types/node": "^18.0.0",
     "@types/react": "^17.0.0",
     "@types/react-color": "^3.0.4",
     "@types/react-frame-component": "^4.1.1",
