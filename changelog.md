@@ -1,3 +1,13 @@
+
+
+## [0.18.3](https://github.com/ghoshnirmalya/writy/compare/0.18.2...0.18.3) (2024-04-05)
+
+
+### Bug Fixes
+
+* fixes issues with scrolling inside iframe ([7023736](https://github.com/ghoshnirmalya/writy/commit/702373655007690ea6417050b7f64a2e71177bb8))
+* twitter username ([08702b9](https://github.com/ghoshnirmalya/writy/commit/08702b986e0a2abcaffb6b4d9a2727a373d67dbd))
+
 ## [0.18.2](https://github.com/ghoshnirmalya/writy/compare/0.18.1...0.18.2) (2020-12-31)
 
 ### Bug Fixes
