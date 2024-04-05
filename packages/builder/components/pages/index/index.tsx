@@ -1,8 +1,7 @@
 import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
-import RightSidebar from "components/pages/index/right-sidebar";
 import Survey from "components/pages/index/survey";
 import dynamic from "next/dynamic";
-import React, { FC } from "react";
+import { FC } from "react";
 import { useSelector } from "react-redux";
 import { getSiteData } from "selectors/site";
 
@@ -14,13 +13,10 @@ const LazyContentArea = dynamic(
   {
     ssr: false,
     loading: () => {
-      const bgColor = useColorModeValue("brand.100", "brand.900");
-
       return (
         <Flex
           h="calc(100vh - 50px)"
           w="calc(100vw - 500px)"
-          bg={bgColor}
           alignItems="center"
           justifyContent="center"
         >

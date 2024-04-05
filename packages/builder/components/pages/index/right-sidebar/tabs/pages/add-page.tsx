@@ -82,7 +82,8 @@ const AddPage: FC = () => {
               <Stack spacing={8}>
                 <Alert status="info" rounded="lg">
                   <AlertIcon />
-                  Click on the "Add" button below the form to add a new page.
+                  Click on the &quot;Add&quot; button below the form to add a
+                  new page.
                 </Alert>
                 <FormControl>
                   <FormLabel htmlFor="url">URL</FormLabel>
@@ -102,7 +103,7 @@ const AddPage: FC = () => {
                   </InputGroup>
                   <FormHelperText>
                     Enter the url of HTML page in lowercase and hyphenated (eg:
-                    "contact-us" or "about")
+                    &quot;contact-us&quot; or &quot;about&quot;)
                   </FormHelperText>
                 </FormControl>
               </Stack>

@@ -76,7 +76,7 @@ cd writy
 ### 3. **Install necessary dependencies for the frontend application**
 
 ```sh
-yarn bootstrap
+yarn install
 ```
 
 ### 4. **Start the packages**

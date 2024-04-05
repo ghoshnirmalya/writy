@@ -24,7 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         router.events.off("routeChangeComplete", handleRouteChange);
       };
     }
-  }, [router.events]);
+  }, [isProduction, router.events]);
 
   const config = {
     useSystemColorMode: false,
