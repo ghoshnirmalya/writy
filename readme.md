@@ -53,7 +53,7 @@ This application is built using the following technologies:
 
 ### 1. [**Builder**](https://github.com/ghoshnirmalya/writy/tree/main/packages/builder): Next.js application
 
-This application is the primary user-facing application. Once it’s up and running (see [Installation](https://github.com/ghoshnirmalya/writy#installation) section), it’s available on http://localhost:3002/.
+This application is the primary user-facing application. Once it’s up and running (see [Installation](https://github.com/ghoshnirmalya/writy#installation) section), it’s available on http://localhost:3000/.
 
 ### 2. [**Sections**](https://github.com/ghoshnirmalya/writy/tree/main/packages/sections): TailwindCSS components
 
@@ -87,7 +87,7 @@ From the root directory, we can run the following command to start both our pack
 yarn dev
 ```
 
-The above command will start the frontend application on [http://localhost:3002/](http://localhost:3002).
+The above command will start the frontend application on [http://localhost:3000/](http://localhost:3000).
 
 ## Deployment
 

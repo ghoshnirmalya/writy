@@ -6,6 +6,8 @@ export default {
   output: {
     dir: "dist",
     format: "cjs",
+    exports: "default",
   },
+  external: ["react"],
   plugins: [typescript(), image()],
 };

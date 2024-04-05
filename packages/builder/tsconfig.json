@@ -3,18 +3,43 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": ["/*"],
-      "components/*": ["components/*"],
-      "pages/*": ["pages/*"],
-      "types/*": ["types/*"],
-      "lib/*": ["lib/*"],
-      "data/*": ["data/*"],
-      "thunks/*": ["thunks/*"],
-      "selectors/*": ["selectors/*"],
-      "slices/*": ["slices/*"]
+      "*": [
+        "/*"
+      ],
+      "components/*": [
+        "components/*"
+      ],
+      "pages/*": [
+        "pages/*"
+      ],
+      "types/*": [
+        "types/*"
+      ],
+      "lib/*": [
+        "lib/*"
+      ],
+      "data/*": [
+        "data/*"
+      ],
+      "thunks/*": [
+        "thunks/*"
+      ],
+      "selectors/*": [
+        "selectors/*"
+      ],
+      "slices/*": [
+        "slices/*"
+      ]
     },
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
